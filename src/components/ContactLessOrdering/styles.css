@@ -1,0 +1,272 @@
+.card-container {
+  background-color: #fbb501;
+  margin-top: -3px;
+}
+
+.contact-main-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.contact-main-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contactless {
+  display: flex;
+  padding-top: 3.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  z-index: 10;
+  gap: 2rem;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  padding-right: 0.75rem;
+  background-color: #985b00;
+  border-radius: 9999px;
+}
+
+.ordering {
+  padding: 6px;
+  border-radius: 9999px;
+  background-color: #fbb501;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-image {
+  object-fit: contain;
+  width: 18px;
+  height: 18px;
+  max-width: 100%;
+}
+
+.contactless-order {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  font-family: "font1";
+}
+
+.order-made-easy-header {
+  margin: 0px;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #321800;
+  text-align: start;
+  font-family: "font2";
+}
+
+.order-made-easy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.minimize-content {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: #472200;
+  font-weight: 500;
+  font-family: "font1";
+  text-align: start;
+  margin: 0px;
+}
+
+.ContaclessImage-small {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  z-index: 0;
+  display: inline;
+}
+
+.ContactlessImageLarge {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    margin-top: 0px;
+  }
+  .contactless {
+    padding-top: 5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    gap: 2.5rem;
+  }
+
+  .contact-button {
+    padding: 6px;
+  }
+
+  .ordering {
+    height: 44px;
+    width: 44px;
+  }
+
+  .qr-image {
+    width: 22px;
+    height: 1rem;
+  }
+
+  .contactless-order {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    font-weight: 600;
+  }
+
+  .contact-button {
+    padding-right: 1rem;
+  }
+
+  .order-made-easy-header {
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -1.6px;
+    font-weight: 600;
+  }
+
+  .minimize-content {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+  }
+
+  .contact-main-container {
+    max-width: 896px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-main-sub {
+    gap: 0px;
+    height: 616px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ContactlessImageLarge {
+    display: inline;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    z-index: 0;
+    height: 100%;
+    position: absolute;
+    right: -3.5rem;
+    top: 0;
+    display: flex;
+    bottom: 0;
+    width: 714px;
+  }
+
+  .ContaclessImage-small {
+    display: none;
+  }
+
+  .contactless {
+    padding-right: 1.25rem;
+    padding-left: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    gap: 2rem;
+    max-width: 520px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .contact-main-container {
+    max-width: 1156px;
+  }
+
+  .order-made-easy {
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contactless {
+    padding-left: 6rem;
+    padding-right: 0;
+  }
+
+  .order-made-easy-header {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .ContactlessImageLarge {
+    width: 827px;
+    right: 0px;
+  }
+
+  .contact-main-sub {
+    align-items: flex-start;
+    height: 620px;
+    gap: 0.5rem;
+  }
+
+  .contact-main-container {
+    max-width: 1440px;
+  }
+
+  .contactless {
+    max-width: 560px;
+    gap: 2.5rem;
+  }
+
+  .order-made-easy {
+    max-width: 800px;
+  }
+
+  .minimize-content {
+    width: 478px;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .contact-main-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

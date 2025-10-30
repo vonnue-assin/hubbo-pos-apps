@@ -1,0 +1,151 @@
+.Pos-main-container {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #fbb501;
+  overflow: hidden;
+  position: relative;
+}
+
+.upperImage {
+  color: transparent;
+  position: absolute;
+  top: -60px;
+  left: -1.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.lowerImage {
+  position: absolute;
+  right: -100px;
+  bottom: -30px;
+  color: transparent;
+  max-width: 100%;
+  height: auto;
+}
+
+.one-pos-card {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 829px;
+  text-align: center;
+}
+
+.pos-header {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.96px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #321800;
+  font-family: "font2";
+  margin: 0;
+}
+
+.pos-content {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: #472200;
+  margin: 0;
+  font-weight: 500;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-family: "font1";
+}
+
+.free-demo {
+  color: #fff;
+  outline-offset: 2px;
+  text-transform: capitalize;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  text-align: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-family: "font1";
+  background-color: #472200;
+  border-radius: 1rem;
+  white-space: nowrap;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .pos-header {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.64px;
+    font-weight: 600;
+  }
+
+  .Pos-main-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .pos-content {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+  }
+
+  .upperImage {
+    left: 0;
+    top: -1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pos-header {
+    font-size: 36px;
+    line-height: 52px;
+    letter-spacing: -1.44px;
+  }
+
+  .Pos-main-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .pos-content {
+    margin-top: 0.5rem;
+  }
+
+  .upperImage {
+    top: -7rem;
+  }
+
+  .lowerImage {
+    bottom: -1.25rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .lowerImage {
+    bottom: 0;
+    right: 0;
+  }
+
+  .upperImage {
+    top: 0px;
+    left: 0;
+  }
+}

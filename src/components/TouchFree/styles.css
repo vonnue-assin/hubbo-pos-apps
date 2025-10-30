@@ -1,0 +1,190 @@
+.touchFree-main-section {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  background-color: #fffefb;
+}
+
+.touchfree-section-wrapper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sub-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.touch-header {
+  margin: 0;
+  color: #321800;
+  text-transform: capitalize;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  font-weight: 600;
+  font-family: "font2";
+  text-align: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.image-free-box {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.scannedImageMobile {
+  display: inline;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 1.5rem;
+  height: auto;
+}
+
+.scannedImageTab {
+  display: none;
+}
+
+.content-store-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.content-stores {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.offlineImage {
+  color: transparent;
+  width: 24px;
+  height: 24px;
+}
+
+.icon-card {
+  width: 48px;
+  height: 48px;
+  padding: 0.75rem;
+  background-color: #fff8e7;
+  border-radius: 9999px;
+  box-sizing: border-box;
+}
+
+.icon-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex: 1 0 0;
+  flex-direction: column;
+}
+
+.icon-header {
+  margin: 0px;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.96px;
+  font-weight: 600;
+  font-family: "font2";
+  text-transform: capitalize;
+  color: #321800;
+}
+
+.icon-header-content {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-family: "font1";
+  font-weight: 400;
+  color: #846b54;
+  margin: 0;
+  text-align: start;
+}
+
+@media screen and (min-width: 768px) {
+  .touchFree-main-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .touch-header {
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -1.6px;
+    font-weight: 600;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .sub-section-wrapper {
+    gap: 2.5rem;
+  }
+
+  .image-free-box {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .touchfree-section-wrapper {
+    max-width: 1156px;
+  }
+
+  .sub-section-wrapper {
+    gap: 4rem;
+  }
+
+  .image-free-box {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    flex-direction: row-reverse;
+  }
+
+  .scannedImageTab {
+    display: inline;
+    width: 440px;
+    display: flex;
+    border-radius: 1.5rem;
+    aspect-ratio: 4 / 3;
+    margin-bottom: auto;
+  }
+
+  .scannedImageMobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .touchFree-main-section {
+    padding: 6rem;
+  }
+
+  .image-free-box {
+    padding-left: 90px;
+    padding-right: 90px;
+    gap: 2.5rem;
+  }
+
+  .scannedImageTab {
+    width: 509px;
+  }
+
+  .icon-header-content {
+    width: 530px;
+  }
+}
