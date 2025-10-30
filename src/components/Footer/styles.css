@@ -65,13 +65,22 @@
   justify-content: space-between;
 }
 
-.footers {
+/* .footers {
   display: flex;
   width: 100%;
-  flex: 1 1 0%;
+  flex: 1 1 auto;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+} */
+
+.footers {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 0%;
+  gap: 1.1rem;
+  justify-content: space-between;
+  width: fit-content;
 }
 
 .hubbo {
@@ -81,7 +90,7 @@
 
 .HubboposImage {
   height: 100%;
-  height: 1.25rem;
+  /* height: 1.25rem; */
   width: fit-content;
   max-width: 100%;
 }
@@ -101,6 +110,7 @@
   font-family: "font2";
   outline: 2px solid transparent;
   outline-offset: 2px;
+  padding-right: 0px;
 }
 
 .english-card {
@@ -130,9 +140,213 @@
 
 .arrow {
   padding: 0.5rem;
+  width: 41px;
 }
 
 .arrow-down {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+.app-store-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  display: inline;
+}
+
+.app-store {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  vertical-align: middle;
+}
+
+.app-card {
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin: 0;
+}
+
+.AppStore {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.app-store-card-two {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  gap: 0.75rem;
+  display: none;
+}
+
+.text-footer-enquiry {
+  color: #fff5db;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+.text-content {
+  white-space: nowrap;
+  margin: 0;
+  opacity: 0.7;
+  font-family: "font1";
+}
+
+.text-link {
+  opacity: 0.7;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-line: underline;
+  white-space: nowrap;
+  display: block;
+}
+
+.hello-link {
+  margin: 0;
+  font-family: "font1";
+}
+
+.block {
+  display: block;
+}
+
+.social-media-apps {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.facebook {
+  padding: 0.5rem;
+}
+
+.faceBookIcon {
+  max-width: 100%;
+  height: auto;
+  width: 40px;
+  height: 40px;
+}
+
+.privacy-note {
+  color: rgb(132, 107, 84);
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+  font-family: "font1";
+  text-decoration-thickness: 1px;
+  text-decoration-line: underline;
+  margin-top: -4px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.note {
+  width: 100% !important;
+}
+
+.social-media-sub {
+  display: none;
+}
+
+@media screen and (min-width: 375px) {
+  .footers {
+    justify-content: space-between;
+    gap: 1.3rem;
+  }
+
+  .arrow {
+    padding: 0.5rem;
+    width: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-wrapper-box {
+    padding-top: 5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  /* .hubbopos-icon {
+    gap: 1.2rem;
+  } */
+
+  .footers {
+    justify-content: flex-start;
+    gap: 0.9rem;
+    margin-top: -4px;
+  }
+
+  .hubbo {
+    height: 1.5rem;
+  }
+
+  .social-media-sub {
+    display: inline;
+    display: flex;
+  }
+
+  .social-media-apps {
+    display: none;
+  }
+
+  /* .footer-hubbo {
+    margin-top: -1px;
+  } */
+
+  .text-footer-enquiry {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .app-store-card {
+    display: none;
+  }
+
+  .app-store-card-two {
+    display: inline;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 0.75rem;
+  }
+
+  .section-2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding-top: 4px;
+  }
+
+  .privacy-note {
+    text-align: start;
+    margin-top: -8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .text-footer-enquiry {
+    flex-direction: row;
+  }
 }
