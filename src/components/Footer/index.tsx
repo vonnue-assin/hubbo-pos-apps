@@ -9,6 +9,7 @@ import faceBookIcon from "../../assets/images/facebook-icon (1).png";
 import instagramIcon from "../../assets/images/instagram-icon (1).png";
 
 import "./styles.css";
+import FooterTab from "../FooterTab";
 
 const Footer = () => {
   return (
@@ -112,6 +113,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <FooterTab />
       </div>
     </div>
   );

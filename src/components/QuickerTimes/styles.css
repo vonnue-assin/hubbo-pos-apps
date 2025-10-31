@@ -279,10 +279,12 @@
 
 @media screen and (min-width: 1440px) {
   .section-sub-wrapper {
-    padding-top: 5rem;
+    padding-top: 4.9rem;
     padding-bottom: 5rem;
     padding-left: 6rem;
     padding-right: 6rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .section-wrapper {
@@ -295,7 +297,37 @@
     height: 471px;
   }
 
+  .section-two {
+    margin-top: -29px;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .section-sub-wrapper {
+    padding-top: 4.9rem;
+    padding-bottom: 5rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .quicker-text {
+    max-width: 560px;
+  }
+
+  .quicker-content {
+    max-width: 598px;
+  }
+
+  .ScanImage {
+    margin-right: -178px;
+    height: 462.36px;
+    width: 616.48px;
+    margin-top: 5px;
+  }
+
   .quicker-times {
-    margin-top: -2px;
+    margin-left: -6px;
   }
 }

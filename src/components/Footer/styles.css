@@ -350,3 +350,13 @@
     flex-direction: row;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .footer-last-section-main {
+    display: inline;
+  }
+
+  .section-wrapper-box {
+    display: none;
+  }
+}

@@ -1,0 +1,225 @@
+.footer-last-section-main {
+  background-color: #1e0e00;
+}
+
+.footer-last-section {
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-container {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.footer-main-container {
+  display: flex;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.main-card {
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+  gap: 7rem;
+}
+
+.footer-last-section-main {
+  display: none;
+}
+
+.need-help {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.need-help-card {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: #fff5db;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  font-family: "font1";
+  opacity: 7;
+}
+
+.help-header {
+  margin: 0px;
+  white-space: nowrap;
+}
+
+.hello-hubbo {
+  margin: 0px;
+}
+
+.app-store-container {
+  gap: 0.75rem;
+  display: flex;
+}
+
+.store-card {
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.card {
+  padding: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin: 0;
+}
+
+.footer-sub-contents {
+  display: flex;
+  width: 703px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.solution-card {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  text-align: start;
+}
+
+.solution {
+  color: #ad6500;
+  text-transform: capitalize;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 0.75rem;
+  align-items: center;
+  width: fit-content;
+  display: flex;
+  font-family: "font1";
+}
+
+.solution-lists {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  padding: 0.75rem;
+}
+
+.list {
+  display: block;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color: #fff5db;
+  opacity: 0.7;
+  font-family: "font1";
+  cursor: pointer;
+}
+
+.list:hover {
+  text-underline-offset: 4px;
+}
+
+.hubboPos-icon {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.posImage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+}
+
+.hubbopos-card-image {
+  display: flex;
+  flex: 1 1 0%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  height: 1.5rem;
+}
+
+.hubboposImage {
+  height: 100%;
+  max-width: 100%;
+  width: fit-content;
+  color: transparent;
+}
+
+.america-button {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  font-weight: 600;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0.25rem;
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "font2";
+  background-color: transparent;
+  border: none;
+}
+
+.my-content {
+  pointer-events: none;
+  justify-content: flex-end;
+  align-items: center;
+  display: flex;
+}
+
+.malasiaImage {
+  max-width: 100%;
+  margin-right: 0.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.mine {
+  color: #fff;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  font-family: "font1";
+  margin: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-last-section-main {
+    display: inline;
+  }
+}
