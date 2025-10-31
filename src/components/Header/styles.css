@@ -71,6 +71,14 @@ a {
   display: none;
 }
 
+.solutions {
+  cursor: pointer;
+}
+
+.header-sub-english-button {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .header-container {
     padding-left: 3.5rem;
@@ -158,6 +166,7 @@ a {
     padding-bottom: 0.75rem;
     border-radius: 1rem;
     font-family: "font1";
+    cursor: pointer;
   }
 
   .chevron-down-arrow {
@@ -199,6 +208,7 @@ a {
     text-align: left;
     padding-left: 3rem;
     display: flex;
+    cursor: pointer;
   }
 
   .solutions {
@@ -266,6 +276,7 @@ a {
     font-weight: 500;
     text-transform: capitalize;
     font-family: "font1";
+    cursor: pointer;
   }
 
   .contact-us {
@@ -279,5 +290,6 @@ a {
     font-family: "font1";
     color: #472200;
     margin-top: 1px;
+    cursor: pointer;
   }
 }

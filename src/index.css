@@ -28,32 +28,26 @@ code {
   src: url("./assets/fonts/font2.woff2");
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
+  width: 15px;
   height: 6px;
-  width: 6px;
   border-radius: 200px;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: #d9b88a;
-  opacity: 0.6;
   border-radius: 200px;
 }
 
-html {
-  scroll-behavior: smooth;
+html::-webkit-scrollbar-thumb:hover {
+  background: #6b4c1f;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #a98c64;
+html::-webkit-scrollbar-track {
+  background: #e5dacb;
 }
 
-::-webkit-scrollbar-track {
-  background: #fafafd;
-}
-
-::-moz-scrollbar {
-  height: 6px;
-  width: 6px;
-  border-radius: 200px;
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #d9b88a #fafafd;
 }

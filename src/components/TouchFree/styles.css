@@ -177,7 +177,7 @@
   .image-free-box {
     padding-left: 90px;
     padding-right: 90px;
-    gap: 2.5rem;
+    gap: 2.8rem;
   }
 
   .scannedImageTab {
@@ -185,6 +185,16 @@
   }
 
   .icon-header-content {
-    width: 530px;
+    width: 443px;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .icon-header-content {
+    width: 650px;
+  }
+
+  .image-free-box {
+    gap: 1.8rem;
   }
 }
