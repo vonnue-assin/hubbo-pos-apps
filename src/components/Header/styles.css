@@ -3,6 +3,8 @@
   width: 100%;
   max-height: 112px;
   scrollbar-color: #d9b88a #d6800052;
+  position: fixed;
+  z-index: 10;
 }
 
 .header-container {
@@ -183,6 +185,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  .header-main-container {
+    margin-top: -112px;
+  }
+
   .header-menuIcon {
     display: none;
   }

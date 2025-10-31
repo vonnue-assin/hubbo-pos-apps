@@ -1,7 +1,7 @@
 import "./styles.css";
 import QrCodeImg from "../../assets/images/qr-code3.png";
 import ContaclessImage from "../../assets/images/contactless-landing-sm.jpg";
-import ContactlessImageLarge from "../../assets/images/contactless-landing-large.jpg";
+import ContactlessImageLarge from "../../assets/images/contactless-landing-large (1).jpg";
 
 const ContactLessOrdering = () => {
   return (

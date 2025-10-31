@@ -1,4 +1,4 @@
-import "./styles.css";
+import { use, useEffect, useState } from "react";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
@@ -6,7 +6,20 @@ import { ReactComponent as HubboposIconWhite } from "../../assets/svg/hubboposWh
 import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposlogo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
+import "./styles.css";
+
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="header-main-container">
       <div className="header-container">

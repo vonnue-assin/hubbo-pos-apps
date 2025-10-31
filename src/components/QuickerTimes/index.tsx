@@ -26,7 +26,7 @@ const QuickerTimes = () => {
                   wait times, reduced congestion, and improved customer
                   satisfaction.
                 </h3>
-                <a className="request-free-demo">Request Free Demo</a>
+                <span className="request-free-demo">Request Free Demo</span>
               </div>
             </div>
           </div>
