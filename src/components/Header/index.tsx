@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
@@ -21,7 +21,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="header-main-container">
+    <div className={`header-main-container ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-container">
         <div className="header-sub-container">
           <button className="header-menuIcon">
