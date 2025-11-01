@@ -116,6 +116,20 @@ a {
   cursor: pointer;
 }
 
+.chevron-down-arrow-hubbo {
+  cursor: pointer;
+}
+
+.chevron-down-arrow.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.chevron-down-arrow-hubbo.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
 @media screen and (min-width: 768px) {
   .header-container {
     padding-left: 3.5rem;
