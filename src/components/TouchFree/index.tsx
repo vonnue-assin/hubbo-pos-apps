@@ -8,7 +8,7 @@ import "./styles.css";
 
 const TouchFree = () => {
   return (
-    <section className="touchFree-main-section">
+    <div className="touchFree-main-section">
       <div className="touchfree-section-wrapper">
         <div className="sub-section-wrapper">
           <h2 className="touch-header">
@@ -59,7 +59,7 @@ const TouchFree = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

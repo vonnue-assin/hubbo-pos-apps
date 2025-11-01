@@ -143,6 +143,7 @@
 @media screen and (min-width: 1024px) {
   .touchfree-section-wrapper {
     max-width: 1156px;
+    margin-top: -1px;
   }
 
   .sub-section-wrapper {
@@ -196,5 +197,9 @@
 
   .image-free-box {
     gap: 1.8rem;
+  }
+
+  .touchfree-section-wrapper {
+    margin-top: 5px;
   }
 }

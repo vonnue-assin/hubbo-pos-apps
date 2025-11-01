@@ -96,6 +96,7 @@
   color: #fff;
   font-family: "font1";
   outline-offset: 2px;
+  cursor: pointer;
 }
 
 .quicker-times-text {
