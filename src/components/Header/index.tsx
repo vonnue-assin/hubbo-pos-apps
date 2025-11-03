@@ -75,7 +75,7 @@ const Header = () => {
                   <img
                     src={ChevronDown}
                     alt="Chevron Down Icon"
-                    className={`chevron-down-arrow-hubbo ${
+                    className={`chevron-down-arrow ${
                       isDropdownOpenHubbo ? "rotated" : ""
                     }`}
                   />
@@ -102,7 +102,9 @@ const Header = () => {
                   <img
                     src={ChevronDown}
                     alt="Chevron Down Icon"
-                    className="chevron-down-arrow"
+                    className={`chevron-down-arrow ${
+                      isDropdownOpenLanguage ? "rotated" : ""
+                    }`}
                   />
                 </span>
               </button>

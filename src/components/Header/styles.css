@@ -36,7 +36,7 @@
 
 .header-container {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.8rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   display: flex;
@@ -116,16 +116,7 @@ a {
   cursor: pointer;
 }
 
-.chevron-down-arrow-hubbo {
-  cursor: pointer;
-}
-
 .chevron-down-arrow.rotated {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-
-.chevron-down-arrow-hubbo.rotated {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }

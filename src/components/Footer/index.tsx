@@ -1,47 +1,68 @@
-import ArrowDown from "../../assets/images/expand-more.7764b847.svg";
-import HubboposImage from "../../assets/images/hubbopos-logo-yellow.db2085f8.svg";
-import MalasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
-import AppStore from "../../assets/images/app-store-sm (1).png";
-import GooglePlay from "../../assets/images/google-play-sm.png";
-import GooglePlayMd from "../../assets/images/google-play-md.png";
-import AppStoreMd from "../../assets/images/app-store-md.png";
-import faceBookIcon from "../../assets/images/facebook-icon (1).png";
-import instagramIcon from "../../assets/images/instagram-icon (1).png";
+import { useState } from "react";
 
-import "./styles.css";
+import { footerData } from "../../data/footer";
+import DropDownFooter from "../DropDownFooter";
 import FooterTab from "../FooterTab";
 
+import AppStoreMd from "../../assets/images/app-store-md.png";
+import AppStore from "../../assets/images/app-store-sm (1).png";
+import ArrowDown from "../../assets/images/expand-more.7764b847.svg";
+import faceBookIcon from "../../assets/images/facebook-icon (1).png";
+import GooglePlayMd from "../../assets/images/google-play-md.png";
+import GooglePlay from "../../assets/images/google-play-sm.png";
+import HubboposImage from "../../assets/images/hubbopos-logo-yellow.db2085f8.svg";
+import instagramIcon from "../../assets/images/instagram-icon (1).png";
+import MalasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
+
+import "./styles.css";
+
 const Footer = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleAccordion = (index: any) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
     <div className="footer-main-section">
       <div className="section-wrapper-footer">
         <div className="section-wrapper-box">
           <div className="footer-card">
             <div className="footer-card-sub">
-              <div className="footer-sub">
-                <div className="solutions-bar">
-                  <h1 className="solution-text">Solution</h1>
-                  <img src={ArrowDown} className="" />
+              {footerData.map((item, index) => (
+                <div className="footer-sub" key={item.id}>
+                  <div
+                    className="solutions-bar"
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <div className="solutions-bar-footer">
+                      <h1 className="solution-text">{item.Heading}</h1>
+                      <img
+                        src={ArrowDown}
+                        className={`arrowdown ${
+                          openIndex === index ? "rotate" : ""
+                        }`}
+                        alt="toggle"
+                      />
+                    </div>
+                  </div>
+
+                  {openIndex === index && (
+                    <ul className="accordion-content">
+                      {item.features.map((feature, i) => (
+                        <li key={i} className="feature-item">
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-              </div>
-              <div className="footer-sub">
-                <div className="solutions-bar">
-                  <h1 className="solution-text">Plans ＆ Pricing</h1>
-                  <img src={ArrowDown} className="" />
-                </div>
-              </div>
-              <div className="footer-sub">
-                <div className="solutions-bar">
-                  <h1 className="solution-text">Company</h1>
-                  <img src={ArrowDown} className="" />
-                </div>
-              </div>
-              <div className="footer-sub">
-                <div className="solutions-bar">
-                  <h1 className="solution-text">Support</h1>
-                  <img src={ArrowDown} className="arrowdown" />
-                </div>
-              </div>
+              ))}
             </div>
             <div className="hubbopos-icon">
               <div className="footer-hubbo">
@@ -49,15 +70,25 @@ const Footer = () => {
                   <div className="hubbo">
                     <img src={HubboposImage} className="HubboposImage" />
                   </div>
-                  <button className="english">
-                    <div className="english-card">
-                      <img src={MalasiaImage} className="MalasiaImage" />
-                    </div>
-                    <h2 className="my-name">MY</h2>
-                    <span className="arrow">
-                      <img src={ArrowDown} className="arrow-down" />
-                    </span>
-                  </button>
+
+                  <div className="language-dropdown-wrapper">
+                    <button className="english" onClick={toggleDropdown}>
+                      <div className="english-card">
+                        <img src={MalasiaImage} className="MalasiaImage" />
+                      </div>
+                      <h2 className="my-name">MY</h2>
+                      <span className="arrow">
+                        <img
+                          src={ArrowDown}
+                          className={`arrow-down ${
+                            isDropdownOpen ? "rotate" : ""
+                          }`}
+                        />
+                      </span>
+                    </button>
+
+                    <DropDownFooter isOpen={isDropdownOpen} />
+                  </div>
                 </div>
                 <div className="social-media-sub">
                   <span className="facebook">
@@ -68,6 +99,7 @@ const Footer = () => {
                   </span>
                 </div>
               </div>
+
               <div className="app-store-card">
                 <div className="app-store">
                   <span className="app-card">
@@ -96,6 +128,7 @@ const Footer = () => {
                   </span>
                 </div>
               </div>
+
               <div className="block">
                 <div className="social-media-apps">
                   <span className="facebook">
@@ -106,6 +139,7 @@ const Footer = () => {
                   </span>
                 </div>
               </div>
+
               <div className="privacy-note">
                 <span className="inline-block">&nbsp;</span>
                 <span className="note">Privacy Notice</span>
@@ -113,6 +147,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <FooterTab />
       </div>
     </div>

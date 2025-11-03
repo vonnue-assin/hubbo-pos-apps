@@ -1,0 +1,61 @@
+.dropdown-main-footer {
+  animation: opacity 0.2s linear;
+  border-radius: 0.5rem;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+    0 1px 2px -1px var(--tw-shadow-color);
+  background-color: #fff5db;
+  overflow: hidden auto;
+  position: absolute;
+  top: 100%;
+  right: -14px;
+  max-height: 12rem;
+}
+
+.dropdown-main-footer:focus {
+  background-color: #fff5db;
+}
+
+.drop-down-footer {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  display: flex;
+  cursor: pointer;
+  gap: 0.25rem;
+  width: 195px;
+}
+
+.image-card-toggle-footer {
+  align-items: center;
+  display: flex;
+  animation: opacity 0.2s linear;
+}
+
+.dropdown-icon-footer {
+  border-color: #ad6500;
+  color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+  /* height: auto; */
+  height: 32px;
+  width: 32px;
+}
+
+.item-name-footer {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  color: #472200;
+  white-space: nowrap;
+  margin: 0;
+  font-family: "font1";
+}
