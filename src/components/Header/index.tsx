@@ -12,31 +12,37 @@ import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposl
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
 import "./styles.css";
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<
     "solutions" | "hubbo" | "language" | null
   >(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobileView = () => setIsMobile(window.innerWidth <= 768);
+
+    checkIsMobileView();
+    window.addEventListener("resize", checkIsMobileView);
+
+    return () => window.removeEventListener("resize", checkIsMobileView);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (window.innerWidth > 768) {
-        setIsMenuOpen(false);
-      }
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    return () => {
+
+      document.body.style.overflow = "auto";
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleDropdown = (dropdown: "solutions" | "hubbo" | "language") => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
@@ -78,6 +84,7 @@ const Header = () => {
                 </span>
               </button>
               <DropDownSolutions isOpen={openDropdown === "solutions"} />
+
               <p className="price-and-plans">Plans ＆ Pricing</p>
               <div className="why-hubbo-container">
                 <button
@@ -111,6 +118,7 @@ const Header = () => {
               >
                 <div className="header-english">
                   <GlobeBrownIcon className="globe-icon" />
+
                   <p className="english">EN</p>
                 </div>
                 <span className="arrow-button">
@@ -132,7 +140,9 @@ const Header = () => {
       </div>
 
       {isMobile && isMenuOpen && (
-        <MenuClick onClose={() => setIsMenuOpen(false)} />
+        <div className="menuLay">
+          <MenuClick onClose={() => setIsMenuOpen(false)} />
+        </div>
       )}
     </div>
   );

@@ -1,5 +1,8 @@
-import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
+import ChevronDown from "../../assets/images/chevron-down.svg";
 import CloseImage from "../../assets/images/close.cf72762d.svg";
+import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
+import vectorImage from "../../assets/images/vector-right.bc13d4ee.svg";
+import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
 
 import "./styles.css";
 
@@ -26,7 +29,63 @@ const MenuClick: React.FC<MenuClickProps> = ({ onClose }) => {
                   <img src={CloseImage} alt="Close" className="CloseImage" />
                 </button>
               </div>
+              <div className="solutions-menuclick">
+                <div className="solutions-card-container">
+                  <button className="button-class">
+                    <div className="list-cards">
+                      <p className="text-heading">Solutions</p>
+                      <img
+                        src={vectorImage}
+                        alt="vectorImage"
+                        className="vectorImage"
+                      />
+                    </div>
+                  </button>
+                  <button className="button-class">
+                    <div className="list-card">
+                      <p className="text-heading">Why HUBBO</p>
+                      <img
+                        src={vectorImage}
+                        alt="vectorImage"
+                        className="vectorImage"
+                      />
+                    </div>
+                  </button>
+                  <button className="button-class">
+                    <div className="list-card-plans">
+                      <p className="text-heading-plans">Plans ＆ Pricing</p>
+                    </div>
+                  </button>
+                  <button className="button-class">
+                    <div className="list-card-plans">
+                      <p className="text-heading-plans">Contact Us</p>
+                    </div>
+                  </button>
+                  <button className="button-class">
+                    <div className="list-card-language">
+                      <p className="text-heading-plans">Language</p>
+                      <button className="english-button-menu">
+                        <div className="english-menu-click">
+                          <GlobeBrownIcon className="globe-icon" />
+                          <p className="english-menu">EN</p>
+                        </div>
+                        <span className="arrow-button">
+                          <img
+                            src={ChevronDown}
+                            alt="Chevron Down Icon"
+                            className="chevron-down-arrow-english-menu"
+                          />
+                        </span>
+                      </button>
+                    </div>
+                  </button>
+                </div>
+              </div>
             </div>
+          </div>
+          <div className="buttons-containers">
+            <button className="get-started-buttons">Get Started</button>
+            <button className="free-demo-button-menu">Request Free Demo</button>
           </div>
         </div>
       </div>

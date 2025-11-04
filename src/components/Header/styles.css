@@ -131,6 +131,23 @@ a {
   transition: transform 0.3s ease;
 }
 
+/* ///////////////////////////////////////////////////////////////// */
+
+.menuLay {
+  position: fixed;
+  background-image: var(--black-gradient);
+  inset: 0;
+  z-index: 999;
+  width: 100%;
+  --black-gradient: linear-gradient(
+    180deg,
+    rgba(71, 34, 0, 0.47) 30.86%,
+    rgba(71, 34, 0, 0)
+  );
+}
+
+/* //////////////////////////////////////////////////////////////////// */
+
 @media screen and (min-width: 768px) {
   .header-container {
     padding-left: 3.5rem;
