@@ -153,6 +153,7 @@
   align-self: stretch;
   gap: 1rem;
   align-items: flex-start;
+  margin-top: 1px;
 }
 
 .posImage {
@@ -231,6 +232,10 @@
   text-decoration-thickness: 1px;
   text-decoration-line: underline;
   margin-top: -4px;
+}
+
+.hubboPos-icon {
+  position: relative;
 }
 
 @media screen and (min-width: 1440px) {

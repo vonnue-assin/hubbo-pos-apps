@@ -12,6 +12,10 @@
   top: 100%;
   right: -14px;
   max-height: 12rem;
+  position: absolute;
+  top: 50%;
+  margin-top: 1.2rem;
+  z-index: 1000;
 }
 
 .dropdown-main-footer:focus {
@@ -58,4 +62,13 @@
   white-space: nowrap;
   margin: 0;
   font-family: "font1";
+}
+
+@media screen and (min-width: 1440px) {
+  .dropdown-main-footer {
+    position: absolute;
+    left: 18%;
+    width: 200px;
+    margin-top: 0.2rem;
+  }
 }

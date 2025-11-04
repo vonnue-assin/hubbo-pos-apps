@@ -1,0 +1,69 @@
+.menuClick-main-container {
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menuClick-main-container.menu-open .menuclick-sub-container {
+  left: 0;
+  opacity: 1;
+}
+
+.menuclick-sub-container {
+  width: 90%;
+  max-width: 343px;
+  height: 100%;
+  background-color: #fff5db;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 0;
+}
+
+.menuclick-relative {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding-bottom: 2.5rem;
+}
+
+.hubbopos-card-menu {
+  border-bottom: 1px solid #ffe7a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #fff5db;
+}
+
+.hubboposImageI {
+  max-width: 100%;
+  height: auto;
+}
+
+.CloseImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.closeButton {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  padding: 0px;
+}
+
+:root {
+  --dark-brown-300: 132 107 84;
+}

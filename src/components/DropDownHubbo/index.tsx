@@ -7,7 +7,7 @@ import "./styles.css";
 
 const DropDownHubbo: React.FC<DropDownProps> = ({ isOpen }) => {
   if (!isOpen) return null;
-  
+
   return (
     <div className="dropdown-main-container">
       <div className="drop-down-hubbo">

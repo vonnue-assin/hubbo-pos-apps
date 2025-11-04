@@ -40,3 +40,15 @@
   flex-direction: column;
   gap: 0.25rem;
 }
+
+.item-name-english:nth-child(1):hover {
+  background-color: #fff5db;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.item-name-english:nth-child(2):hover {
+  background-color: #fff5db;
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}

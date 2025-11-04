@@ -1,9 +1,11 @@
-import "./styles.css";
-import QrCodeImg from "../../assets/images/qr-code3.png";
-import ContaclessImage from "../../assets/images/contactless-landing-sm.jpg";
 import ContactlessImageLarge from "../../assets/images/contactless-landing-large (1).jpg";
+import ContaclessImage from "../../assets/images/contactless-landing-sm.jpg";
+import QrCodeImg from "../../assets/images/qr-code3.png";
+
+import "./styles.css";
 
 const ContactLessOrdering = () => {
+  
   return (
     <section className="card-container">
       <div className="contact-main-container">

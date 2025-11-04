@@ -1,14 +1,24 @@
+import { useState } from "react";
+
+import DropDownFooter from "../DropDownFooter";
+
 import AppStoreExcel from "../../assets/images/app-store-xl.png";
-import GooglePlayExcel from "../../assets/images/google-play-xl.png";
-import hubboposImage from "../../assets/images/hubbopos-logo-yellow.db2085f8.svg";
-import malasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
 import ArrowDown from "../../assets/images/expand-more.7764b847.svg";
 import faceBookIcon from "../../assets/images/facebook-icon (1).png";
+import GooglePlayExcel from "../../assets/images/google-play-xl.png";
+import hubboposImage from "../../assets/images/hubbopos-logo-yellow.db2085f8.svg";
 import instagramIcon from "../../assets/images/instagram-icon (1).png";
+import malasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
 
 import "./styles.css";
 
 const FooterTab = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
   return (
     <div className="footer-last-section-main">
       <div className="footer-last-section">
@@ -73,17 +83,25 @@ const FooterTab = () => {
                   <img src={hubboposImage} className="hubboposImage" />
 
                   <div className="america">
-                    <button className="america-button">
+                    <button className="america-button" onClick={toggleDropdown}>
                       <div className="my-content">
                         <img src={malasiaImage} className="malasiaImage" />
                         <p className="mine">MY</p>
                         <span className="arrow">
-                          <img src={ArrowDown} className="arrow-down" />
+                          <img
+                            src={ArrowDown}
+                            className={`arrow-down ${
+                              isDropdownOpen ? "rotate" : ""
+                            }`}
+                          />
                         </span>
                       </div>
                     </button>
+
+                    <DropDownFooter isOpen={isDropdownOpen} />
                   </div>
                 </div>
+
                 <div className="social-media-sub">
                   <span className="facebook">
                     <img src={faceBookIcon} className="faceBookIcon" />

@@ -324,6 +324,7 @@
   .social-media-sub {
     display: inline;
     display: flex;
+    margin-top: -1px;
   }
 
   .social-media-apps {
@@ -356,17 +357,26 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     padding-top: 4px;
+    padding-bottom: 1px;
   }
 
   .privacy-note {
     text-align: start;
     margin-top: -8px;
   }
+
+  .footer-hubbo {
+    margin-top: 1px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .text-footer-enquiry {
     flex-direction: row;
+  }
+
+  .footer-hubbo {
+    margin-top: 1px;
   }
 }
 
