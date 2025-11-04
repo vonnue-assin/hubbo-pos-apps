@@ -238,6 +238,10 @@
   position: relative;
 }
 
+.list:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 1440px) {
   .footer-last-section-main {
     display: inline;
