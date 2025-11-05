@@ -1,0 +1,188 @@
+.new-container {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: #fffefb;
+}
+
+.new-container-main {
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.demo-book-card-main {
+  gap: 3.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.book-card-hubbo {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-self: flex-start;
+}
+
+.flex-item-start {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.DemoBookImage {
+  width: 4rem;
+  height: 4rem;
+  max-width: 100%;
+}
+
+.flex-items-content {
+  gap: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.flex-gap-items-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.hubbo-name-text {
+  margin: 0px;
+  color: #321800;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.96px;
+  font-weight: 600;
+  font-family: "font2";
+  text-align: start;
+}
+
+.hubbo-content-contact {
+  margin: 0px;
+  color: #6c4e33;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  font-family: "font1";
+  text-align: start;
+}
+
+.hubbo-button {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-transform: capitalize;
+  outline-offset: 2px;
+  color: #472200;
+  text-align: center;
+  font-family: "font1";
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  background-color: #fff;
+  border: 2px solid #472200;
+  border-radius: 1rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem !important;
+  width: 180px !important;
+}
+
+.general-enquiry {
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.general-enquiry-start-link {
+  display: flex;
+  flex: 1 0 0;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.general-text {
+  color: #6c4e33;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  flex: 1 0 0;
+  font-family: "font1";
+  margin: 0px;
+  text-align: start;
+}
+
+.hello {
+  text-decoration-line: underline;
+  color: #321800;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  flex: 1 0 0;
+  font-family: "font1";
+}
+
+@media screen and (min-width: 768px) {
+  .new-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .DemoBookImage {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .hubbo-name-text {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.96px;
+    font-weight: 600;
+  }
+
+  .general-enquiry {
+    padding-left: 104px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .new-container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .DemoBookImage {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .book-card-hubbo {
+    width: 50%;
+  }
+
+  .general-enquiry {
+    padding-left: 5rem;
+  }
+}

@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import HelpHere from "../../components/HelpHere";
+import NewToHubboPos from "../../components/NewToHubboPos";
 
 import "./styles.css";
 
@@ -8,6 +9,7 @@ const Contact = () => {
     <div className="helphere-header">
       <Header />
       <HelpHere />
+      <NewToHubboPos />
     </div>
   );
 };
