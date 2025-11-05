@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
+
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import CloseImage from "../../assets/images/close.cf72762d.svg";
 import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
@@ -17,6 +21,12 @@ const MenuClick: React.FC<MenuClickProps> = ({
   onOpenSolutions,
   onOpenHubbo,
 }) => {
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropDown((prev) => !prev);
+  };
+
   return (
     <div className="menuClick-main-container">
       <div className="menuclick-sub-container">
@@ -67,7 +77,7 @@ const MenuClick: React.FC<MenuClickProps> = ({
                       <p className="text-heading-plans">Contact Us</p>
                     </div>
                   </button>
-                  <button className="button-class">
+                  <button className="button-class" onClick={toggleDropdown}>
                     <div className="list-card-language">
                       <p className="text-heading-plans">Language</p>
                       <button className="english-button-menu">
@@ -77,9 +87,11 @@ const MenuClick: React.FC<MenuClickProps> = ({
                         </div>
                         <span className="arrow-button">
                           <img
+                            className={`chevron-down-arrow-english-event ${
+                              showDropDown ? "rotated" : ""
+                            }`}
                             src={ChevronDown}
                             alt="Chevron Down Icon"
-                            className="chevron-down-arrow-english-menu"
                           />
                         </span>
                       </button>
@@ -87,6 +99,9 @@ const MenuClick: React.FC<MenuClickProps> = ({
                   </button>
                 </div>
               </div>
+            </div>
+            <div className="click-event">
+              <EnglishLangaugesDropdown isOpen={showDropDown} />
             </div>
           </div>
           <div className="buttons-containers">

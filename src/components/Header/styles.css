@@ -133,17 +133,16 @@ a {
 
 /* ///////////////////////////////////////////////////////////////// */
 
+:root {
+  --color-brown-rgb: 132 107 84;
+}
+
 .menuLay {
   position: fixed;
-  background-image: var(--black-gradient);
   inset: 0;
   z-index: 999;
   width: 100%;
-  --black-gradient: linear-gradient(
-    180deg,
-    rgba(71, 34, 0, 0.47) 30.86%,
-    rgba(71, 34, 0, 0)
-  );
+  background-color: rgb(var(--color-brown-rgb) / 0.4);
 }
 
 /* //////////////////////////////////////////////////////////////////// */
