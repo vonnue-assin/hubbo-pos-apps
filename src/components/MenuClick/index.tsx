@@ -9,10 +9,14 @@ import "./styles.css";
 type MenuClickProps = {
   onClose: () => void;
   onOpenSolutions: () => void;
+  onOpenHubbo: () => void;
 };
 
-const MenuClick: React.FC<MenuClickProps> = ({ onClose, onOpenSolutions }) => {
-    
+const MenuClick: React.FC<MenuClickProps> = ({
+  onClose,
+  onOpenSolutions,
+  onOpenHubbo,
+}) => {
   return (
     <div className="menuClick-main-container">
       <div className="menuclick-sub-container">
@@ -43,7 +47,7 @@ const MenuClick: React.FC<MenuClickProps> = ({ onClose, onOpenSolutions }) => {
                       />
                     </div>
                   </button>
-                  <button className="button-class">
+                  <button className="button-class" onClick={onOpenHubbo}>
                     <div className="list-card">
                       <p className="text-heading">Why HUBBO</p>
                       <img

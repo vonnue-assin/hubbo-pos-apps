@@ -1,0 +1,33 @@
+.hubbo-item {
+  border-bottom: 1px solid #ffe7a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.3rem;
+}
+
+.button-classes-hubbo {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  padding: 0px;
+  margin-top: -3px;
+}
+
+.click-event-hubbo {
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.click-item-hubbo {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

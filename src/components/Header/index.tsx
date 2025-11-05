@@ -13,6 +13,7 @@ import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposl
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
 import "./styles.css";
+import WhyHubbo from "../WhyHubbo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,6 +23,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
+  const [showHubbo, setShowHubbo] = useState(false);
 
   useEffect(() => {
     const checkIsMobileView = () => setIsMobile(window.innerWidth <= 768);
@@ -84,7 +86,7 @@ const Header = () => {
                   />
                 </span>
               </button>
-              
+
               <DropDownSolutions isOpen={openDropdown === "solutions"} />
 
               <p className="price-and-plans">Plans ＆ Pricing</p>
@@ -119,7 +121,6 @@ const Header = () => {
                 onClick={() => toggleDropdown("language")}
               >
                 <div className="header-english">
-
                   <GlobeBrownIcon className="globe-icon" />
                   <p className="english">EN</p>
                 </div>
@@ -146,10 +147,19 @@ const Header = () => {
         <div className="menuLay">
           {showSolutions ? (
             <Solutions onClose={() => setShowSolutions(false)} />
+          ) : showHubbo ? (
+            <WhyHubbo onClose={() => setShowHubbo(false)} />
           ) : (
             <MenuClick
               onClose={() => setIsMenuOpen(false)}
-              onOpenSolutions={() => setShowSolutions(true)}
+              onOpenSolutions={() => {
+                setShowHubbo(false);
+                setShowSolutions(true);
+              }}
+              onOpenHubbo={() => {
+                setShowSolutions(false);
+                setShowHubbo(true);
+              }}
             />
           )}
         </div>

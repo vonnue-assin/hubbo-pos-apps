@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuClick from "../MenuClick";
 import Solutions from "../Solutions";
+import WhyHubbo from "../WhyHubbo";
 
 const MenuContainer = ({ onClose }: { onClose: () => void }) => {
   const [showSolutions, setShowSolutions] = useState(false);
@@ -10,10 +11,13 @@ const MenuContainer = ({ onClose }: { onClose: () => void }) => {
     <>
       {showSolutions ? (
         <Solutions onClose={() => setShowSolutions(false)} />
+      ) : showHubbo ? (
+        <WhyHubbo onClose={() => setShowHubbo(false)} />
       ) : (
         <MenuClick
           onClose={onClose}
           onOpenSolutions={() => setShowSolutions(true)}
+          onOpenHubbo={() => setShowHubbo(true)}
         />
       )}
     </>
