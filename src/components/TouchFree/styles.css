@@ -203,3 +203,9 @@
     margin-top: 5px;
   }
 }
+
+@media screen and (min-width: 1870px) {
+  .touchFree-main-section {
+    margin-top: -5px;
+  }
+}

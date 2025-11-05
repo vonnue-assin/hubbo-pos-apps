@@ -8,9 +8,11 @@ import "./styles.css";
 
 type MenuClickProps = {
   onClose: () => void;
+  onOpenSolutions: () => void;
 };
 
-const MenuClick: React.FC<MenuClickProps> = ({ onClose }) => {
+const MenuClick: React.FC<MenuClickProps> = ({ onClose, onOpenSolutions }) => {
+    
   return (
     <div className="menuClick-main-container">
       <div className="menuclick-sub-container">
@@ -31,7 +33,7 @@ const MenuClick: React.FC<MenuClickProps> = ({ onClose }) => {
               </div>
               <div className="solutions-menuclick">
                 <div className="solutions-card-container">
-                  <button className="button-class">
+                  <button className="button-class" onClick={onOpenSolutions}>
                     <div className="list-cards">
                       <p className="text-heading">Solutions</p>
                       <img

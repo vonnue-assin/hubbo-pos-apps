@@ -1,0 +1,137 @@
+.solutions-header-main-container {
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.solutions-main-container {
+  width: 90%;
+  max-width: 343px;
+  height: 100%;
+  background-color: #fff5db;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+    0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  position: relative;
+  left: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.solutions-header-card {
+  position: relative;
+  padding-bottom: 2.3rem;
+}
+
+.solutions-sub-container {
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.solutions-item {
+  border-bottom: 1px solid #ffe7a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.3rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.button-classes {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  padding: 0px;
+  margin-top: -3px;
+}
+
+.leftArrowIcon {
+  max-width: 100%;
+  height: auto;
+  color: transparent;
+}
+
+.solu {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  color: #472200;
+  margin: 0;
+  font-family: "font2";
+}
+
+.solutions-list-card {
+  padding-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.solutions-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-items {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.image-cloud {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  background-color: #ffe7a9;
+  padding: 0.75rem;
+}
+
+.CloudImage {
+  max-width: 100%;
+  height: auto;
+  margin-top: 4px;
+}
+
+.sol-text {
+  color: #472200;
+  text-transform: capitalize;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  margin-left: 1rem;
+  font-family: "font1";
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  text-align: start;
+}
+
+.numberCallingSystem,
+.ContactlessOrderImage,
+.loyaltyImage,
+.IntegrationsImage {
+  margin-top: 0px;
+}

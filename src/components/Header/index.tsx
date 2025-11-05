@@ -4,6 +4,7 @@ import DropDownHubbo from "../DropDownHubbo";
 import DropDownSolutions from "../DropDownSolutions";
 import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
 import MenuClick from "../MenuClick";
+import Solutions from "../Solutions";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
@@ -12,6 +13,7 @@ import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposl
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
 import "./styles.css";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<
@@ -19,6 +21,7 @@ const Header = () => {
   >(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [showSolutions, setShowSolutions] = useState(false);
 
   useEffect(() => {
     const checkIsMobileView = () => setIsMobile(window.innerWidth <= 768);
@@ -32,14 +35,12 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
     return () => {
-
       document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
@@ -83,6 +84,7 @@ const Header = () => {
                   />
                 </span>
               </button>
+              
               <DropDownSolutions isOpen={openDropdown === "solutions"} />
 
               <p className="price-and-plans">Plans ＆ Pricing</p>
@@ -117,8 +119,8 @@ const Header = () => {
                 onClick={() => toggleDropdown("language")}
               >
                 <div className="header-english">
-                  <GlobeBrownIcon className="globe-icon" />
 
+                  <GlobeBrownIcon className="globe-icon" />
                   <p className="english">EN</p>
                 </div>
                 <span className="arrow-button">
@@ -131,6 +133,7 @@ const Header = () => {
                   />
                 </span>
               </button>
+
               <EnglishLangaugesDropdown isOpen={openDropdown === "language"} />
             </div>
             <p className="loginIn">Log In</p>
@@ -141,7 +144,14 @@ const Header = () => {
 
       {isMobile && isMenuOpen && (
         <div className="menuLay">
-          <MenuClick onClose={() => setIsMenuOpen(false)} />
+          {showSolutions ? (
+            <Solutions onClose={() => setShowSolutions(false)} />
+          ) : (
+            <MenuClick
+              onClose={() => setIsMenuOpen(false)}
+              onOpenSolutions={() => setShowSolutions(true)}
+            />
+          )}
         </div>
       )}
     </div>
