@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
 
@@ -74,7 +75,10 @@ const MenuClick: React.FC<MenuClickProps> = ({
                   </button>
                   <button className="button-class">
                     <div className="list-card-plans">
-                      <p className="text-heading-plans">Contact Us</p>
+                      <p className="text-heading-plans">
+                        {" "}
+                        <Link to="/contact">Contact Us</Link>
+                      </p>
                     </div>
                   </button>
                   <button className="button-class" onClick={toggleDropdown}>

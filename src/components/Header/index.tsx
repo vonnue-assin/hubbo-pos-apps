@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import DropDownHubbo from "../DropDownHubbo";
 import DropDownSolutions from "../DropDownSolutions";
@@ -108,7 +109,9 @@ const Header = () => {
                 </button>
                 <DropDownHubbo isOpen={openDropdown === "hubbo"} />
               </div>
-              <p className="contact-us">Contact Us</p>
+              <p className="contact-us">
+                <Link to="/contact">Contact Us</Link>
+              </p>
             </div>
           )}
         </div>
