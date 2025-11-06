@@ -163,6 +163,10 @@
   .general-enquiry {
     padding-left: 104px;
   }
+
+  .demo-book-card-main {
+    gap: 5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -184,5 +188,38 @@
 
   .general-enquiry {
     padding-left: 5rem;
+  }
+
+  .demo-book-card-main {
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+  }
+
+  .faq-accordion {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .new-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .DemoBookImage {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .general-enquiry {
+    padding-left: 104px;
+  }
+
+  .new-container-main {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

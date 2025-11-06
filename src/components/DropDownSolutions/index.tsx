@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { solutionsData } from "../../data/solutionsData";
 import { DropDownProps } from "../../types";
@@ -12,16 +13,17 @@ const DropDownSolutions: React.FC<DropDownProps> = ({ isOpen }) => {
     <div className="dropdown-main-container">
       <div className="drop-down-container">
         {solutionsData.map((item) => (
-          <div key={item.id} className="dropdown-item">
+          <Link
+            key={item.id}
+            to={item.link ?? "#"}
+            className="dropdown-item"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="image-card-toggle">
-              <img
-                src={item.image}
-                alt={item.image}
-                className="dropdown-icon"
-              />
+              <img src={item.image} alt={item.name} className="dropdown-icon" />
             </div>
             <p className="item-name">{item.name}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import leftArrowIcon from "../../assets/images/chevron-left.813f13ce.svg";
 import CloseIcon from "../../assets/images/close.cf72762d.svg";
@@ -62,7 +62,9 @@ const Solutions = ({ onClose }: { onClose: () => void }) => {
                       className="ContactlessOrderImage"
                     />
                   </div>
-                  <p className="sol-text">Contactless ordering</p>
+                  <p className="sol-text">
+                    <Link to="/">Contactless ordering</Link>
+                  </p>
                 </div>
                 <div className="columns-items">
                   <div className="image-cloud">

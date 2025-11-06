@@ -1,8 +1,10 @@
 import { customerData } from "../../data/customerData";
+import FAQAccordion from "../FAQAccordion";
 
 import "./styles.css";
 
 const NewToHubboPos = () => {
+  
   return (
     <div className="new-container">
       <div className="new-container-main">
@@ -36,6 +38,9 @@ const NewToHubboPos = () => {
                 <span className="hello">marketing.my@hubbopos.com</span>
               </div>
             </div>
+          </div>
+          <div className="faq-accordion">
+            <FAQAccordion />
           </div>
         </div>
       </div>
