@@ -5,7 +5,7 @@ import NewToHubboPos from "../../components/NewToHubboPos";
 
 import "./styles.css";
 
-const Contact = () => {
+export const Contact = () => {
   return (
     <div className="helphere-header">
       <Header />
@@ -15,5 +15,3 @@ const Contact = () => {
     </div>
   );
 };
-
-export default Contact;

@@ -5,7 +5,7 @@ import ScanImageSmall from "../../assets/images/contactless-cta-small.png";
 
 const QuickerTimes = () => {
   return (
-    <section className="quicker-main-container">
+    <div className="quicker-main-container">
       <div className="section-wrapper">
         <div className="section-sub-wrapper">
           <div className="section-two">
@@ -32,7 +32,7 @@ const QuickerTimes = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
