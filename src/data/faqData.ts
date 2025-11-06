@@ -23,7 +23,7 @@ export const faqData = [
     answer1:
       "With HUBBO POS Gold, you will be able to integrate with food delivery platforms and receive delivery orders on 1 single POS system. Say goodbye to managing multiple devices!",
     answer2:
-      "With HUBBO POS Gold, you will be able to integrate with food delivery platforms and receive delivery orders on 1 single POS system. Say goodbye to managing multiple devices!",
+      "What’s more, you will be able to update your menu across all delivery platforms with just 1 click. Saving you time and effort.",
     answer3: "Click here to",
     link: "learn more",
     arrowDown: downWardArrowIcon,

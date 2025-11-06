@@ -17,11 +17,13 @@ import MalasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
 import "./styles.css";
 
 const Footer = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number[]>([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleAccordion = (index: any) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggleAccordion = (index: number) => {
+    setOpenIndex((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   const toggleDropdown = () => {
@@ -45,14 +47,14 @@ const Footer = () => {
                       <img
                         src={ArrowDown}
                         className={`arrowdown ${
-                          openIndex === index ? "rotate" : ""
+                          openIndex.includes(index) ? "rotate" : ""
                         }`}
                         alt="toggle"
                       />
                     </div>
                   </div>
 
-                  {openIndex === index && (
+                  {openIndex.includes(index) && (
                     <ul className="accordion-content">
                       {item.features.map((feature, i) => (
                         <li key={i} className="feature-item">

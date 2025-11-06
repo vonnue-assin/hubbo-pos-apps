@@ -94,6 +94,14 @@
   margin-bottom: 0px;
 }
 
+.answer2 {
+  margin-bottom: 0px;
+}
+
+.answer3 {
+  margin-bottom: 0px;
+}
+
 .faq-border {
   border-bottom: 1px solid #d9b88a;
   width: 100%;
@@ -116,11 +124,19 @@
     line-height: 28px;
     font-weight: 500;
   }
+
+  .answer2,.answer3 {
+    padding-top: 0.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .faq-main-container {
     padding-right: 57px;
+  }
+
+  .answer2,.answer3 {
+    padding-top: 0.5rem;
   }
 }
 

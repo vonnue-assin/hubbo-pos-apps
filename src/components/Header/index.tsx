@@ -52,6 +52,31 @@ const Header = () => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropDownElements = document.querySelectorAll(
+        ".solutions-card, .header-sub-english-button, .why-hubbo-container"
+      );
+
+      let clickedInside = false;
+      dropDownElements.forEach((element) => {
+        if (element.contains(event.target as Node)) {
+          clickedInside = true;
+        }
+      });
+
+      if (!clickedInside) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className={`header-main-container ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-container">

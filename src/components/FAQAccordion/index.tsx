@@ -3,10 +3,14 @@ import { faqData } from "../../data/faqData";
 import "./styles.css";
 
 const FAQAccordion = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number[]>([]);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((prevOpenDropDown) =>
+      prevOpenDropDown.includes(index)
+        ? prevOpenDropDown.filter((i) => i !== index)
+        : [...prevOpenDropDown, index]
+    );
   };
 
   return (
@@ -21,21 +25,25 @@ const FAQAccordion = () => {
                 src={item.arrowDown}
                 alt="Toggle"
                 className={`dropdown-icon-faq-image ${
-                  openIndex === index ? "rotate" : ""
+                  openIndex.includes(index) ? "rotate" : ""
                 }`}
               />
             </div>
 
-            <div className={`faq-answer ${openIndex === index ? "show" : ""}`}>
+            <div
+              className={`faq-answer ${
+                openIndex.includes(index) ? "show" : ""
+              }`}
+            >
               {item.answer && (
                 <p className="answer">
                   {item.answer} <span className="faq-link">{item.link}</span>
                 </p>
               )}
               {item.answer1 && <p className="answer">{item.answer1}</p>}
-              {item.answer2 && <p className="answer">{item.answer2} </p>}
+              {item.answer2 && <p className="answer2">{item.answer2} </p>}
               {item.answer3 && (
-                <p className="answer">
+                <p className="answer3">
                   {item.answer3} <span className="faq-link">{item.link}</span>
                 </p>
               )}
