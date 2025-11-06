@@ -111,7 +111,7 @@ const FooterTab = () => {
                   </span>
                 </div>
               </div>
-              <div className="privacy-notes">
+              <div className="privacy-notes-sum">
                 <span className="inline-block">&nbsp;</span>
                 <span className="notes">Privacy Notice</span>
               </div>

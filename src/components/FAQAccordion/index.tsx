@@ -17,7 +17,6 @@ const FAQAccordion = () => {
   };
 
   return (
-    
     <div className="faq-main-container">
       <h2 className="faq-header">FAQs</h2>
       <div className="faq-content">
