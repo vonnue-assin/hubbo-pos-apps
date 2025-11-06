@@ -125,7 +125,8 @@
     font-weight: 500;
   }
 
-  .answer2,.answer3 {
+  .answer2,
+  .answer3 {
     padding-top: 0.5rem;
   }
 }
@@ -135,13 +136,22 @@
     padding-right: 57px;
   }
 
-  .answer2,.answer3 {
+  .answer2,
+  .answer3 {
     padding-top: 0.5rem;
+  }
+
+  .dropdown-icon-faq {
+    padding-right: 0.7rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .faq-main-container {
     padding-right: 72px;
+  }
+
+  .dropdown-icon-faq {
+    padding-right: 0.75rem;
   }
 }
