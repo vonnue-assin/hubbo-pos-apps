@@ -1,0 +1,11 @@
+export const SOLUTIONS = "solutions";
+export const HUBBO = "hubbo";
+export const LANGUAGE = "language";
+export const RESIZE = "resize";
+export const HIDDEN = "hidden";
+export const AUTO = "auto";
+export const CLICK = "click";
+export const SCROLL = "scroll";
+export const ROTATE = "rotate";
+export const SHOW = "show";
+export const SCROLLED = "scrolled";

@@ -6,6 +6,19 @@ import DropDownSolutions from "../DropDownSolutions";
 import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
 import MenuClick from "../MenuClick";
 import Solutions from "../Solutions";
+import WhyHubbo from "../WhyHubbo";
+import {
+  AUTO,
+  CLICK,
+  HIDDEN,
+  HUBBO,
+  LANGUAGE,
+  RESIZE,
+  ROTATE,
+  SCROLL,
+  SCROLLED,
+  SOLUTIONS,
+} from "../../constants";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
@@ -14,7 +27,6 @@ import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposl
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
 import "./styles.css";
-import WhyHubbo from "../WhyHubbo";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,21 +42,21 @@ const Header = () => {
     const checkIsMobileView = () => setIsMobile(window.innerWidth <= 768);
 
     checkIsMobileView();
-    window.addEventListener("resize", checkIsMobileView);
+    window.addEventListener(RESIZE, checkIsMobileView);
 
-    return () => window.removeEventListener("resize", checkIsMobileView);
+    return () => window.removeEventListener(RESIZE, checkIsMobileView);
   }, []);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 100);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener(SCROLL, handleScroll);
+    return () => window.removeEventListener(SCROLL, handleScroll);
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+    document.body.style.overflow = isMenuOpen ? HIDDEN : AUTO;
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = AUTO;
     };
   }, [isMenuOpen]);
 
@@ -70,15 +82,15 @@ const Header = () => {
       }
     };
 
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener(CLICK, handleClickOutside);
 
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener(CLICK, handleClickOutside);
     };
   }, []);
 
   return (
-    <div className={`header-main-container ${isScrolled ? "scrolled" : ""}`}>
+    <div className={`header-main-container ${isScrolled ? SCROLLED : ""}`}>
       <div className="header-container">
         <div className="header-sub-container">
           {isMobile && (
@@ -107,13 +119,13 @@ const Header = () => {
                     src={ChevronDown}
                     alt="Chevron Down Icon"
                     className={`chevron-down-arrow ${
-                      openDropdown === "solutions" ? "rotated" : ""
+                      openDropdown === "solutions" ? ROTATE : ""
                     }`}
                   />
                 </span>
               </button>
 
-              <DropDownSolutions isOpen={openDropdown === "solutions"} />
+              <DropDownSolutions isOpen={openDropdown === SOLUTIONS} />
 
               <p className="price-and-plans">Plans ＆ Pricing</p>
               <div className="why-hubbo-container">
@@ -127,12 +139,12 @@ const Header = () => {
                       src={ChevronDown}
                       alt="Chevron Down Icon"
                       className={`chevron-down-arrow-hubbo ${
-                        openDropdown === "hubbo" ? "rotated" : ""
+                        openDropdown === "hubbo" ? ROTATE : ""
                       }`}
                     />
                   </span>
                 </button>
-                <DropDownHubbo isOpen={openDropdown === "hubbo"} />
+                <DropDownHubbo isOpen={openDropdown === HUBBO} />
               </div>
               <p className="contact-us">
                 <Link to="/contact">Contact Us</Link>
@@ -143,7 +155,7 @@ const Header = () => {
 
         <div className="Header-sub-components">
           <div className="header-sub">
-            <div style={{ display: "block" }}>
+            <div>
               <button
                 className="header-sub-english-button"
                 onClick={() => toggleDropdown("language")}
@@ -157,13 +169,13 @@ const Header = () => {
                     src={ChevronDown}
                     alt="Chevron Down Icon"
                     className={`chevron-down-arrow-english ${
-                      openDropdown === "language" ? "rotated" : ""
+                      openDropdown === "language" ? ROTATE : ""
                     }`}
                   />
                 </span>
               </button>
 
-              <EnglishLangaugesDropdown isOpen={openDropdown === "language"} />
+              <EnglishLangaugesDropdown isOpen={openDropdown === LANGUAGE} />
             </div>
             <p className="loginIn">Log In</p>
             <button className="get-started">Get Started</button>

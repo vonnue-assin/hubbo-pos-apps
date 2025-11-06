@@ -3,6 +3,7 @@ import { useState } from "react";
 import { footerData } from "../../data/footer";
 import DropDownFooter from "../DropDownFooter";
 import FooterTab from "../FooterTab";
+import { ROTATE } from "../../constants";
 
 import AppStoreMd from "../../assets/images/app-store-md.png";
 import AppStore from "../../assets/images/app-store-sm (1).png";
@@ -47,7 +48,7 @@ const Footer = () => {
                       <img
                         src={ArrowDown}
                         className={`arrowdown ${
-                          openIndex.includes(index) ? "rotate" : ""
+                          openIndex.includes(index) ? ROTATE : ""
                         }`}
                         alt="toggle"
                       />
@@ -83,7 +84,7 @@ const Footer = () => {
                         <img
                           src={ArrowDown}
                           className={`arrow-down ${
-                            isDropdownOpen ? "rotate" : ""
+                            isDropdownOpen ? ROTATE : ""
                           }`}
                         />
                       </span>

@@ -1,4 +1,3 @@
-import { link } from "fs";
 import ContactLessOrderingImage from "../assets/images/header-contactless-ordering.png";
 import IntegrationsImage from "../assets/images/header-integrations.png";
 import LoyaltyImage from "../assets/images/header-loyalty.png";

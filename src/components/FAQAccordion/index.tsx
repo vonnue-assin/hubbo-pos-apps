@@ -1,5 +1,8 @@
 import { useState } from "react";
+
+import { ROTATE, SHOW } from "../../constants";
 import { faqData } from "../../data/faqData";
+
 import "./styles.css";
 
 const FAQAccordion = () => {
@@ -14,6 +17,7 @@ const FAQAccordion = () => {
   };
 
   return (
+    
     <div className="faq-main-container">
       <h2 className="faq-header">FAQs</h2>
       <div className="faq-content">
@@ -25,15 +29,13 @@ const FAQAccordion = () => {
                 src={item.arrowDown}
                 alt="Toggle"
                 className={`dropdown-icon-faq-image ${
-                  openIndex.includes(index) ? "rotate" : ""
+                  openIndex.includes(index) ? ROTATE : ""
                 }`}
               />
             </div>
 
             <div
-              className={`faq-answer ${
-                openIndex.includes(index) ? "show" : ""
-              }`}
+              className={`faq-answer ${openIndex.includes(index) ? SHOW : ""}`}
             >
               {item.answer && (
                 <p className="answer">

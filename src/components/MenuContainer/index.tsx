@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import MenuClick from "../MenuClick";
 import Solutions from "../Solutions";
 import WhyHubbo from "../WhyHubbo";

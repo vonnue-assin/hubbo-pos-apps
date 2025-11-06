@@ -116,17 +116,17 @@ a {
   cursor: pointer;
 }
 
-.chevron-down-arrow.rotated {
+.chevron-down-arrow.rotate {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
-.chevron-down-arrow-english.rotated {
+.chevron-down-arrow-english.rotate {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
-.chevron-down-arrow-hubbo.rotated {
+.chevron-down-arrow-hubbo.rotate {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
