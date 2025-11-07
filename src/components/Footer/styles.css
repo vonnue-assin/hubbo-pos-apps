@@ -124,7 +124,7 @@
 .my-name {
   font-size: 18px;
   line-height: 20px;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   font-weight: 600;
   color: #fff;
   font-family: "font1";
@@ -294,6 +294,10 @@
   cursor: pointer;
 }
 
+.feature-item:hover {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 375px) {
   .footers {
     justify-content: space-between;
@@ -303,6 +307,10 @@
   .arrow {
     padding: 0.5rem;
     width: 40px;
+  }
+
+  .my-name {
+    letter-spacing: 0.3px;
   }
 }
 
@@ -341,6 +349,10 @@
     font-weight: 500;
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .my-name {
+    letter-spacing: 0.3px;
   }
 
   .app-store-card {
@@ -392,11 +404,9 @@
   }
 }
 
-@media screen and (min-width:1804px) {
-  
+@media screen and (min-width: 1804px) {
 }
 
 .helphere-header > .privacy-note {
   margin-top: -3px;
 }
-

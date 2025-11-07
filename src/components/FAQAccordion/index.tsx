@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { ROTATE, SHOW } from "../../constants";
+import { RESIZE, ROTATE, SHOW } from "../../constants";
 import { faqData } from "../../data/faqData";
 
 import "./styles.css";
@@ -15,6 +15,21 @@ const FAQAccordion = () => {
         : [...prevOpenDropDown, index]
     );
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth) {
+        setOpenIndex([0]);
+      } else {
+        setOpenIndex([]);
+      }
+    };
+
+    handleResize();
+    window.addEventListener(RESIZE, handleResize);
+
+    return () => window.removeEventListener(RESIZE, handleResize);
+  }, []);
 
   return (
     <div className="faq-main-container">

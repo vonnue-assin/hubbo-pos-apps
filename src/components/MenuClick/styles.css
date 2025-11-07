@@ -245,12 +245,13 @@
   line-height: 24px;
   letter-spacing: -0.1px;
   font-weight: 600;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   background-color: #472200;
   width: 100%;
   border-radius: 1rem;
   font-family: "font1";
+  border: none;
 }
 
 .click-event > .dropdown-main-container-languages {
@@ -291,5 +292,9 @@
   .click-event > .dropdown-main-container-languages {
     top: 46%;
     right: -13%;
+  }
+
+  .chevron-down-arrow-english-event {
+    margin-top: 0px;
   }
 }

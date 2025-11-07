@@ -1,10 +1,11 @@
-import qrIconImage from "../../assets/images/qr-code2.png";
-import dynamicQr from "../../assets/images/dynamic-qr.png";
 import container from "../../assets/images/container.png";
+import dynamicQr from "../../assets/images/dynamic-qr.png";
+import qrIconImage from "../../assets/images/qr-code2.png";
 
 import "./styles.css";
 
 const TableOrder = () => {
+
   return (
     <div className="store-container-support">
       <div className="store-sub-container">

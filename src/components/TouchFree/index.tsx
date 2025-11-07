@@ -1,8 +1,8 @@
 import scannedImageMobile from "../../assets/images/contactless-featureMobile.jpg";
 import scannedImageTab from "../../assets/images/contactless-featureTab.jpg";
-import qrIconImage from "../../assets/images/qr-code3.png";
-import dynamiImage from "../../assets/images/dynamic-qr2.png";
 import trash from "../../assets/images/container (1).png";
+import dynamiImage from "../../assets/images/dynamic-qr2.png";
+import qrIconImage from "../../assets/images/qr-code3.png";
 
 import "./styles.css";
 

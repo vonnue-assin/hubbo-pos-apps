@@ -1,5 +1,4 @@
 import { hubboData } from "../../data/hubboData";
-import { DropDownProps } from "../../types";
 
 import leftArrowIcon from "../../assets/images/chevron-left.813f13ce.svg";
 import CloseIcon from "../../assets/images/close.cf72762d.svg";

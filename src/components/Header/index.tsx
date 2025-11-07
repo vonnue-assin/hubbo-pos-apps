@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import DropDownHubbo from "../DropDownHubbo";
-import DropDownSolutions from "../DropDownSolutions";
-import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
-import MenuClick from "../MenuClick";
-import Solutions from "../Solutions";
-import WhyHubbo from "../WhyHubbo";
 import {
   AUTO,
   CLICK,
@@ -19,6 +13,12 @@ import {
   SCROLLED,
   SOLUTIONS,
 } from "../../constants";
+import DropDownHubbo from "../DropDownHubbo";
+import DropDownSolutions from "../DropDownSolutions";
+import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
+import MenuClick from "../MenuClick";
+import Solutions from "../Solutions";
+import WhyHubbo from "../WhyHubbo";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";

@@ -13,7 +13,7 @@ const ResturentCard = () => {
         <p className="pos-content">
           Streamline your F＆B operations and supercharge your business growth
         </p>
-        <span className="free-demo">Request Free Demo</span>
+        <button className="free-demo">Request Free Demo</button>
       </div>
     </div>
   );
