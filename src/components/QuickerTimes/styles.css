@@ -311,6 +311,10 @@
   .section-two {
     margin-top: -29px;
   }
+
+  .quicker-times {
+    margin-top: 1px;
+  }
 }
 
 @media screen and (min-width: 1804px) {
@@ -332,9 +336,9 @@
   }
 
   .ScanImage {
-    margin-right: -192px;
+    margin-right: -192.5px;
     height: 462.36px;
-    width: 616.48px;
+    width: 619px;
     margin-top: 5px;
   }
 
@@ -345,6 +349,12 @@
 
 @media screen and (min-width: 1870px) {
   .ScanImage {
-    margin-right: -226.9px;
+    margin-right: -224px;
+    width: 616.5px;
+    height: 462.359px;
+  }
+
+  .quicker-times {
+    margin-left: -9px;
   }
 }

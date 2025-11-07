@@ -196,16 +196,49 @@
   }
 
   .image-free-box {
-    gap: 1.8rem;
+    gap: 1.82rem;
   }
 
-  .touchfree-section-wrapper {
-    margin-top: 5px;
+  .icon-card {
+    margin-left: 1px;
+  }
+
+  .icon-card-header {
+    margin-left: 0.07px;
+  }
+
+  .icon-header-content {
+    margin-left: 0.07px;
+  }
+
+  .touchFree-main-section {
+    margin-top: -4px;
   }
 }
 
 @media screen and (min-width: 1870px) {
   .touchFree-main-section {
-    margin-top: -5px;
+    margin-top: -4px;
+  }
+
+  .scannedImageTab {
+    width: 510.2px;
+    height: 382px;
+  }
+
+  .icon-card-header {
+    margin-left: 0.2px;
+  }
+
+  .icon-header-content {
+    margin-left: 0.1px;
+  }
+
+  .icon-card {
+    margin-left: 2px;
+  }
+
+  .image-free-box {
+    gap: 1.83rem;
   }
 }

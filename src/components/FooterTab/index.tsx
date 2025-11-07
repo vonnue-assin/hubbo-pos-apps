@@ -102,7 +102,7 @@ const FooterTab = () => {
                   </div>
                 </div>
 
-                <div className="social-media-sub">
+                <div className="social-media-sub-tab">
                   <span className="facebook">
                     <img src={faceBookIcon} className="faceBookIcon" />
                   </span>

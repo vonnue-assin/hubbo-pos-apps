@@ -35,7 +35,7 @@ const MenuClick: React.FC<MenuClickProps> = ({
           <div className="menuclick-width">
             <div className="menuclick-height">
               <div className="hubbopos-card-menu">
-                <span>
+                <span style={{ marginTop: "1px" }}>
                   <img
                     src={hubboposImage}
                     alt="HubboPOS"

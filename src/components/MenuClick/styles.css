@@ -263,6 +263,10 @@
   padding-right: 1rem;
 }
 
+.chevron-down-arrow-english-event {
+  margin-top: 3px;
+}
+
 .chevron-down-arrow-english-event.rotated {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
