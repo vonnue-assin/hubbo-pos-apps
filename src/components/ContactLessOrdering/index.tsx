@@ -28,7 +28,7 @@ const ContactLessOrdering = () => {
               </h4>
             </div>
           </div>
-          <img src={ContaclessImage} className="ContaclessImage-small" />
+          <img src={ContaclessImage} className="ContaclessImage-smaller" />
           <img src={ContactlessImageLarge} className="ContactlessImageLarge" />
         </div>
       </div>

@@ -104,7 +104,7 @@
   z-index: 1;
 }
 
-.ContaclessImage-small {
+.ContaclessImage-smaller {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -114,6 +114,13 @@
 
 .ContactlessImageLarge {
   display: none;
+}
+
+@media screen and (min-width: 425px) {
+  .ContaclessImage-smaller {
+    margin-top: -1px;
+    padding-top: 1px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -171,6 +178,11 @@
   .contact-main-container {
     max-width: 896px;
   }
+
+  .ContaclessImage-smaller {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -196,7 +208,7 @@
     width: 714px;
   }
 
-  .ContaclessImage-small {
+  .ContaclessImage-smaller {
     display: none;
   }
 

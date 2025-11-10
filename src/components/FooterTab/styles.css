@@ -252,16 +252,46 @@
   .footer-last-section-main {
     display: inline;
   }
+
+  .social-media-sub-tab {
+    margin-top: -1.5px;
+  }
 }
 
-@media screen and (min-width: 1870px) {
+@media screen and (min-width: 1805px) {
+  .malasiaImage {
+    margin-right: 8.7px;
+  }
+
+  .social-media-sub-tab {
+    margin-top: -1.5px;
+  }
+
+  .mine {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1869px) {
   .social-media-sub-tab {
     display: inline;
     display: flex;
-    margin-top: -2px;
+    margin-top: -2.5px;
   }
 
   .hubbopos-card-image {
-    margin-top: -7px;
+    margin-top: -6.5px;
+  }
+
+  .hubboPos-icon {
+    margin-top: 2px;
+  }
+
+  .malasiaImage {
+    margin-right: 8.5px;
+  }
+
+  .footer-last-section {
+    margin-top: 0px;
   }
 }

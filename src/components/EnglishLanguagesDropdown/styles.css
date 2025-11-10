@@ -52,3 +52,14 @@
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
 }
+
+.click-event .item-name-english {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .click-event > .dropdown-main-container-languages {
+    top: 45%;
+    right: -12%;
+  }
+}

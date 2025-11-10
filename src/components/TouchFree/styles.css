@@ -173,6 +173,7 @@
 @media screen and (min-width: 1440px) {
   .touchFree-main-section {
     padding: 6rem;
+    margin-top: -4px;
   }
 
   .image-free-box {

@@ -24,9 +24,7 @@ const MenuClick: React.FC<MenuClickProps> = ({
 }) => {
   const [showDropDown, setShowDropDown] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropDown((prev) => !prev);
-  };
+  const toggleDropdown = () => setShowDropDown((prev) => !prev);
 
   return (
     <div className="menuClick-main-container">
@@ -46,6 +44,7 @@ const MenuClick: React.FC<MenuClickProps> = ({
                   <img src={CloseImage} alt="Close" className="CloseImage" />
                 </button>
               </div>
+
               <div className="solutions-menuclick">
                 <div className="solutions-card-container">
                   <button className="button-class" onClick={onOpenSolutions}>
@@ -58,6 +57,7 @@ const MenuClick: React.FC<MenuClickProps> = ({
                       />
                     </div>
                   </button>
+
                   <button className="button-class" onClick={onOpenHubbo}>
                     <div className="list-card">
                       <p className="text-heading">Why HUBBO</p>
@@ -68,19 +68,21 @@ const MenuClick: React.FC<MenuClickProps> = ({
                       />
                     </div>
                   </button>
+
                   <button className="button-class">
                     <div className="list-card-plans">
                       <p className="text-heading-plans">Plans ＆ Pricing</p>
                     </div>
                   </button>
+
                   <button className="button-class">
                     <div className="list-card-plans">
                       <p className="text-heading-plans">
-                        {" "}
                         <Link to="/contact">Contact Us</Link>
                       </p>
                     </div>
                   </button>
+
                   <button className="button-class" onClick={toggleDropdown}>
                     <div className="list-card-language">
                       <p className="text-heading-plans">Language</p>
@@ -104,10 +106,12 @@ const MenuClick: React.FC<MenuClickProps> = ({
                 </div>
               </div>
             </div>
+
             <div className="click-event">
               <EnglishLangaugesDropdown isOpen={showDropDown} />
             </div>
           </div>
+
           <div className="buttons-containers">
             <button className="get-started-buttons">Get Started</button>
             <button className="free-demo-button-menu">Request Free Demo</button>

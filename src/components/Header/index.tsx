@@ -184,23 +184,25 @@ const Header = () => {
       </div>
 
       {isMobile && isMenuOpen && (
-        <div className="menuLay">
+        <div className="menuLay" onClick={() => setIsMenuOpen(false)}>
           {showSolutions ? (
             <Solutions onClose={() => setShowSolutions(false)} />
           ) : showHubbo ? (
             <WhyHubbo onClose={() => setShowHubbo(false)} />
           ) : (
-            <MenuClick
-              onClose={() => setIsMenuOpen(false)}
-              onOpenSolutions={() => {
-                setShowHubbo(false);
-                setShowSolutions(true);
-              }}
-              onOpenHubbo={() => {
-                setShowSolutions(false);
-                setShowHubbo(true);
-              }}
-            />
+            <div onClick={(e) => e.stopPropagation()}>
+              <MenuClick
+                onClose={() => setIsMenuOpen(false)}
+                onOpenSolutions={() => {
+                  setShowHubbo(false);
+                  setShowSolutions(true);
+                }}
+                onOpenHubbo={() => {
+                  setShowSolutions(false);
+                  setShowHubbo(true);
+                }}
+              />
+            </div>
           )}
         </div>
       )}

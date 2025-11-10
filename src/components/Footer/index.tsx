@@ -1,9 +1,9 @@
 import { useState } from "react";
 
+import { ROTATE } from "../../constants";
 import { footerData } from "../../data/footer";
 import DropDownFooter from "../DropDownFooter";
 import FooterTab from "../FooterTab";
-import { ROTATE } from "../../constants";
 
 import AppStoreMd from "../../assets/images/app-store-md.png";
 import AppStore from "../../assets/images/app-store-sm (1).png";
