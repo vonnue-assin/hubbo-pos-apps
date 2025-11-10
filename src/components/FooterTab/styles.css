@@ -256,6 +256,18 @@
   .social-media-sub-tab {
     margin-top: -1.5px;
   }
+
+  .helphere-header .social-media-sub-tab {
+    margin-top: 0px;
+  }
+
+  .helphere-header .hubboPos-icon {
+    margin-top: 1px;
+  }
+
+  .helphere-header .privacy-notes-sum {
+    margin-top: -6px;
+  }
 }
 
 @media screen and (min-width: 1805px) {
