@@ -149,6 +149,12 @@
   }
 }
 
+@media screen and (min-width: 425px) {
+  .quicker-content {
+    margin-top: 1px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .section-sub-wrapper {
     padding-left: 3.5rem;
@@ -169,6 +175,7 @@
     line-height: 28px;
     letter-spacing: -0.1px;
     font-weight: 500;
+    margin-top: 0px;
   }
 
   .image-card {

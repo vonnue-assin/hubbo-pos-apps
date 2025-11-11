@@ -270,13 +270,14 @@
   }
 }
 
-@media screen and (min-width: 1805px) {
+@media screen and (min-width: 1804px) {
   .malasiaImage {
-    margin-right: 8.7px;
+    margin-right: 0.47rem;
+    margin-left: 1px;
   }
 
   .social-media-sub-tab {
-    margin-top: -1.5px;
+    margin-top: -2px;
   }
 
   .mine {
@@ -284,7 +285,7 @@
   }
 }
 
-@media screen and (min-width: 1869px) {
+@media screen and (min-width: 1870px) {
   .social-media-sub-tab {
     display: inline;
     display: flex;
@@ -292,15 +293,11 @@
   }
 
   .hubbopos-card-image {
-    margin-top: -6.5px;
+    margin-top: -6px;
   }
 
   .hubboPos-icon {
-    margin-top: 2px;
-  }
-
-  .malasiaImage {
-    margin-right: 8.5px;
+    margin-top: 3px;
   }
 
   .footer-last-section {
