@@ -287,13 +287,11 @@
 
 @media screen and (min-width: 1870px) {
   .social-media-sub-tab {
-    display: inline;
-    display: flex;
-    margin-top: -2.5px;
+    margin-top: -3px;
   }
 
   .hubbopos-card-image {
-    margin-top: -6px;
+    margin-top: -7px;
   }
 
   .hubboPos-icon {
@@ -301,6 +299,10 @@
   }
 
   .footer-last-section {
+    margin-top: 0px;
+  }
+  
+  .helphere-header .social-media-sub-tab {
     margin-top: 0px;
   }
 }
