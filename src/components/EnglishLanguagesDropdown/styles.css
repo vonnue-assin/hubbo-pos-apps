@@ -1,6 +1,13 @@
+:root {
+  --tw-shadow: 0 0 #0000;
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-shadow-color: 00 #0000;
+}
+
 .dropdown-main-container-languages {
   position: fixed;
-  top: 4.8rem;
+  top: 4.75rem;
   z-index: 10;
   animation: opacity 0.2s linear;
   border-radius: 0.5rem;
@@ -14,8 +21,8 @@
 }
 
 .drop-down-english {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  min-width: 100%;
+  display: table;
 }
 
 .item-name-english {
@@ -33,6 +40,10 @@
   font-family: "font1";
   display: flex;
   gap: 0.25rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  cursor: pointer;
+  border: 0 solid;
 }
 
 .dropdown-item-languages {

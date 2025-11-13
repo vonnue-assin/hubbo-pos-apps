@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { solutionsData } from "../../data/solutionsData";
-
 import leftArrowIcon from "../../assets/images/chevron-left.813f13ce.svg";
 import CloseIcon from "../../assets/images/close.cf72762d.svg";
-
 import "./styles.css";
 
 const Solutions = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div className="solutions-header-main-container">
+    <div
+      className="solutions-header-main-container"
+      onClick={(e) => e.stopPropagation()}
+    >
       <div className="solutions-main-container">
         <div className="solutions-sub-container">
           <div className="solutions-header-card">
@@ -27,6 +28,7 @@ const Solutions = ({ onClose }: { onClose: () => void }) => {
                 <img src={CloseIcon} alt="CloseIcon" className="CloseIcon" />
               </button>
             </div>
+
             <div className="solutions-list-card">
               <div className="solutions-flex">
                 {solutionsData.map((item) => (

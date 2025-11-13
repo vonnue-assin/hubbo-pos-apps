@@ -7,7 +7,10 @@ import "./styles.css";
 
 const WhyHubbo = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div className="solutions-header-main-container">
+    <div
+      className="solutions-header-main-container"
+      onClick={(e) => e.stopPropagation()}
+    >
       <div className="solutions-main-container">
         <div className="solutions-header-card">
           <div className="hubbo-item">

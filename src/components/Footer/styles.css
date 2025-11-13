@@ -387,9 +387,8 @@
     margin-top: 1px;
   }
 
-  .my-name,
-  .arrow {
-    margin-right: 0.01px;
+  .my-name {
+    margin-left: 0.06px;
   }
 }
 
