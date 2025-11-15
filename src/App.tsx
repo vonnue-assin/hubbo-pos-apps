@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Contact, Home } from "./pages";
+import { Contact, Home, PlansAndPrice } from "./pages";
 
 import "./App.css";
 
@@ -10,6 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/plansandprice" element={<PlansAndPrice />} />
       </Routes>
     </div>
   );

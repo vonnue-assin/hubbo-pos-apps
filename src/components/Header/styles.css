@@ -152,6 +152,10 @@ a {
   justify-content: flex-start;
 }
 
+.plansandPrice-main-container .header-main-container {
+  margin-top: 0px;
+}
+
 /* //////////////////////////////////////////////////////////////////// */
 
 @media screen and (min-width: 768px) {
@@ -321,6 +325,10 @@ a {
 
   .header-sub-container {
     margin-top: 2px;
+  }
+
+  .plansandPrice-main-container .header-main-container {
+    margin-top: -112px;
   }
 }
 

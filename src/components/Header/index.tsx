@@ -127,7 +127,9 @@ const Header = () => {
 
               <DropDownSolutions isOpen={openDropdown === SOLUTIONS} />
 
-              <p className="price-and-plans">Plans ＆ Pricing</p>
+              <p className="price-and-plans">
+                <Link to="/plansandprice"> Plans ＆ Pricing</Link>
+              </p>
               <div className="why-hubbo-container">
                 <button
                   className="button-con-hubbo"

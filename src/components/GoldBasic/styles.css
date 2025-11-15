@@ -1,0 +1,24 @@
+.silver-button-card {
+  vertical-align: top;
+  background-color: #fffcf4;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e6cfb0;
+}
+
+.arrowdown.rotated,
+.arrowdownadd.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.delievary-platform,
+.included-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.delievary-platform.open,
+.included-content.open {
+  max-height: 500px;
+}

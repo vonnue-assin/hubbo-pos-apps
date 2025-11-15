@@ -1,0 +1,259 @@
+.software-only {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.price-text {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  margin: 0px;
+  color: rgb(132, 107, 84);
+  font-weight: 500;
+  text-align: center;
+  font-family: "font1";
+}
+
+.price-text-card {
+  width: 100%;
+  margin-bottom: 3rem;
+  width: 100%;
+  overflow-x: auto;
+  /* display: none; */
+}
+
+/* .price-card-main-card {
+  padding-top: 0 !important;
+  padding: 0.5rem;
+  background-color: #fbb501;
+  border-radius: 1rem;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-width: 262px;
+  max-width: 400px;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.best-value {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.36px;
+  font-weight: 700;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin: 0;
+  color: #764600;
+  font-family: "font1";
+}
+
+/* .platinum-basic-card-main {
+  background-color: #fffefb;
+  border: 1px solid #e6cfb0;
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.width {
+  width: 100%;
+}
+
+/* .features-main-container {
+  flex-grow: 1;
+  min-height: 0;
+} */
+
+.silver-basic-container {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e6cfb0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Platinum-Basic-text {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.96px;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+  color: #472200;
+  margin: 0px;
+  font-family: "font1";
+  text-align: start;
+}
+
+.text-money {
+  color: #d68000;
+  margin: 0;
+  text-align: start;
+}
+
+.rm-text {
+  letter-spacing: 0;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-right: 0.25rem;
+  font-family: "font2";
+  padding: 0px;
+}
+
+.money-text {
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.6px;
+  font-weight: 600;
+  font-family: "font2";
+  padding: 0px;
+  margin-left: -5px;
+}
+
+.year-plan {
+  color: #6c4e33;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  text-align: start;
+  font-family: "font1";
+}
+
+.features-main-container {
+  vertical-align: top;
+  padding: 1.5rem;
+  background-color: #fffcf4;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #e6cfb0;
+}
+
+.price-card-main-card {
+  padding: 0.5rem;
+  background-color: #fbb501;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.platinum-basic-card-main {
+  background-color: #fffefb;
+  border: 1px solid #e6cfb0;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.features-main-container {
+  padding: 1.5rem;
+  background-color: #fffcf4;
+  border-bottom: 1px solid #e6cfb0;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.features-container {
+  display: flex;
+  min-width: 100%;
+  width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* .features-sub-container {
+
+} */
+
+.button-feature {
+  border: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: transparent;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.add-features {
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(132, 107, 84);
+  font-family: "font1";
+}
+
+.arrowdown {
+  height: 1rem;
+  width: 1rem;
+  transform: rotate(180deg);
+}
+
+.arrowdownadd {
+  height: 1rem;
+  width: 1rem;
+}
+
+.delievary-platform {
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.integration {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.tickimage {
+  padding-top: 0.125rem;
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  max-width: 100%;
+  display: block;
+}
+
+.delievery-text {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  color: #472200;
+  font-weight: 500;
+  font-family: "font1";
+  text-align: start;
+}
+
+.request-free-demo-button-main {
+  padding-top: 1.6rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #fffcf4;
+  width: 100%;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}

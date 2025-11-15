@@ -1,0 +1,72 @@
+.choose-your-plans-sub-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.choose-ypur-plans-text {
+  margin: 0px;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.6px;
+  font-weight: 600;
+  font-family: "font2";
+  text-transform: capitalize;
+}
+
+.sub-container {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 3rem;
+}
+
+.Chooseyour-plans-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 375px) {
+  .sub-container {
+    text-align: unset;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sub-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sub-container {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    gap: 4rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sub-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .section-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+  }
+}
