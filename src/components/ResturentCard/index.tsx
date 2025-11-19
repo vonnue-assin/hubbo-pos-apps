@@ -6,8 +6,8 @@ import "./styles.css";
 const ResturentCard = () => {
   return (
     <div className="Pos-main-container">
-      <img src={upperImage} className="upperImage" />
-      <img src={lowerImage} className="lowerImage" />
+      <img src={upperImage} className="upperImage" alt="arrow" />
+      <img src={lowerImage} className="lowerImage" alt="arrow" />
       <div className="one-pos-card">
         <h1 className="pos-header">All-in-One POS for your restaurant</h1>
         <p className="pos-content">

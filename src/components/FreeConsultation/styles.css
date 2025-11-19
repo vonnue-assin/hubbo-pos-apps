@@ -185,3 +185,14 @@
     margin-top: 0px;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .free-consultaion-main {
+    max-width: none;
+    position: relative;
+  }
+
+  .free-consultaion-main-container {
+    max-width: 1440px;
+  }
+}

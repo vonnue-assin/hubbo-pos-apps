@@ -16,7 +16,6 @@ const ChooseYourPlans = () => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const [silverOpen, setSilverOpen] = useState(false);
-  const [goldOpen, setGoldOpen] = useState(false);
 
   return (
     <section className="section-wrap">
@@ -131,6 +130,7 @@ const ChooseYourPlans = () => {
                                   <img
                                     src={ArrowDownImage}
                                     className="ArrowDownImage"
+                                    alt="arrow"
                                   />
                                 </button>
                               </h3>
@@ -140,6 +140,7 @@ const ChooseYourPlans = () => {
                                   <img
                                     src={roundTickImage}
                                     className="roundTickImage"
+                                    alt="arrow"
                                   />
                                   <p className="platform-text">
                                     Delivery Platform Integration
@@ -158,6 +159,7 @@ const ChooseYourPlans = () => {
                                 </span>
                                 <img
                                   src={ArrowDownImage}
+                                  alt="arrow"
                                   className={`ArrowDownImage ${
                                     silverOpen ? "rotated" : ""
                                   }`}
@@ -208,6 +210,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
+                                    alt="arrow"
                                     className="ArrowDownImage"
                                   />
                                 </button>
@@ -217,6 +220,7 @@ const ChooseYourPlans = () => {
                                 <div className="feature-card">
                                   <img
                                     src={roundTickImage}
+                                    alt="arrow"
                                     className="roundTickImage"
                                   />
                                   <p className="platform-text">
@@ -236,6 +240,7 @@ const ChooseYourPlans = () => {
                                 </span>
                                 <img
                                   src={ArrowDownImage}
+                                  alt="arrow"
                                   className={`ArrowDownImage ${
                                     silverOpen ? "rotated" : ""
                                   }`}
@@ -274,11 +279,19 @@ const ChooseYourPlans = () => {
                 <div className="arrow-cards">
                   <div className="arrow-card-container">
                     <button className="arrow-buttons">
-                      <img src={ArrowDownImage} className="arrowbuttonLeft" />
+                      <img
+                        src={ArrowDownImage}
+                        alt="arrow"
+                        className="arrowbuttonLeft"
+                      />
                     </button>
                     <div className="px-three"></div>
                     <button className="arrow-buttons">
-                      <img src={ArrowDownImage} className="arrowbuttonRight" />
+                      <img
+                        src={ArrowDownImage}
+                        alt="arrow"
+                        className="arrowbuttonRight"
+                      />
                     </button>
                   </div>
                 </div>
@@ -315,6 +328,7 @@ const ChooseYourPlans = () => {
                                     </span>
                                     <img
                                       src={ArrowDownImage}
+                                      alt="arrow"
                                       className="ArrowDownImage"
                                     />
                                   </button>
@@ -324,6 +338,7 @@ const ChooseYourPlans = () => {
                                   <div className="feature-card-hardware">
                                     <img
                                       src={roundTickImage}
+                                      alt="arrow"
                                       className="roundTickImage"
                                     />
                                     <p className="platform-text">
@@ -345,6 +360,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -394,6 +410,7 @@ const ChooseYourPlans = () => {
                                     </span>
                                     <img
                                       src={ArrowDownImage}
+                                      alt="arrow"
                                       className="ArrowDownImage"
                                     />
                                   </button>
@@ -403,6 +420,7 @@ const ChooseYourPlans = () => {
                                   <div className="feature-card-hardware">
                                     <img
                                       src={roundTickImage}
+                                      alt="arrow"
                                       className="roundTickImage"
                                     />
                                     <p className="platform-text">
@@ -424,6 +442,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -473,6 +492,7 @@ const ChooseYourPlans = () => {
                                     </span>
                                     <img
                                       src={ArrowDownImage}
+                                      alt="arrow"
                                       className="ArrowDownImage"
                                     />
                                   </button>
@@ -483,6 +503,7 @@ const ChooseYourPlans = () => {
                                     <img
                                       src={roundTickImage}
                                       className="roundTickImage"
+                                      alt="arrow"
                                     />
                                     <p className="platform-text">
                                       Delivery Platform Integration
@@ -501,6 +522,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -541,11 +563,19 @@ const ChooseYourPlans = () => {
                 <div className="arrow-cards">
                   <div className="arrow-card-container">
                     <button className="arrow-buttons">
-                      <img src={ArrowDownImage} className="arrowbuttonLeft" />
+                      <img
+                        src={ArrowDownImage}
+                        alt=""
+                        className="arrowbuttonLeft"
+                      />
                     </button>
                     <div className="px-three"></div>
                     <button className="arrow-buttons">
-                      <img src={ArrowDownImage} className="arrowbuttonRight" />
+                      <img
+                        src={ArrowDownImage}
+                        alt=""
+                        className="arrowbuttonRight"
+                      />
                     </button>
                   </div>
                 </div>
