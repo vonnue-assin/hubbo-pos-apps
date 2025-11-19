@@ -1,0 +1,187 @@
+.free-consultaion-main-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff4d7;
+}
+
+.free-consultaion-main {
+  padding-top: 1.75rem;
+  padding-bottom: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.background-brand-free {
+  background-color: #fbb501;
+  border-radius: 32px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1248px;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+}
+
+.speak-card {
+  padding-bottom: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  align-self: stretch;
+}
+
+.speak-text {
+  color: #321800;
+  text-transform: capitalize;
+  white-space: pre-wrap;
+  margin-bottom: 1.5rem;
+  font-family: "font2";
+  margin: 0;
+  margin-bottom: 24px;
+  text-align: start;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: -5px;
+}
+
+.need-text {
+  color: #472200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  font-family: "font1";
+  margin: 0;
+  text-align: start;
+  margin-bottom: 32px;
+}
+
+.request {
+  color: #fff;
+  text-transform: capitalize;
+  width: 100%;
+  display: flex;
+  position: relative;
+  max-width: 320px;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 1rem;
+  background-color: #472200;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+  font-family: "font1";
+}
+
+.image-free-card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.freeConsultImageOne {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: inline;
+  border-radius: 1.5rem;
+}
+
+.freeConsultImageTwo {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .free-consultaion-main {
+    padding-bottom: 5rem;
+    padding-top: 2.5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
+
+  .speak-card {
+    padding-bottom: 3.5rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .need-text {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
+  }
+
+  .speak-text {
+    margin-top: -29px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .free-consultaion-main {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .background-brand-free {
+    flex-direction: row;
+    height: 492px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .speak-card {
+    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    max-width: 520px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .freeConsultImageOne {
+    display: none;
+  }
+
+  .freeConsultImageTwo {
+    max-width: 100%;
+    height: auto;
+    display: inline;
+    border-radius: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .image-free-card {
+    width: 656px;
+    margin-bottom: 0;
+    position: absolute;
+    right: -242px;
+    bottom: 0;
+    top: 0;
+    margin-bottom: 0;
+  }
+
+  .speak-text {
+    margin-top: 0px;
+  }
+}

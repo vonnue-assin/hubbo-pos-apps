@@ -1,4 +1,5 @@
 import ChooseYourPlans from "../../components/ChooseYourPlans";
+import FreeConsultaion from "../../components/FreeConsultation";
 import Header from "../../components/Header";
 import Pricing from "../../components/Pricing";
 
@@ -12,6 +13,7 @@ export const PlansAndPrice = () => {
       <div className="section-3">
         <ChooseYourPlans />
       </div>
+      <FreeConsultaion />
     </div>
   );
 };
