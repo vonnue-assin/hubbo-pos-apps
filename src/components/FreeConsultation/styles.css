@@ -7,7 +7,7 @@
 }
 
 .free-consultaion-main {
-  padding-top: 1.75rem;
+  padding-top: 1.5rem;
   padding-bottom: 3.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -105,6 +105,120 @@
   display: none;
 }
 
+.freeConsultImageThree {
+  display: none;
+}
+
+.hardware .feature-card {
+  max-width: unset;
+}
+
+.best-value-hardware .feature-card-main {
+  padding-top: 1.25rem;
+}
+
+.freeConsultImage {
+  display: none;
+  .freeConsultImageOne {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    display: inline;
+    border-radius: 1.5rem;
+  }
+}
+
+.hardware-pagination {
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.3s;
+  transform: translateZ(0);
+  z-index: 10;
+}
+
+.hardware-arrows {
+  display: flex;
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-card-container-hardware {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-buttons-hardware {
+  cursor: pointer;
+  padding-left: 27px;
+  padding-right: 27px;
+  background-color: transparent;
+  border: none;
+}
+
+.hardware .swiper-pagination {
+  bottom: 14px;
+}
+
+.hardware .arrowbuttonLeft {
+  margin-top: 5px;
+}
+
+.hardware .arrowbuttonRight {
+  margin-top: 8px;
+}
+
+.hard .swiper-text-card {
+  margin-left: 0px;
+}
+
+.pro {
+  margin-left: -3px;
+}
+
+.plus {
+  margin-left: -3px;
+}
+
+.platinum {
+  margin-left: -4px;
+}
+
+.money-text-set-hardware-platinum {
+  margin-left: -5px;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.6px;
+  font-weight: 600;
+  font-family: "font2";
+}
+
+.feature-card-main-hardware {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1.25rem;
+}
+
+@media screen and (min-width: 375px) {
+  .freeConsultImage {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: inline;
+    border-radius: 1.5rem;
+    display: inline;
+  }
+
+  .freeConsultImageOne {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .free-consultaion-main {
     padding-bottom: 5rem;
@@ -134,7 +248,7 @@
 
 @media screen and (min-width: 1024px) {
   .free-consultaion-main {
-    padding-top: 3rem;
+    padding-top: 6rem;
     padding-bottom: 6rem;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -184,6 +298,10 @@
   .speak-text {
     margin-top: 0px;
   }
+
+  .swiper-text-card {
+    min-width: unset;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -194,5 +312,28 @@
 
   .free-consultaion-main-container {
     max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .background-brand-free {
+    gap: 0.5rem;
+  }
+
+  .speak-card {
+    padding-right: 1.5rem;
+    padding-left: 3.5rem;
+    max-width: none;
+    position: relative;
+  }
+
+  .image-free-card {
+    position: relative;
+    right: 0;
+    width: auto;
+  }
+
+  .need-text {
+    width: 483px;
   }
 }

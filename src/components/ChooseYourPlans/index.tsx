@@ -1,21 +1,41 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
 import Included from "../Included";
+import IncludedHardware from "../IncludedHardware";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import roundTickImage from "../../assets/images/round-tick.38e908ce.svg";
 
 import "./styles.css";
-import IncludedHardware from "../IncludedHardware";
+import { SCROLL } from "../../constants";
 
 const ChooseYourPlans = () => {
   const [selectedPlan, setSelectedPlan] = useState("Software Only");
   const isDesktop = useMediaQuery("(min-width: 768px)");
-
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeSliderRef = useRef<HTMLDivElement>(null);
   const [silverOpen, setSilverOpen] = useState(false);
+
+  useEffect(() => {
+    const slider = activeSliderRef.current;
+    if (!slider) return;
+
+    const handleScroll = () => {
+      const slide = slider.querySelector(".swiper-slide") as HTMLElement;
+      if (!slide) return;
+
+      const slideWidth = slide.clientWidth;
+      const index = Math.round(slider.scrollLeft / slideWidth);
+      setActiveIndex(index);
+    };
+
+    slider.addEventListener("scroll", handleScroll);
+
+    return () => slider.removeEventListener("scroll", handleScroll);
+  }, [selectedPlan]);
 
   return (
     <section className="section-wrap">
@@ -51,7 +71,7 @@ const ChooseYourPlans = () => {
             {selectedPlan === "Software Only" && (
               <div className="silverBasic">
                 <div className="swipper-basic-main">
-                  <div className="swiper-wrapper">
+                  <div className="swiper-wrapper" ref={activeSliderRef}>
                     <div className="swiper-slide">
                       <div className="swiper-text-card">
                         <div className="border-text">
@@ -269,9 +289,14 @@ const ChooseYourPlans = () => {
 
                   {/* Pagination */}
                   <div className="swiper-pagination">
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
+                    {[0, 1, 2].map((i) => (
+                      <span
+                        key={i}
+                        className={`bullets ${
+                          activeIndex === i ? "active-bullet" : ""
+                        }`}
+                      ></span>
+                    ))}
                   </div>
                 </div>
 
@@ -299,18 +324,100 @@ const ChooseYourPlans = () => {
             )}
 
             {selectedPlan === "Software ＆ Hardware" && (
-              <div className="silverBasic">
+              <div className="silverBasic hardware">
                 <div className="swipper-basic-main">
-                  <div className="swiper-wrapper">
+                  <div className="swiper-wrapper" ref={activeSliderRef}>
+                    <div className="swiper-slide hard">
+                      <div className="swiper-text-card">
+                        <div className="border-text">
+                          <div className="w-full">
+                            <div className="solid-primary">
+                              <p className="silver-text">Silver Plus</p>
+                              <p className="money-text">
+                                <span className="rm-text">RM</span>
+                                <span className="money-text-set-hardware">
+                                  3,390
+                                </span>
+                              </p>
+                              <p className="year-plan">Payable first year</p>
+                              <p className="year-plan">RM 990 annually after</p>
+                            </div>
+                          </div>
+
+                          <div className="silver-card-sub-card">
+                            <div className="vertical-set">
+                              <h3 className="header-2">
+                                <button className="button-additional">
+                                  <span className="additional-features">
+                                    Additional features
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    className="ArrowDownImage"
+                                    alt="arrow"
+                                  />
+                                </button>
+                              </h3>
+                              <div className="feature-card-main">
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    1x Single-screen POS device with built-in
+                                    NFC Reader
+                                  </p>
+                                </div>
+                              </div>
+                              <h3 className="header-3">
+                                <button
+                                  className="button-include"
+                                  onClick={() => setSilverOpen(!silverOpen)}
+                                >
+                                  <span className="include-text">
+                                    What’s included :
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    alt="ArrowDownImage"
+                                    className={`ArrowDownImage ${
+                                      silverOpen ? "rotated" : ""
+                                    }`}
+                                  />
+                                </button>
+                              </h3>
+
+                              <div
+                                className={`included-content ${
+                                  silverOpen ? "open" : ""
+                                }`}
+                              >
+                                <IncludedHardware />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="request-free-demo-button-sub">
+                            <span className="free-demo-button-set">
+                              Request Free Demo
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div className="swiper-slide">
-                      <div className="swiper-text-card">
+                      <div className="swiper-text-card pro">
                         <div className="border-text">
                           <div className="w-full">
                             <div className="solid-primary">
-                              <p className="silver-text">Silver Plus</p>
+                              <p className="silver-text">Silver Pro</p>
                               <p className="money-text">
-                                <span className="rm-text">RM </span>
-                                <span className="money-text-set">3,390</span>
+                                <span className="rm-text">RM</span>
+                                <span className="money-text-set-hardware">
+                                  3,490
+                                </span>
                               </p>
                               <p className="year-plan">Payable first year</p>
                               <p className="year-plan">RM 990 annually after</p>
@@ -319,37 +426,38 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
-                              <div>
-                                <h3 className="header-2">
-                                  <button className="button-additional">
-                                    <span className="additional-features">
-                                      Additional features
-                                    </span>
-                                    <img
-                                      src={ArrowDownImage}
-                                      alt="arrow"
-                                      className="ArrowDownImage"
-                                    />
-                                  </button>
-                                </h3>
-
-                                <div className="feature-card-main">
-                                  <div className="feature-card-hardware">
-                                    <img
-                                      src={roundTickImage}
-                                      alt="arrow"
-                                      className="roundTickImage"
-                                    />
-                                    <p className="platform-text">
-                                      1x Single-screen POS device with built-in
-                                      NFC Reader
-                                    </p>
-                                  </div>
+                              <h3 className="header-2">
+                                <button className="button-additional">
+                                  <span className="additional-features">
+                                    Additional features
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    className="ArrowDownImage"
+                                    alt="arrow"
+                                  />
+                                </button>
+                              </h3>
+                              <div className="feature-card-main">
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    1x Dual screen POS device with NFC Reader
+                                  </p>
+                                </div>
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">1x QR scanner</p>
                                 </div>
                               </div>
-
-                              {/* Included */}
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -360,7 +468,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="arrow"
+                                    alt="ArrowDownImage"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -385,53 +493,53 @@ const ChooseYourPlans = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="swiper-text-card">
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="swiper-text-card plus">
                         <div className="border-text">
                           <div className="w-full">
                             <div className="solid-primary">
-                              <p className="silver-text">Silver Plus</p>
+                              <p className="silver-text">Gold Plus</p>
                               <p className="money-text">
-                                <span className="rm-text">RM </span>
-                                <span className="money-text-set">3,390</span>
+                                <span className="rm-text">RM</span>
+                                <span className="money-text-set-hardware">
+                                  3,890
+                                </span>
                               </p>
                               <p className="year-plan">Payable first year</p>
-                              <p className="year-plan">RM 990 annually after</p>
+                              <p className="year-plan">
+                                RM 1,490 annually after
+                              </p>
                             </div>
                           </div>
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
-                              <div>
-                                <h3 className="header-2">
-                                  <button className="button-additional">
-                                    <span className="additional-features">
-                                      Additional features
-                                    </span>
-                                    <img
-                                      src={ArrowDownImage}
-                                      alt="arrow"
-                                      className="ArrowDownImage"
-                                    />
-                                  </button>
-                                </h3>
-
-                                <div className="feature-card-main">
-                                  <div className="feature-card-hardware">
-                                    <img
-                                      src={roundTickImage}
-                                      alt="arrow"
-                                      className="roundTickImage"
-                                    />
-                                    <p className="platform-text">
-                                      1x Single-screen POS device with built-in
-                                      NFC Reader
-                                    </p>
-                                  </div>
+                              <h3 className="header-2">
+                                <button className="button-additional">
+                                  <span className="additional-features">
+                                    Additional features
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    className="ArrowDownImage"
+                                    alt="arrow"
+                                  />
+                                </button>
+                              </h3>
+                              <div className="feature-card-main">
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    1x Single-screen POS device with built-in
+                                    NFC ReaderDelivery platform integrations
+                                  </p>
                                 </div>
                               </div>
-
-                              {/* Included */}
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -442,7 +550,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="arrow"
+                                    alt="ArrowDownImage"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -467,18 +575,216 @@ const ChooseYourPlans = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="swiper-text-card best-value">
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="swiper-text-card plus">
+                        <div className="border-text">
+                          <div className="w-full">
+                            <div className="solid-primary">
+                              <p className="silver-text">Gold Pro</p>
+                              <p className="money-text">
+                                <span className="rm-text">RM</span>
+                                <span className="money-text-set-hardware">
+                                  3,990
+                                </span>
+                              </p>
+                              <p className="year-plan">Payable first year</p>
+                              <p className="year-plan">
+                                RM 1,490 annually after
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="silver-card-sub-card">
+                            <div className="vertical-set">
+                              <h3 className="header-2">
+                                <button className="button-additional">
+                                  <span className="additional-features">
+                                    Additional features
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    className="ArrowDownImage"
+                                    alt="arrow"
+                                  />
+                                </button>
+                              </h3>
+                              <div className="feature-card-main">
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    1x Dual screen POS device with NFC Reader
+                                  </p>
+                                </div>
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">1x QR scanner</p>
+                                </div>
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    Delivery platform integrations
+                                  </p>
+                                </div>
+                              </div>
+                              <h3 className="header-3">
+                                <button
+                                  className="button-include"
+                                  onClick={() => setSilverOpen(!silverOpen)}
+                                >
+                                  <span className="include-text">
+                                    What’s included :
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    alt="ArrowDownImage"
+                                    className={`ArrowDownImage ${
+                                      silverOpen ? "rotated" : ""
+                                    }`}
+                                  />
+                                </button>
+                              </h3>
+
+                              <div
+                                className={`included-content ${
+                                  silverOpen ? "open" : ""
+                                }`}
+                              >
+                                <IncludedHardware />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="request-free-demo-button-sub">
+                            <span className="free-demo-button-set">
+                              Request Free Demo
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="swiper-text-card platinum">
+                        <div className="border-text">
+                          <div className="w-full">
+                            <div className="solid-primary">
+                              <p className="silver-text">Platinum Plus</p>
+                              <p className="money-text">
+                                <span className="rm-text">RM</span>
+                                <span className="money-text-set-hardware">
+                                  5,000
+                                </span>
+                              </p>
+                              <p className="year-plan">Payable two year</p>
+                              <p className="year-plan">
+                                RM 2,600 biennially after
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="silver-card-sub-card">
+                            <div className="vertical-set">
+                              <h3 className="header-2">
+                                <button className="button-additional">
+                                  <span className="additional-features">
+                                    Additional features
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    className="ArrowDownImage"
+                                    alt="arrow"
+                                  />
+                                </button>
+                              </h3>
+                              <div className="feature-card-main">
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    1x Single-screen POS device with
+                                    built-in-NFC Reader
+                                  </p>
+                                </div>
+                                <div className="feature-card">
+                                  <img
+                                    src={roundTickImage}
+                                    className="roundTickImage"
+                                    alt="arrow"
+                                  />
+                                  <p className="platform-text">
+                                    Delivery platform integrations
+                                  </p>
+                                </div>
+                              </div>
+                              <h3 className="header-3">
+                                <button
+                                  className="button-include"
+                                  onClick={() => setSilverOpen(!silverOpen)}
+                                >
+                                  <span className="include-text">
+                                    What’s included :
+                                  </span>
+                                  <img
+                                    src={ArrowDownImage}
+                                    alt="ArrowDownImage"
+                                    className={`ArrowDownImage ${
+                                      silverOpen ? "rotated" : ""
+                                    }`}
+                                  />
+                                </button>
+                              </h3>
+
+                              <div
+                                className={`included-content ${
+                                  silverOpen ? "open" : ""
+                                }`}
+                              >
+                                <IncludedHardware />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="request-free-demo-button-sub">
+                            <span className="free-demo-button-set">
+                              Request Free Demo
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="swiper-slide">
+                      <div className="swiper-text-card best-value hardware">
                         <p className="best-value-text">BEST VALUE</p>
 
                         <div className="border-text">
                           <div className="w-full">
                             <div className="solid-primary">
-                              <p className="silver-text">Platinum Basic</p>
+                              <p className="silver-text">Platinum Pro</p>
                               <p className="money-text">
                                 <span className="rm-text">RM </span>
-                                <span className="money-text-set">2,600</span>
+                                <span className="money-text-set-hardware-platinum">
+                                  5,100
+                                </span>
                               </p>
-                              <p className="year-plan">2 year plan</p>
+                              <p className="year-plan">Payable two year</p>
+                              <p className="year-plan">
+                                RM 2,600 biennially after
+                              </p>
                             </div>
                           </div>
 
@@ -498,15 +804,35 @@ const ChooseYourPlans = () => {
                                   </button>
                                 </h3>
 
-                                <div className="feature-card-main">
+                                <div className="feature-card-main-hardware">
                                   <div className="feature-card">
                                     <img
                                       src={roundTickImage}
-                                      className="roundTickImage"
                                       alt="arrow"
+                                      className="roundTickImage"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Dual screen POS device
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      alt="arrow"
+                                      className="roundTickImage"
+                                    />
+                                    <p className="platform-text">
+                                      1x QR scanner
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      alt="arrow"
+                                      className="roundTickImage"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery platform integrations
                                     </p>
                                   </div>
                                 </div>
@@ -535,7 +861,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -549,31 +875,34 @@ const ChooseYourPlans = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="swiper-pagination">
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
-                    <span className="bullets"></span>
+                  {/* Pagination */}
+                  <div className="swiper-pagination hardware-pagination">
+                    {[0, 1, 2, 3, 4, 5].map((i) => (
+                      <span
+                        key={i}
+                        className={`bullets ${
+                          activeIndex === i ? "active-bullet" : ""
+                        }`}
+                      ></span>
+                    ))}
                   </div>
                 </div>
 
                 {/* Arrows */}
-                <div className="arrow-cards">
-                  <div className="arrow-card-container">
-                    <button className="arrow-buttons">
+                <div className="hardware-arrows">
+                  <div className="arrow-card-container-hardware">
+                    <button className="arrow-buttons-hardware">
                       <img
                         src={ArrowDownImage}
-                        alt=""
+                        alt="arrow"
                         className="arrowbuttonLeft"
                       />
                     </button>
                     <div className="px-three"></div>
-                    <button className="arrow-buttons">
+                    <button className="arrow-buttons-hardware">
                       <img
                         src={ArrowDownImage}
-                        alt=""
+                        alt="arrow"
                         className="arrowbuttonRight"
                       />
                     </button>

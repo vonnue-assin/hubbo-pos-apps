@@ -1,6 +1,7 @@
 import ChooseYourPlans from "../../components/ChooseYourPlans";
 import FreeConsultaion from "../../components/FreeConsultation";
 import Header from "../../components/Header";
+import PlanComparison from "../../components/PlanComparison";
 import Pricing from "../../components/Pricing";
 
 import "./styles.css";
@@ -12,8 +13,9 @@ export const PlansAndPrice = () => {
       <Pricing />
       <div className="section-3">
         <ChooseYourPlans />
+        <FreeConsultaion />
       </div>
-      <FreeConsultaion />
+      <PlanComparison />
     </div>
   );
 };

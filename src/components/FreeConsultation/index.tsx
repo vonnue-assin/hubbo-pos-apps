@@ -1,5 +1,6 @@
-import freeConsultImage from "../../assets/images/pricing-cta-small.png";
 import freeConsultImageTwo from "../../assets/images/pricing-cta-large.png";
+import freeConsultImage from "../../assets/images/pricing-cta-small.png";
+import freeConsultImageOne from "../../assets/images/pricing-cta-small (2).png";
 
 import "./styles.css";
 
@@ -22,6 +23,11 @@ export const FreeConsultaion = () => {
               src={freeConsultImage}
               alt="freeConsultImage"
               className="freeConsultImageOne"
+            />
+            <img
+              src={freeConsultImageOne}
+              alt="freeConsultImage"
+              className="freeConsultImage"
             />
             <img
               src={freeConsultImageTwo}

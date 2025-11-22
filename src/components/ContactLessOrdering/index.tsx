@@ -5,7 +5,6 @@ import QrCodeImg from "../../assets/images/qr-code3.png";
 import "./styles.css";
 
 const ContactLessOrdering = () => {
-  
   return (
     <section className="card-container">
       <div className="contact-main-container">
@@ -13,7 +12,7 @@ const ContactLessOrdering = () => {
           <div className="contactless">
             <div className="contact-button">
               <div className="ordering">
-                <img src={QrCodeImg} className="qr-image" />
+                <img src={QrCodeImg} className="qr-image" alt="arrow" />
               </div>
               <h3 className="contactless-order">Contactless ordering</h3>
             </div>
@@ -28,8 +27,16 @@ const ContactLessOrdering = () => {
               </h4>
             </div>
           </div>
-          <img src={ContaclessImage} className="ContaclessImage-smaller" />
-          <img src={ContactlessImageLarge} className="ContactlessImageLarge" />
+          <img
+            src={ContaclessImage}
+            alt="arrow"
+            className="ContaclessImage-smaller"
+          />
+          <img
+            src={ContactlessImageLarge}
+            alt="arrow"
+            className="ContactlessImageLarge"
+          />
         </div>
       </div>
     </section>

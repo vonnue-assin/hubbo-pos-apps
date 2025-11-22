@@ -1,0 +1,53 @@
+.feature-card-main-container {
+  --tw-border-opacity: 1;
+  border-bottom: 1px solid rgb(233 228 223 / var(--tw-border-opacity, 1));
+  width: 100%;
+  margin-top: -14px;
+}
+
+.feat-text-header {
+  color: rgb(132 107 84);
+  font-family: "font1";
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0.5rem !important;
+  width: 100%;
+  margin: 0;
+}
+
+.feature-card-texts {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.feature-card-spans {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.feature-name {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  color: #472200;
+  max-width: 300px;
+  text-align: center;
+  font-family: "font1";
+  padding: 0.75rem;
+  animation: fade 0.9s linear;
+}
+
+.feature-card-main-input {
+  display: flex;
+  flex-direction: row;
+}

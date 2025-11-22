@@ -35,10 +35,18 @@ const FooterTab = () => {
                 <div className="app-store-container">
                   <div className="store-card">
                     <span className="card">
-                      <img src={AppStoreExcel} className="appStoreExcel" />
+                      <img
+                        src={AppStoreExcel}
+                        alt="arrow"
+                        className="appStoreExcel"
+                      />
                     </span>
                     <span className="card">
-                      <img src={GooglePlayExcel} className="appStoreExcel" />
+                      <img
+                        src={GooglePlayExcel}
+                        alt="arrow"
+                        className="appStoreExcel"
+                      />
                     </span>
                   </div>
                 </div>
@@ -80,16 +88,25 @@ const FooterTab = () => {
             <div className="hubboPos-icon">
               <div className="posImage">
                 <div className="hubbopos-card-image">
-                  <img src={hubboposImage} className="hubboposImage" />
+                  <img
+                    src={hubboposImage}
+                    alt="arrow"
+                    className="hubboposImage"
+                  />
 
                   <div className="america">
                     <button className="america-button" onClick={toggleDropdown}>
                       <div className="my-content">
-                        <img src={malasiaImage} className="malasiaImage" />
+                        <img
+                          src={malasiaImage}
+                          alt="arrow"
+                          className="malasiaImage"
+                        />
                         <p className="mine">MY</p>
                         <span className="arrow">
                           <img
                             src={ArrowDown}
+                            alt="arrow"
                             className={`arrow-down ${
                               isDropdownOpen ? "rotate" : ""
                             }`}
@@ -104,10 +121,18 @@ const FooterTab = () => {
 
                 <div className="social-media-sub-tab">
                   <span className="facebook">
-                    <img src={faceBookIcon} className="faceBookIcon" />
+                    <img
+                      src={faceBookIcon}
+                      alt="arrow"
+                      className="faceBookIcon"
+                    />
                   </span>
                   <span className="facebook">
-                    <img src={instagramIcon} className="InstagramIcon" />
+                    <img
+                      src={instagramIcon}
+                      alt="arrow"
+                      className="InstagramIcon"
+                    />
                   </span>
                 </div>
               </div>

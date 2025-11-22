@@ -71,18 +71,27 @@ const Footer = () => {
               <div className="footer-hubbo">
                 <div className="footers">
                   <div className="hubbo">
-                    <img src={HubboposImage} className="HubboposImage" />
+                    <img
+                      src={HubboposImage}
+                      alt="arrow"
+                      className="HubboposImage"
+                    />
                   </div>
 
                   <div className="language-dropdown-wrapper">
                     <button className="english" onClick={toggleDropdown}>
                       <div className="english-card">
-                        <img src={MalasiaImage} className="MalasiaImage" />
+                        <img
+                          src={MalasiaImage}
+                          alt="arrow"
+                          className="MalasiaImage"
+                        />
                       </div>
                       <h2 className="my-name">MY</h2>
                       <span className="arrow">
                         <img
                           src={ArrowDown}
+                          alt="arrow"
                           className={`arrow-down ${
                             isDropdownOpen ? ROTATE : ""
                           }`}
@@ -95,10 +104,18 @@ const Footer = () => {
                 </div>
                 <div className="social-media-sub">
                   <span className="facebook">
-                    <img src={faceBookIcon} className="faceBookIcon" />
+                    <img
+                      src={faceBookIcon}
+                      alt="arrow"
+                      className="faceBookIcon"
+                    />
                   </span>
                   <span className="facebook">
-                    <img src={instagramIcon} className="InstagramIcon" />
+                    <img
+                      src={instagramIcon}
+                      alt="arrow"
+                      className="InstagramIcon"
+                    />
                   </span>
                 </div>
               </div>
@@ -106,10 +123,10 @@ const Footer = () => {
               <div className="app-store-card">
                 <div className="app-store">
                   <span className="app-card">
-                    <img src={AppStore} className="AppStore" />
+                    <img src={AppStore} className="AppStore" alt="arrow" />
                   </span>
                   <span className="app-card">
-                    <img src={GooglePlay} className="AppStore" />
+                    <img src={GooglePlay} className="AppStore" alt="arrow" />
                   </span>
                 </div>
               </div>
@@ -117,10 +134,14 @@ const Footer = () => {
                 <div className="app-store-card-two">
                   <div className="app-store">
                     <span className="app-card">
-                      <img src={AppStoreMd} className="AppStore" />
+                      <img src={AppStoreMd} className="AppStore" alt="arrow" />
                     </span>
                     <span className="app-card">
-                      <img src={GooglePlayMd} className="AppStore" />
+                      <img
+                        src={GooglePlayMd}
+                        className="AppStore"
+                        alt="arrow"
+                      />
                     </span>
                   </div>
                 </div>
@@ -135,10 +156,18 @@ const Footer = () => {
               <div className="block">
                 <div className="social-media-apps">
                   <span className="facebook">
-                    <img src={faceBookIcon} className="faceBookIcon" />
+                    <img
+                      src={faceBookIcon}
+                      className="faceBookIcon"
+                      alt="arrow"
+                    />
                   </span>
                   <span className="facebook">
-                    <img src={instagramIcon} className="InstagramIcon" />
+                    <img
+                      src={instagramIcon}
+                      alt="arrow"
+                      className="InstagramIcon"
+                    />
                   </span>
                 </div>
               </div>

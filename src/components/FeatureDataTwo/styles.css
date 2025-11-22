@@ -1,0 +1,30 @@
+.feature-card-texts-two {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.feature-card-spans-two {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #fff8e7;
+  border-radius: 0.75rem;
+}
+
+.feature-name-two {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  color: #472200;
+  max-width: 300px;
+  text-align: center;
+  font-family: "font1";
+  padding: 0.75rem;
+  animation: fade 0.9s linear;
+}

@@ -46,7 +46,9 @@
   list-style: none;
   padding: 0;
   z-index: 1;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   touch-action: pan-y;
   position: static !important;
 }
@@ -67,10 +69,11 @@
   );
   box-sizing: content-box;
   transform: translateZ(0);
+  justify-content: center;
 }
 
 .swiper-slide {
-  width: 272px;
+  width: 271px;
   scroll-snap-align: start start;
   flex-shrink: 0;
   /* width: 100%;
@@ -154,6 +157,13 @@
   margin-left: -5px;
 }
 
+.money-text-set-hardware {
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.6px;
+  font-weight: 600;
+  font-family: "font2";
+}
 .year-plan {
   font-size: 16px;
   line-height: 24px;
@@ -168,7 +178,7 @@
 .silver-card-sub-card {
   vertical-align: top;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 16px;
   background-color: #fffcf4;
   flex-grow: 1;
   width: 100%;
@@ -318,7 +328,7 @@
 }
 
 .ArrowDownImage.rotated {
-  transform: rotate(0deg);
+  transform: rotate(180deg);
 }
 
 .request-free-demo-button-sub {
@@ -328,7 +338,6 @@
   padding-bottom: 1.5rem;
   border-top: 1px solid #e6cfb0;
   width: 100%;
-  margin-top: -8px;
 }
 
 .free-demo-button-set {
@@ -389,6 +398,10 @@
   width: -moz-max-content;
   width: max-content;
   transform: translateX(-50%) !important;
+}
+
+.bullets.active-bullet {
+  background-color: #6c4c2c;
 }
 
 .bullets {
@@ -455,7 +468,19 @@
 }
 
 .best-value .request-free-demo-button-sub {
-  margin-top: -6px;
+  margin-top: 2px;
+}
+
+.hardware .feature-card-main {
+  padding-top: 12px;
+}
+
+.hardware .request-free-demo-button-sub {
+  margin-top: 8px;
+}
+
+.swiper-wrapper {
+  justify-content: flex-start !important;
 }
 
 /* ////////////////////////media Queries////////////////////////// */
@@ -466,7 +491,7 @@
   }
 
   .swiper-slide {
-    width: 327px;
+    width: 321px;
   }
 
   .swiper-text-card {
@@ -482,7 +507,11 @@
   }
 
   .card-gold .request-free-demo-button-sub {
-    margin-top: 0px;
+    margin-top: 8px;
+  }
+
+  .best-value .request-free-demo-button-sub {
+    margin-top: 10px;
   }
 }
 
@@ -497,6 +526,10 @@
 
   .card-gold .request-free-demo-button-sub {
     margin-top: -8px;
+  }
+
+  .best-value .request-free-demo-button-sub {
+    margin-top: 10px;
   }
 }
 
@@ -524,6 +557,14 @@
     padding-left: 3rem;
     padding-right: 3rem;
     gap: 4rem;
+  }
+
+  .swiper-slide {
+    width: 301px;
+  }
+
+  .swiper-wrapper {
+    gap: 0.75rem;
   }
 }
 
