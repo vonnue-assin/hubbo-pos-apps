@@ -1,4 +1,5 @@
 import ChooseYourPlans from "../../components/ChooseYourPlans";
+import Footer from "../../components/Footer";
 import FreeConsultaion from "../../components/FreeConsultation";
 import Header from "../../components/Header";
 import PlanComparison from "../../components/PlanComparison";
@@ -16,6 +17,7 @@ export const PlansAndPrice = () => {
         <FreeConsultaion />
       </div>
       <PlanComparison />
+      <Footer />
     </div>
   );
 };

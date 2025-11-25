@@ -24,11 +24,7 @@ export const FreeConsultaion = () => {
               alt="freeConsultImage"
               className="freeConsultImageOne"
             />
-            <img
-              src={freeConsultImageOne}
-              alt="freeConsultImage"
-              className="freeConsultImage"
-            />
+
             <img
               src={freeConsultImageTwo}
               alt="freeConsultImage"

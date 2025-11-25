@@ -71,7 +71,10 @@ const MenuClick: React.FC<MenuClickProps> = ({
 
                   <button className="button-class">
                     <div className="list-card-plans">
-                      <p className="text-heading-plans">Plans ＆ Pricing</p>
+                      <p className="text-heading-plans">
+                        {" "}
+                        <Link to="/mypricing">Plans ＆ Pricing</Link>
+                      </p>
                     </div>
                   </button>
 

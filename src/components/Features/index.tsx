@@ -5,12 +5,21 @@ import "./styles.css";
 const Features = () => {
   return (
     <>
-      <div className="feature-card-main-container">
-        <p className="feat-text-header">Features</p>
+      <div className="pricings-container-main">
+        <p className="pricing-text">Features</p>
       </div>
       <div className="feature-card-main-input">
-        <FeaturesDataOneMain />
-        <FeaturesDataTwoMain />
+        <div>
+          <FeaturesDataOneMain />
+        </div>
+
+        <div className="data-two">
+          {" "}
+          <FeaturesDataOneMain />
+        </div>
+        <div className="data-three">
+          <FeaturesDataTwoMain />
+        </div>
       </div>
     </>
   );

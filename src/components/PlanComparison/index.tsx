@@ -123,6 +123,9 @@ const PlanComparison = () => {
               </div>
 
               <PlansFiltering selectedPlan={selectedSilver} />
+              <div className="button-padding-card">
+                <span className="free-button-padding">Request Free Demo</span>
+              </div>
             </div>
           </div>
         </div>

@@ -18,6 +18,7 @@
   display: flex;
   animation: opacity 0.2s linear;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .dropdown-heading {
@@ -32,7 +33,7 @@
   font-family: "font1";
 }
 
-.dropdown-item-set{
+.dropdown-item-set {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

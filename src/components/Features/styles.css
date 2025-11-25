@@ -28,12 +28,6 @@
   flex-direction: column;
 }
 
-.feature-card-spans {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-}
-
 .feature-name {
   font-size: 16px;
   line-height: 24px;
@@ -50,4 +44,35 @@
 .feature-card-main-input {
   display: flex;
   flex-direction: row;
+}
+
+.data-two {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .data-two {
+    display: inline;
+  }
+
+  .feature-card-main-container {
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+  }
+
+  .feature-card-main-input {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    max-width: none;
+  }
+
+  .feature-name {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feature-card-main-input {
+    justify-content: space-between;
+  }
 }

@@ -4,20 +4,19 @@ import useMediaQuery from "../../Hooks/useMediaQuery";
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
 import Included from "../Included";
-import IncludedHardware from "../IncludedHardware";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import roundTickImage from "../../assets/images/round-tick.38e908ce.svg";
 
 import "./styles.css";
-import { SCROLL } from "../../constants";
 
 const ChooseYourPlans = () => {
   const [selectedPlan, setSelectedPlan] = useState("Software Only");
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [goldAdditionalOpen, setGoldAdditionalOpen] = useState(true);
   const activeSliderRef = useRef<HTMLDivElement>(null);
-  const [silverOpen, setSilverOpen] = useState(false);
+  const [silverOpen, setSilverOpen] = useState(true);
 
   useEffect(() => {
     const slider = activeSliderRef.current;
@@ -70,7 +69,7 @@ const ChooseYourPlans = () => {
 
             {selectedPlan === "Software Only" && (
               <div className="silverBasic">
-                <div className="swipper-basic-main">
+                <div className="swipper-basic-main software">
                   <div className="swiper-wrapper" ref={activeSliderRef}>
                     <div className="swiper-slide">
                       <div className="swiper-text-card">
@@ -90,7 +89,9 @@ const ChooseYourPlans = () => {
                             <div className="vertical-set">
                               <h3 className="header-3">
                                 <button
-                                  className="button-include"
+                                  className={`button-include ${
+                                    silverOpen ? "open" : "close"
+                                  }`}
                                   onClick={() => setSilverOpen(!silverOpen)}
                                 >
                                   <span className="include-text">
@@ -116,7 +117,7 @@ const ChooseYourPlans = () => {
                             </div>
                           </div>
 
-                          <div className="request-free-demo-button-sub">
+                          <div className="request-free-demo-button-sub texted-silver">
                             <span className="free-demo-button-set">
                               Request Free Demo
                             </span>
@@ -141,21 +142,37 @@ const ChooseYourPlans = () => {
                         <div className="silver-card-sub-card">
                           <div className="vertical-set">
                             {/* Additional features */}
-                            <div>
+                            <div className="additional-featured-buttons">
                               <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
+                                <button
+                                  className="button-additional"
+                                  onClick={() =>
+                                    setGoldAdditionalOpen(!goldAdditionalOpen)
+                                  }
+                                >
+                                  <span
+                                    className={`additional-features ${
+                                      goldAdditionalOpen ? "open" : ""
+                                    }`}
+                                  >
                                     Additional features
                                   </span>
+
                                   <img
                                     src={ArrowDownImage}
-                                    className="ArrowDownImage"
+                                    className={`ArrowDownImage ${
+                                      goldAdditionalOpen ? "rotated" : ""
+                                    }`}
                                     alt="arrow"
                                   />
                                 </button>
                               </h3>
 
-                              <div className="feature-card-main">
+                              <div
+                                className={`feature-card-main ${
+                                  goldAdditionalOpen ? "open" : "close"
+                                }`}
+                              >
                                 <div className="feature-card">
                                   <img
                                     src={roundTickImage}
@@ -222,26 +239,43 @@ const ChooseYourPlans = () => {
 
                         <div className="silver-card-sub-card">
                           <div className="vertical-set">
-                            <div>
+                            {/* Additional features */}
+                            <div className="additional-featured-buttons">
                               <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
+                                <button
+                                  className="button-additional"
+                                  onClick={() =>
+                                    setGoldAdditionalOpen(!goldAdditionalOpen)
+                                  }
+                                >
+                                  <span
+                                    className={`additional-features ${
+                                      goldAdditionalOpen ? "open" : ""
+                                    }`}
+                                  >
                                     Additional features
                                   </span>
+
                                   <img
                                     src={ArrowDownImage}
+                                    className={`ArrowDownImage ${
+                                      goldAdditionalOpen ? "rotated" : ""
+                                    }`}
                                     alt="arrow"
-                                    className="ArrowDownImage"
                                   />
                                 </button>
                               </h3>
 
-                              <div className="feature-card-main">
+                              <div
+                                className={`feature-card-main ${
+                                  goldAdditionalOpen ? "open" : "close"
+                                }`}
+                              >
                                 <div className="feature-card">
                                   <img
                                     src={roundTickImage}
-                                    alt="arrow"
                                     className="roundTickImage"
+                                    alt="arrow"
                                   />
                                   <p className="platform-text">
                                     Delivery Platform Integration
@@ -256,7 +290,7 @@ const ChooseYourPlans = () => {
                                 onClick={() => setSilverOpen(!silverOpen)}
                               >
                                 <span className="include-text">
-                                  What’s included:
+                                  What’s included :
                                 </span>
                                 <img
                                   src={ArrowDownImage}
@@ -288,7 +322,7 @@ const ChooseYourPlans = () => {
                   </div>
 
                   {/* Pagination */}
-                  <div className="swiper-pagination">
+                  <div className="swiper-pagination software-pagination">
                     {[0, 1, 2].map((i) => (
                       <span
                         key={i}
@@ -326,7 +360,10 @@ const ChooseYourPlans = () => {
             {selectedPlan === "Software ＆ Hardware" && (
               <div className="silverBasic hardware">
                 <div className="swipper-basic-main">
-                  <div className="swiper-wrapper" ref={activeSliderRef}>
+                  <div
+                    className="swiper-wrapper hardware-software"
+                    ref={activeSliderRef}
+                  >
                     <div className="swiper-slide hard">
                       <div className="swiper-text-card">
                         <div className="border-text">
@@ -346,31 +383,51 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
-                                    Additional features
-                                  </span>
-                                  <img
-                                    src={ArrowDownImage}
-                                    className="ArrowDownImage"
-                                    alt="arrow"
-                                  />
-                                </button>
-                              </h3>
-                              <div className="feature-card-main">
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    1x Single-screen POS device with built-in
-                                    NFC Reader
-                                  </p>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
+                                <h3 className="header-2">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
+                                      Additional features
+                                    </span>
+
+                                    <img
+                                      src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
+                                      alt="arrow"
+                                    />
+                                  </button>
+                                </h3>
+
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery Platform Integration
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
+
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -381,7 +438,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="ArrowDownImage"
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -394,7 +451,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>
@@ -426,38 +483,51 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
-                                    Additional features
-                                  </span>
-                                  <img
-                                    src={ArrowDownImage}
-                                    className="ArrowDownImage"
-                                    alt="arrow"
-                                  />
-                                </button>
-                              </h3>
-                              <div className="feature-card-main">
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    1x Dual screen POS device with NFC Reader
-                                  </p>
-                                </div>
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">1x QR scanner</p>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
+                                <h3 className="header-2">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
+                                      Additional features
+                                    </span>
+
+                                    <img
+                                      src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
+                                      alt="arrow"
+                                    />
+                                  </button>
+                                </h3>
+
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery Platform Integration
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
+
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -468,7 +538,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="ArrowDownImage"
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -481,7 +551,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>
@@ -515,31 +585,51 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
-                                    Additional features
-                                  </span>
-                                  <img
-                                    src={ArrowDownImage}
-                                    className="ArrowDownImage"
-                                    alt="arrow"
-                                  />
-                                </button>
-                              </h3>
-                              <div className="feature-card-main">
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    1x Single-screen POS device with built-in
-                                    NFC ReaderDelivery platform integrations
-                                  </p>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
+                                <h3 className="header-2">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
+                                      Additional features
+                                    </span>
+
+                                    <img
+                                      src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
+                                      alt="arrow"
+                                    />
+                                  </button>
+                                </h3>
+
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery Platform Integration
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
+
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -550,7 +640,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="ArrowDownImage"
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -563,7 +653,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>
@@ -597,48 +687,51 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
-                                    Additional features
-                                  </span>
-                                  <img
-                                    src={ArrowDownImage}
-                                    className="ArrowDownImage"
-                                    alt="arrow"
-                                  />
-                                </button>
-                              </h3>
-                              <div className="feature-card-main">
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    1x Dual screen POS device with NFC Reader
-                                  </p>
-                                </div>
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">1x QR scanner</p>
-                                </div>
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    Delivery platform integrations
-                                  </p>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
+                                <h3 className="header-2">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
+                                      Additional features
+                                    </span>
+
+                                    <img
+                                      src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
+                                      alt="arrow"
+                                    />
+                                  </button>
+                                </h3>
+
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery Platform Integration
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
+
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -649,7 +742,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="ArrowDownImage"
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -662,7 +755,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>
@@ -696,41 +789,51 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <h3 className="header-2">
-                                <button className="button-additional">
-                                  <span className="additional-features">
-                                    Additional features
-                                  </span>
-                                  <img
-                                    src={ArrowDownImage}
-                                    className="ArrowDownImage"
-                                    alt="arrow"
-                                  />
-                                </button>
-                              </h3>
-                              <div className="feature-card-main">
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    1x Single-screen POS device with
-                                    built-in-NFC Reader
-                                  </p>
-                                </div>
-                                <div className="feature-card">
-                                  <img
-                                    src={roundTickImage}
-                                    className="roundTickImage"
-                                    alt="arrow"
-                                  />
-                                  <p className="platform-text">
-                                    Delivery platform integrations
-                                  </p>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
+                                <h3 className="header-2">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
+                                      Additional features
+                                    </span>
+
+                                    <img
+                                      src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
+                                      alt="arrow"
+                                    />
+                                  </button>
+                                </h3>
+
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery Platform Integration
+                                    </p>
+                                  </div>
                                 </div>
                               </div>
+
                               <h3 className="header-3">
                                 <button
                                   className="button-include"
@@ -741,7 +844,7 @@ const ChooseYourPlans = () => {
                                   </span>
                                   <img
                                     src={ArrowDownImage}
-                                    alt="ArrowDownImage"
+                                    alt="arrow"
                                     className={`ArrowDownImage ${
                                       silverOpen ? "rotated" : ""
                                     }`}
@@ -754,7 +857,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>
@@ -790,49 +893,46 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              <div>
+                              {/* Additional features */}
+                              <div className="additional-featured-buttons">
                                 <h3 className="header-2">
-                                  <button className="button-additional">
-                                    <span className="additional-features">
+                                  <button
+                                    className="button-additional"
+                                    onClick={() =>
+                                      setGoldAdditionalOpen(!goldAdditionalOpen)
+                                    }
+                                  >
+                                    <span
+                                      className={`additional-features ${
+                                        goldAdditionalOpen ? "open" : ""
+                                      }`}
+                                    >
                                       Additional features
                                     </span>
+
                                     <img
                                       src={ArrowDownImage}
+                                      className={`ArrowDownImage ${
+                                        goldAdditionalOpen ? "rotated" : ""
+                                      }`}
                                       alt="arrow"
-                                      className="ArrowDownImage"
                                     />
                                   </button>
                                 </h3>
 
-                                <div className="feature-card-main-hardware">
+                                <div
+                                  className={`feature-card-main ${
+                                    goldAdditionalOpen ? "open" : "close"
+                                  }`}
+                                >
                                   <div className="feature-card">
                                     <img
                                       src={roundTickImage}
-                                      alt="arrow"
                                       className="roundTickImage"
+                                      alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      1x Dual screen POS device
-                                    </p>
-                                  </div>
-                                  <div className="feature-card">
-                                    <img
-                                      src={roundTickImage}
-                                      alt="arrow"
-                                      className="roundTickImage"
-                                    />
-                                    <p className="platform-text">
-                                      1x QR scanner
-                                    </p>
-                                  </div>
-                                  <div className="feature-card">
-                                    <img
-                                      src={roundTickImage}
-                                      alt="arrow"
-                                      className="roundTickImage"
-                                    />
-                                    <p className="platform-text">
-                                      Delivery platform integrations
+                                      Delivery Platform Integration
                                     </p>
                                   </div>
                                 </div>
@@ -844,7 +944,7 @@ const ChooseYourPlans = () => {
                                   onClick={() => setSilverOpen(!silverOpen)}
                                 >
                                   <span className="include-text">
-                                    What’s included:
+                                    What’s included :
                                   </span>
                                   <img
                                     src={ArrowDownImage}
@@ -861,7 +961,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <IncludedHardware />
+                                <Included />
                               </div>
                             </div>
                           </div>

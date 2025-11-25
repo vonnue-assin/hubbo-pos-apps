@@ -4,10 +4,10 @@ import "./styles.css";
 
 const FeaturesDataTwoMain = () => {
   return (
-    <div className="feature-card-texts-two">
+    <div className="feature-container-right">
       {FeatureDataTwo.map((item) => (
-        <div className="feature-card-spans-two" key={item.id}>
-          <span className="feature-name-two">{item.name}</span>
+        <div className="feature-card-spans" key={item.id}>
+          <span className="feature-name seconds">{item.name}</span>
         </div>
       ))}
     </div>

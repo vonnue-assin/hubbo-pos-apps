@@ -209,12 +209,11 @@
     height: auto;
     margin-bottom: 1rem;
     width: 100%;
-    display: inline;
+    display: none;
     border-radius: 1.5rem;
-    display: inline;
   }
 
-  .freeConsultImageOne {
+  .freeConsultImageTwo {
     display: none;
   }
 }
