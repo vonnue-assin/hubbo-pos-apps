@@ -1,6 +1,6 @@
 import ChooseYourPlans from "../../components/ChooseYourPlans";
 import Footer from "../../components/Footer";
-import FreeConsultaion from "../../components/FreeConsultation";
+import FreeConsultaion from "../../components/FreeConsultationSection";
 import Header from "../../components/Header";
 import PlanComparison from "../../components/PlanComparison";
 import Pricing from "../../components/Pricing";

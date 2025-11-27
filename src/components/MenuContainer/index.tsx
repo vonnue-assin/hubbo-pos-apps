@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import MenuClick from "../MenuClick";
+import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";
 import WhyHubbo from "../WhyHubbo";
 

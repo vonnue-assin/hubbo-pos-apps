@@ -231,9 +231,10 @@
     --tw-border-opacity: 1;
     border: 1px solid rgb(233 228 223 / var(--tw-border-opacity, 1));
   }
-  .silver-gold-platinum {
+
+  /* .silver-gold-platinum {
     display: none;
-  }
+  } */
 
   .silver-gold-platinum-text {
     display: inline;

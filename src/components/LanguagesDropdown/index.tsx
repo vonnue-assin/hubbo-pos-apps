@@ -1,4 +1,4 @@
-import { EnglishData } from "../../data/EnglishData";
+import { EnglishData } from "../../data/languageData";
 import { DropDownProps } from "../../types";
 
 import "./styles.css";

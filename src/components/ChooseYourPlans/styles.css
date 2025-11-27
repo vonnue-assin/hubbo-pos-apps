@@ -585,7 +585,7 @@
 @media screen and (min-width: 768px) {
   .sub-container {
     padding-top: 5rem;
-    padding-bottom: 7.9rem;
+    padding-bottom: 5rem;
     padding-left: 3.5rem;
     padding-right: 3.5rem;
   }
@@ -599,7 +599,7 @@
   }
 
   .plus {
-    margin-left: 9px;
+    margin-left: -8px;
   }
 
   .swiper-slide {
@@ -625,12 +625,16 @@
   .arrow-cards {
     display: none;
   }
+
+  .platinum {
+    margin-left: -4px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .sub-container {
     padding-top: 6rem;
-    padding-bottom: 3rem;
+    padding-bottom: 6.7rem;
     padding-left: 3rem;
     padding-right: 3rem;
     gap: 4rem;
@@ -698,6 +702,10 @@
   }
 
   .hardware-software .request-free-demo-button-sub {
-    margin-top: 0px;
+    margin-top: 8px;
+  }
+
+  .platinum {
+    margin-left: 0px;
   }
 }

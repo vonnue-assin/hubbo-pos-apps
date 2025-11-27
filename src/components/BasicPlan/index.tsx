@@ -1,17 +1,17 @@
-import { ComparisonData } from "../../data/ComparisonData";
+import React from "react";
+import { ComparisonData } from "../../data/comparisonData";
 import "./styles.css";
 
 type BasicPlanProps = {
   onSelect: (value: string) => void;
 };
 
-const BasicPlan = ({ onSelect }: BasicPlanProps) => {
+const BasicPlan: React.FC<BasicPlanProps> = ({ onSelect }) => {
   return (
     <div>
       {ComparisonData.map((item, index) => (
         <ul className="shadow-select-dropdown" key={index}>
           <li className="dropdown-heading">{item.Heading}</li>
-
           {item.subContents.map((sub) => (
             <li
               key={`${item.Heading}-${sub.id}`}

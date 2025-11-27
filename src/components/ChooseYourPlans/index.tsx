@@ -3,7 +3,8 @@ import { useState, useRef, useEffect } from "react";
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
-import Included from "../Included";
+import Included from "../WhatsIncludedDropdown";
+import IncludedHardware from "../IncludedHardware";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import roundTickImage from "../../assets/images/round-tick.38e908ce.svg";
@@ -422,7 +423,8 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Single-screen POS device with built-in
+                                      NFC Reader
                                     </p>
                                   </div>
                                 </div>
@@ -451,7 +453,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -522,7 +524,17 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Dual screen POS device with NFC Reader
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      1x QR scanner
                                     </p>
                                   </div>
                                 </div>
@@ -551,7 +563,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -624,7 +636,8 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Single-screen POS device with built-in
+                                      NFC ReaderDelivery platform integrations
                                     </p>
                                   </div>
                                 </div>
@@ -653,7 +666,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -726,7 +739,27 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Dual screen POS device with NFC Reader
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      1x QR scanner
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery platform integrations
                                     </p>
                                   </div>
                                 </div>
@@ -755,7 +788,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -828,7 +861,18 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Single-screen POS device with
+                                      built-in-NFC Reader
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery platform integrations
                                     </p>
                                   </div>
                                 </div>
@@ -857,7 +901,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>
@@ -932,7 +976,27 @@ const ChooseYourPlans = () => {
                                       alt="arrow"
                                     />
                                     <p className="platform-text">
-                                      Delivery Platform Integration
+                                      1x Dual screen POS device
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      1x QR scanner
+                                    </p>
+                                  </div>
+                                  <div className="feature-card">
+                                    <img
+                                      src={roundTickImage}
+                                      className="roundTickImage"
+                                      alt="arrow"
+                                    />
+                                    <p className="platform-text">
+                                      Delivery platform integrations
                                     </p>
                                   </div>
                                 </div>
@@ -961,7 +1025,7 @@ const ChooseYourPlans = () => {
                                   silverOpen ? "open" : ""
                                 }`}
                               >
-                                <Included />
+                                <IncludedHardware />
                               </div>
                             </div>
                           </div>

@@ -1,109 +1,128 @@
-import Features from "../Features";
-import Pricings from "../Pricings";
+import { useEffect, useState } from "react";
+
+import {
+  GOLD_BASIC,
+  PLATINUM_BASIC,
+  RESIZE,
+  SILVER_BASIC,
+} from "../../constants/constants";
+import { PLANS_DATA } from "../../data/pricingData";
+
 import "./styles.css";
+import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
+import Features from "../Features";
 
 type PlansFilteringProps = {
-  selectedPlan: string;
+  selectedPlans: {
+    plus: string;
+    pro: string;
+    silver: string;
+  };
 };
 
-const planMapping: Record<string, string> = {
-  "Silver (RM 990)": "Silver Basic",
-  "Gold (RM 1490)": "Gold Basic",
-  "Platinum (RM 1300)": "Platinum Basic",
+type PlanKey = "Silver" | "Gold" | "Platinum";
+
+const normalizeBasic = (value: string): string => {
+  if (value.includes("Silver")) return SILVER_BASIC;
+  if (value.includes("Gold")) return GOLD_BASIC;
+  if (value.includes("Platinum")) return PLATINUM_BASIC;
+  return value;
 };
 
-const PlansFiltering = ({ selectedPlan }: PlansFilteringProps) => {
+const mapBasicToPlanKey = (value: string): PlanKey => {
+  if (value.includes("Silver")) return "Silver";
+  if (value.includes("Gold")) return "Gold";
+  if (value.includes("Platinum")) return "Platinum";
+  return "Silver";
+};
+
+const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
+  const normalized = {
+    plus: normalizeBasic(selectedPlans.plus),
+    pro: normalizeBasic(selectedPlans.pro),
+    silver: normalizeBasic(selectedPlans.silver),
+  };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [selectedPlan, setSelectedPlan] = useState<PlanKey>(
+    mapBasicToPlanKey(normalized.plus)
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener(RESIZE, handleResize);
+    return () => window.removeEventListener(RESIZE, handleResize);
+  }, []);
+
   const standardPlans = [
     {
-      title: planMapping[selectedPlan] || "Silver Basic",
+      title: normalized.plus,
       subText: "Software only",
+      microText: "Microbusinesses",
+      bestValue: normalized.plus === PLATINUM_BASIC,
     },
     {
-      title: planMapping[selectedPlan] || "Gold Basic",
+      title: normalized.pro,
       subText: "Software only",
+      microText: "Microbusinesses",
+      bestValue: normalized.pro === PLATINUM_BASIC,
     },
     {
-      title: planMapping[selectedPlan] || "Platinum Basic",
+      title: normalized.silver,
       subText: "Software only",
-      bestValue: true,
+      microText: "Small businesses",
+      bestValue: normalized.silver === PLATINUM_BASIC,
     },
   ];
+
+  const mobilePlans = isMobile ? standardPlans.slice(0, 2) : standardPlans;
 
   return (
     <div className="silver-gold-card">
       <div className="silver-gold-platinum">
-        {standardPlans.map((plan, index) => (
+        {mobilePlans.map((plan, idx) => (
           <div
-            key={index}
+            key={idx}
             className={`plan-filtering-main-card ${
               plan.bestValue ? "best-value-card" : ""
             }`}
           >
+            {plan.bestValue && (
+              <span className="best-value-text-plan">BEST VALUE</span>
+            )}
+
             <span className="height"></span>
 
             <div className="goldBasics">
-              {plan.bestValue && (
-                <span className="best-value-text-plan">BEST VALUE</span>
-              )}
               <div className="title-row">
                 <h2 className="basic-text">{plan.title}</h2>
                 <p className="only-text">{plan.subText}</p>
               </div>
 
               <div className="new-wrapper">
-                <span className="micro-text">Microbusinesses</span>
-                <span className="started-button">Get Started</span>
+                <span className="micro-text">{plan.microText}</span>
+                <span
+                  className="started-button"
+                  onClick={() => setSelectedPlan(mapBasicToPlanKey(plan.title))}
+                >
+                  Get Started
+                </span>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="silver-gold-platinum-text">
-        <div className="silver-gold-tablet-main">
-          <div className="silver-gold-tablet-main-card">
-            <span className="height-set"></span>
-            <div className="silver-set">
-              <div className="new-wrapper-name">
-                <h2 className="basic-text">Silver Plus</h2>
-                <p className="only-text">Hardware and software included</p>
-              </div>
-              <div className="new-wrapper">
-                <span className="micro-text">Medium businesses</span>
-                <span className="started-button">Get Started</span>
-              </div>
-            </div>
-          </div>
-          <div className="silver-gold-tablet-main-card">
-            <span className="height-set"></span>
-            <div className="silver-set">
-              <div className="new-wrapper-name">
-                <h2 className="basic-text">Gold Basic</h2>
-                <p className="only-text">Software only</p>
-              </div>
-              <div className="new-wrapper">
-                <span className="micro-text">Small businesses</span>
-                <span className="started-button">Get Started</span>
-              </div>
-            </div>
-          </div>
-          <div className="silver-gold-tablet-main-card">
-            <span className="height-set"></span>
-            <span className="best-value-text-plan">BEST VALUE</span>
-            <div className="silver-set">
-              <div className="new-wrapper-name">
-                <h2 className="basic-text">Platinum Basic</h2>
-                <p className="only-text">Software only</p>
-              </div>
-              <div className="new-wrapper">
-                <span className="micro-text">Small businesses</span>
-                <span className="started-button-get">Get Started</span>
-              </div>
-            </div>
-          </div>
+      <div>
+        <div className="pricings-container-main">
+          <p className="pricing-text">Pricing</p>
         </div>
+        <PlanComparisonPriceRender
+          plan={selectedPlan}
+          data={PLANS_DATA[selectedPlan]}
+        />
       </div>
-      <Pricings />
-
       <Features />
     </div>
   );

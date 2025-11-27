@@ -9,3 +9,7 @@ export const SCROLL = "scroll";
 export const ROTATE = "rotate";
 export const SHOW = "show";
 export const SCROLLED = "scrolled";
+export const SILVER_BASIC = "Silver Basic";
+export const GOLD_BASIC = "Gold Basic";
+export const PLATINUM_BASIC = "Platinum Basic";
+export const SILVER_RM = "Silver (RM 990)";

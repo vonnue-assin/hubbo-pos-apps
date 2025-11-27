@@ -1,6 +1,6 @@
 import React from "react";
 
-import { footerMyData } from "../../data/FooterMydata";
+import { footerMyData } from "../../data/footerMydata";
 import { DropDownProps } from "../../types";
 
 import "./styles.css";

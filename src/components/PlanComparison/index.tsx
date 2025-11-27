@@ -1,21 +1,21 @@
 import { useState } from "react";
 
+import { SILVER_RM } from "../../constants/constants";
 import BasicPlan from "../BasicPlan";
 import PlansFiltering from "../PlansFilterings";
 
 import DownArrowImage from "../../assets/images/chevron-down.svg";
 
 import "./styles.css";
-import Pricings from "../Pricings";
 
 const PlanComparison = () => {
-  const [silverPlusOpen, setSilverPlusOpen] = useState(false);
-  const [silverProOpen, setSilverProOpen] = useState(false);
-  const [silverOpen, setSilverOpen] = useState(false);
+  const [selPlus, setSelPlus] = useState(SILVER_RM);
+  const [selPro, setSelPro] = useState(SILVER_RM);
+  const [selSilver, setSelSilver] = useState(SILVER_RM);
 
-  const [selectedSilverPlus, setSelectedSilverPlus] = useState("Silver Plus");
-  const [selectedSilverPro, setSelectedSilverPro] = useState("Silver Pro");
-  const [selectedSilver, setSelectedSilver] = useState("Silver (RM 990)");
+  const [plusOpen, setPlusOpen] = useState(false);
+  const [proOpen, setProOpen] = useState(false);
+  const [silverOpen, setSilverOpen] = useState(false);
 
   return (
     <div className="plan-container-main-card">
@@ -30,102 +30,96 @@ const PlanComparison = () => {
           </div>
 
           <div className="choose-a-plan-main-card">
-            <div className="choose-plan-sub">
-              <div className="items-plans-card">
-                <div className="items-card-button">
-                  <button
-                    className="buttons-item-set"
-                    onClick={() => setSilverPlusOpen(!silverPlusOpen)}
-                  >
-                    <div className="flex-card-items">
-                      <span className="choose-header">Choose a plan</span>
-                      <h2 className="choose-text-header">
-                        {selectedSilverPlus}
-                      </h2>
-                    </div>
+            <div className="items-plans-card">
+              <div className="items-card-button">
+                <button
+                  className="buttons-item-set"
+                  onClick={() => setPlusOpen(!plusOpen)}
+                >
+                  <div className="flex-card-items">
+                    <span className="choose-header">Choose a plan</span>
+                    <h2 className="choose-text-header">{selPlus}</h2>
+                  </div>
+                  <img
+                    src={DownArrowImage}
+                    alt="down-arrow"
+                    className={`DownArrowImage ${plusOpen ? "rotate" : ""}`}
+                  />
+                </button>
 
-                    <img
-                      src={DownArrowImage}
-                      alt="down-arrow"
-                      className={`DownArrowImage ${
-                        silverPlusOpen ? "rotate" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {silverPlusOpen && (
-                    <BasicPlan
-                      onSelect={(value) => {
-                        setSelectedSilverPlus(value);
-                        setSilverPlusOpen(false);
-                      }}
-                    />
-                  )}
-                </div>
-
-                <div className="items-card-button silverPro">
-                  <button
-                    className="buttons-item-set"
-                    onClick={() => setSilverProOpen(!silverProOpen)}
-                  >
-                    <div className="flex-card-items">
-                      <span className="choose-header">Choose a plan</span>
-                      <h2 className="choose-text-header">
-                        {selectedSilverPro}
-                      </h2>
-                    </div>
-
-                    <img
-                      src={DownArrowImage}
-                      alt="down-arrow"
-                      className={`DownArrowImage ${
-                        silverProOpen ? "rotate" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {silverProOpen && (
-                    <BasicPlan
-                      onSelect={(value) => {
-                        setSelectedSilverPro(value);
-                        setSilverProOpen(false);
-                      }}
-                    />
-                  )}
-                </div>
-
-                <div className="items-card-button silver">
-                  <button
-                    className="buttons-item-set"
-                    onClick={() => setSilverOpen(!silverOpen)}
-                  >
-                    <div className="flex-card-items">
-                      <span className="choose-header">Choose a plan</span>
-                      <h2 className="choose-text-header">{selectedSilver}</h2>
-                    </div>
-
-                    <img
-                      src={DownArrowImage}
-                      alt="down-arrow"
-                      className={`DownArrowImage ${silverOpen ? "rotate" : ""}`}
-                    />
-                  </button>
-
-                  {silverOpen && (
-                    <BasicPlan
-                      onSelect={(value) => {
-                        setSelectedSilver(value);
-                        setSilverOpen(false);
-                      }}
-                    />
-                  )}
-                </div>
+                {plusOpen && (
+                  <BasicPlan
+                    onSelect={(value) => {
+                      setSelPlus(value);
+                      setPlusOpen(false);
+                    }}
+                  />
+                )}
               </div>
 
-              <PlansFiltering selectedPlan={selectedSilver} />
-              <div className="button-padding-card">
-                <span className="free-button-padding">Request Free Demo</span>
+              <div className="items-card-button silverPro">
+                <button
+                  className="buttons-item-set"
+                  onClick={() => setProOpen(!proOpen)}
+                >
+                  <div className="flex-card-items">
+                    <span className="choose-header">Choose a plan</span>
+                    <h2 className="choose-text-header">{selPro}</h2>
+                  </div>
+                  <img
+                    src={DownArrowImage}
+                    alt="down-arrow"
+                    className={`DownArrowImage ${proOpen ? "rotate" : ""}`}
+                  />
+                </button>
+
+                {proOpen && (
+                  <BasicPlan
+                    onSelect={(value) => {
+                      setSelPro(value);
+                      setProOpen(false);
+                    }}
+                  />
+                )}
               </div>
+
+              <div className="items-card-button silver">
+                <button
+                  className="buttons-item-set"
+                  onClick={() => setSilverOpen(!silverOpen)}
+                >
+                  <div className="flex-card-items">
+                    <span className="choose-header">Choose a plan</span>
+                    <h2 className="choose-text-header">{selSilver}</h2>
+                  </div>
+                  <img
+                    src={DownArrowImage}
+                    alt="down-arrow"
+                    className={`DownArrowImage ${silverOpen ? "rotate" : ""}`}
+                  />
+                </button>
+
+                {silverOpen && (
+                  <BasicPlan
+                    onSelect={(value) => {
+                      setSelSilver(value);
+                      setSilverOpen(false);
+                    }}
+                  />
+                )}
+              </div>
+            </div>
+
+            <PlansFiltering
+              selectedPlans={{
+                plus: selPlus,
+                pro: selPro,
+                silver: selSilver,
+              }}
+            />
+
+            <div className="button-padding-card">
+              <span className="free-button-padding">Request Free Demo</span>
             </div>
           </div>
         </div>

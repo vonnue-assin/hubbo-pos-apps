@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Included from "../Included";
+import Included from "../WhatsIncludedDropdown";
 
 import arrowdown from "../../assets/images/chevron-down.svg";
 import tickimage from "../../assets/images/round-tick.38e908ce.svg";

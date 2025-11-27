@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
+import EnglishLangaugesDropdown from "../LanguagesDropdown";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import CloseImage from "../../assets/images/close.cf72762d.svg";

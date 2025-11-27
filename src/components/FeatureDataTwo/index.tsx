@@ -1,4 +1,4 @@
-import { FeatureDataTwo } from "../../data/FeatureTwo";
+import { FeatureDataTwo } from "../../data/featureTwo";
 
 import "./styles.css";
 

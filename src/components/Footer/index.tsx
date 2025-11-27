@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ROTATE } from "../../constants";
+import { ROTATE } from "../../constants/constants";
 import { footerData } from "../../data/footer";
 import DropDownFooter from "../DropDownFooter";
 import FooterTab from "../FooterTab";

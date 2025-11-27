@@ -12,11 +12,11 @@ import {
   SCROLL,
   SCROLLED,
   SOLUTIONS,
-} from "../../constants";
+} from "../../constants/constants";
 import DropDownHubbo from "../DropDownHubbo";
 import DropDownSolutions from "../DropDownSolutions";
-import EnglishLangaugesDropdown from "../EnglishLanguagesDropdown";
-import MenuClick from "../MenuClick";
+import EnglishLangaugesDropdown from "../LanguagesDropdown";
+import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";
 import WhyHubbo from "../WhyHubbo";
 

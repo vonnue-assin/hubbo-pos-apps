@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { RESIZE, ROTATE, SHOW } from "../../constants";
+import { RESIZE, ROTATE, SHOW } from "../../constants/constants";
 import { faqData } from "../../data/faqData";
 
 import "./styles.css";

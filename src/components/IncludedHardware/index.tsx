@@ -1,4 +1,4 @@
-import { HardWareData } from "../../data/HardwareData";
+import { HardWareData } from "../../data/hardwareData";
 
 const IncludedHardware = () => {
   return (

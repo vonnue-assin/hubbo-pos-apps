@@ -1,6 +1,5 @@
 import freeConsultImageTwo from "../../assets/images/pricing-cta-large.png";
 import freeConsultImage from "../../assets/images/pricing-cta-small.png";
-import freeConsultImageOne from "../../assets/images/pricing-cta-small (2).png";
 
 import "./styles.css";
 

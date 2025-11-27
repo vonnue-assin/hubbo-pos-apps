@@ -1,3 +1,3 @@
 export * from "./Contact";
-export * from "./Home";
+export * from "./ContactlessOrdering";
 export * from "./PlansAndPrice";
