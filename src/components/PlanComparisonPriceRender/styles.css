@@ -52,7 +52,7 @@
   line-height: 22px;
   letter-spacing: -0.28px;
   font-weight: 500;
-  font-family: "font2";
+  font-family: "font1";
   animation: fade 0.9s linear;
 }
 
@@ -188,14 +188,6 @@
   .pricing-text {
     margin-left: 1.5rem;
     margin-bottom: 1rem !important;
-  }
-
-  .annual-pricing-card {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    max-width: none;
   }
 
   .annual-card {

@@ -8,7 +8,7 @@ type SecondYearProps = {
   };
 };
 
-const PlanComparisonPriceRenderSecondYear = ({ data }: SecondYearProps) => {
+const PlanComparisonPriceRenderSecondYear = ({ plan,data }: SecondYearProps) => {
   return (
     <>
       <div className="secondYearAnnualCard">

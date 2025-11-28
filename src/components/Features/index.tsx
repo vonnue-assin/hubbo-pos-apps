@@ -1,27 +1,25 @@
-import FeaturesDataOneMain from "../FeatureDataOne";
-import FeaturesDataTwoMain from "../FeatureDataTwo";
 import "./styles.css";
 
-const Features = () => {
-  return (
-    <>
-      <div className="pricings-container-main">
-        <p className="pricing-text">Features</p>
-      </div>
-      <div className="feature-card-main-input">
-        <div>
-          <FeaturesDataOneMain />
-        </div>
+type FeatureItem = {
+  id: number;
+  name: string;
+};
 
-        <div className="data-two">
-          {" "}
-          <FeaturesDataOneMain />
-        </div>
-        <div className="data-three">
-          <FeaturesDataTwoMain />
-        </div>
+type FeaturesProps = {
+  data: FeatureItem[];
+};
+
+const Features = ({ data }: FeaturesProps) => {
+  return (
+    <div className="feature-card-main-conatiner">
+      <div className="feature-card-main-input">
+        {data.map((item) => (
+          <div key={item.id} className="feature-card-spans">
+            <span className="feature-name">{item.name}</span>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

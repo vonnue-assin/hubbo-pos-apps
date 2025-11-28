@@ -524,14 +524,6 @@
   transform: rotate(180deg);
 }
 
-/* .texted-silver {
-  margin-top: 104px;
-}
-
-.button-include.close ~ .texted-silver {
-  margin-top: 96px;
-} */
-
 /* ////////////////////////media Queries////////////////////////// */
 
 @media screen and (min-width: 375px) {

@@ -8,7 +8,7 @@ type PricingProps = {
   };
 };
 
-const PlanComparisonPriceRender = ({ data }: PricingProps) => {
+const PlanComparisonPriceRender = ({ plan,data }: PricingProps) => {
   return (
     <>
       <div className="annual-pricing-card">
