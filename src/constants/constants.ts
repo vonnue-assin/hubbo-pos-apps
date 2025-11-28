@@ -13,3 +13,6 @@ export const SILVER_BASIC = "Silver Basic";
 export const GOLD_BASIC = "Gold Basic";
 export const PLATINUM_BASIC = "Platinum Basic";
 export const SILVER_RM = "Silver (RM 990)";
+export const SILVER = "Silver";
+export const GOLD = "Gold";
+export const PLATINUM = "Platinum";

@@ -6,11 +6,15 @@ import {
   RESIZE,
   SILVER_BASIC,
 } from "../../constants/constants";
-import { PLANS_DATA } from "../../data/pricingData";
+
+import { PLANS_DATA_FIRST_YEAR } from "../../data/pricingDataOne";
+import { PLANS_DATA_SECOND_YEAR } from "../../data/pricingDataSecondYear";
+
+import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
+import PlanComparisonPriceRenderSecondYear from "../PlanComparisonPriceRenderSecondYear";
+import Features from "../Features";
 
 import "./styles.css";
-import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
-import Features from "../Features";
 
 type PlansFilteringProps = {
   selectedPlans: {
@@ -44,9 +48,6 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
   };
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [selectedPlan, setSelectedPlan] = useState<PlanKey>(
-    mapBasicToPlanKey(normalized.plus)
-  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -56,73 +57,80 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
     return () => window.removeEventListener(RESIZE, handleResize);
   }, []);
 
-  const standardPlans = [
-    {
-      title: normalized.plus,
-      subText: "Software only",
-      microText: "Microbusinesses",
-      bestValue: normalized.plus === PLATINUM_BASIC,
-    },
-    {
-      title: normalized.pro,
-      subText: "Software only",
-      microText: "Microbusinesses",
-      bestValue: normalized.pro === PLATINUM_BASIC,
-    },
-    {
-      title: normalized.silver,
-      subText: "Software only",
-      microText: "Small businesses",
-      bestValue: normalized.silver === PLATINUM_BASIC,
-    },
+  let planKeys: PlanKey[] = [
+    mapBasicToPlanKey(normalized.plus),
+    mapBasicToPlanKey(normalized.pro),
+    mapBasicToPlanKey(normalized.silver),
   ];
 
-  const mobilePlans = isMobile ? standardPlans.slice(0, 2) : standardPlans;
+  planKeys = Array.from(new Set(planKeys));
+
+  const visiblePlans = isMobile ? planKeys.slice(0, 2) : planKeys.slice(0, 3);
 
   return (
     <div className="silver-gold-card">
       <div className="silver-gold-platinum">
-        {mobilePlans.map((plan, idx) => (
-          <div
-            key={idx}
-            className={`plan-filtering-main-card ${
-              plan.bestValue ? "best-value-card" : ""
-            }`}
-          >
-            {plan.bestValue && (
-              <span className="best-value-text-plan">BEST VALUE</span>
-            )}
+        {visiblePlans.map((planKey, idx) => {
+          const title =
+            planKey === "Silver"
+              ? SILVER_BASIC
+              : planKey === "Gold"
+              ? GOLD_BASIC
+              : PLATINUM_BASIC;
 
-            <span className="height"></span>
+          return (
+            <div key={idx} className="plan-filtering-main-card">
+              <span className="height"></span>
+              <div className="goldBasics">
+                <div className="title-row">
+                  <h2 className="basic-text">{title}</h2>
+                  <p className="only-text">Software only</p>
+                </div>
 
-            <div className="goldBasics">
-              <div className="title-row">
-                <h2 className="basic-text">{plan.title}</h2>
-                <p className="only-text">{plan.subText}</p>
-              </div>
+                <div className="new-wrapper">
+                  <span className="micro-text">
+                    {planKey === "Silver"
+                      ? "Small businesses"
+                      : "Microbusinesses"}
+                  </span>
+                  <span className="best-value-text-plan">BEST VALUE</span>
 
-              <div className="new-wrapper">
-                <span className="micro-text">{plan.microText}</span>
-                <span
-                  className="started-button"
-                  onClick={() => setSelectedPlan(mapBasicToPlanKey(plan.title))}
-                >
-                  Get Started
-                </span>
+                  <span className="started-button">Get Started</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
-      <div>
+
+      <div className="pricing-main-card">
         <div className="pricings-container-main">
           <p className="pricing-text">Pricing</p>
         </div>
-        <PlanComparisonPriceRender
-          plan={selectedPlan}
-          data={PLANS_DATA[selectedPlan]}
-        />
+
+        <div className="price-renders-card">
+          <div className="price-renders-card-one">
+            {visiblePlans.map((planKey) => (
+              <PlanComparisonPriceRender
+                key={`first-${planKey}`}
+                plan={planKey}
+                data={PLANS_DATA_FIRST_YEAR[planKey]}
+              />
+            ))}
+          </div>
+
+          <div className="price-renders-card-two">
+            {visiblePlans.map((planKey) => (
+              <PlanComparisonPriceRenderSecondYear
+                key={`second-${planKey}`}
+                plan={planKey}
+                data={PLANS_DATA_SECOND_YEAR[planKey]}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
       <Features />
     </div>
   );

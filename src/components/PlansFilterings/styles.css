@@ -151,6 +151,7 @@
   margin-bottom: 0.75rem;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .started-button-get {
@@ -231,7 +232,72 @@
 .silver-gold-platinum {
   display: flex;
   justify-content: center;
-  margin-left: -5px;
+  /* margin-left: -5px; */
+}
+
+.pricing-main-card {
+  width: 100%;
+}
+
+.pricing-row {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pricing-column-card {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.price-renders-card {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.price-renders-card-one {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+
+.price-renders-card-two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 375px) {
+  .best-value-card .best-value-text-plan {
+    white-space: nowrap;
+    height: unset;
+  }
+
+  .height {
+    min-height: 58px;
+  }
+
+  .basic-text {
+    white-space: nowrap;
+  }
 }
 
 @media screen and (min-width: 425px) {
@@ -263,6 +329,10 @@
 
   .silver-gold-card {
     padding-top: 0px;
+  }
+
+  .price-renders-card-one {
+    justify-content: center;
   }
 }
 
