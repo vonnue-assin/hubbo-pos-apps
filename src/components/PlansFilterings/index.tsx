@@ -63,17 +63,9 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
     mapBasicToPlanKey(normalized.silver),
   ];
 
-  const allPlans: PriceKey[] = ["Silver", "Gold", "Platinum"];
-
-  let uniquePlans = Array.from(new Set(selectedPlanKeys));
-
-  allPlans.forEach((p) => {
-    if (!uniquePlans.includes(p)) uniquePlans.push(p);
-  });
-
   const visiblePlans = isMobile
-    ? uniquePlans.slice(0, 2)
-    : uniquePlans.slice(0, 3);
+    ? selectedPlanKeys.slice(0, 2)
+    : selectedPlanKeys.slice(0, 3);
 
   return (
     <div className="silver-gold-card">
@@ -87,9 +79,14 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
               : PLATINUM_BASIC;
 
           return (
-            <div key={idx} className="plan-filtering-main-card">
+            <div
+              key={`plan-${idx}-${planKey}`}
+              className={`plan-filtering-main-card ${
+                planKey === "Platinum" ? "plan-platinum" : ""
+              }`}
+            >
               {planKey === "Platinum" && (
-                <span className="best-value-text-plan best-value">
+                <span className="best-value-text-plan best-value-card">
                   BEST VALUE
                 </span>
               )}
@@ -103,11 +100,17 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
                 <div className="new-wrapper">
                   <span className="micro-text">
                     {planKey === "Silver"
-                      ? "Small businesses"
-                      : "Microbusinesses"}
+                      ? "Microbusinesses"
+                      : "Small businesses"}
                   </span>
 
-                  <span className="started-button">Get Started</span>
+                  <span
+                    className={`started-button ${
+                      planKey === "Platinum" ? "get-started-platinum" : ""
+                    }`}
+                  >
+                    Get Started
+                  </span>
                 </div>
               </div>
             </div>
@@ -122,22 +125,34 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
 
         <div className="price-renders-card">
           <div className="price-renders-card-one">
-            {visiblePlans.map((plan) => (
-              <PlanComparisonPriceRender
-                key={`first-${plan}`}
-                plan={plan}
-                data={PLANS_DATA_FIRST_YEAR[plan]}
-              />
+            {visiblePlans.map((plan, idx) => (
+              <div
+                key={`first-${idx}-${plan}`}
+                className={`pricing-card-wrapper ${
+                  plan === "Platinum" ? "platinum-bg" : ""
+                }`}
+              >
+                <PlanComparisonPriceRender
+                  plan={plan}
+                  data={PLANS_DATA_FIRST_YEAR[plan]}
+                />
+              </div>
             ))}
           </div>
 
-          <div className="price-renders-card-two">
-            {visiblePlans.map((plan) => (
-              <PlanComparisonPriceRenderSecondYear
-                key={`second-${plan}`}
-                plan={plan}
-                data={PLANS_DATA_SECOND_YEAR[plan]}
-              />
+          <div className="price-renders-card-one">
+            {visiblePlans.map((plan, idx) => (
+              <div
+                key={`second-${idx}-${plan}`}
+                className={`pricing-card-wrapper ${
+                  plan === "Platinum" ? "platinum-bg" : ""
+                }`}
+              >
+                <PlanComparisonPriceRenderSecondYear
+                  plan={plan}
+                  data={PLANS_DATA_SECOND_YEAR[plan]}
+                />
+              </div>
             ))}
           </div>
         </div>
@@ -148,9 +163,13 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
           <div className="pricings-container-main">
             <p className="pricing-text">Features</p>
           </div>
+
           <div className="pricing-texted-cards">
-            {visiblePlans.map((plan) => (
-              <Features key={`features-${plan}`} data={FeaturesData[plan]} />
+            {visiblePlans.map((plan, idx) => (
+              <Features
+                key={`features-${idx}-${plan}`}
+                data={FeaturesData[plan]}
+              />
             ))}
           </div>
         </div>

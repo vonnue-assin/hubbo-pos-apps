@@ -1,10 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import useMediaQuery from "../../Hooks/useMediaQuery";
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
-import Included from "../WhatsIncludedDropdown";
 import IncludedHardware from "../IncludedHardware";
+import Included from "../WhatsIncludedDropdown";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import roundTickImage from "../../assets/images/round-tick.38e908ce.svg";
@@ -79,14 +79,18 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Silver Basic</p>
                               <p className="money-text">
-                                <span className="rm-text">RM </span>
+                                <span className="rm-text-silver">RM </span>
                                 <span className="money-text-set">990</span>
                               </p>
                               <p className="year-plan">1 year plan</p>
                             </div>
                           </div>
 
-                          <div className="silver-card-sub-card">
+                          <div
+                            className={`silver-card-sub-card ${
+                              silverOpen ? "is-open" : ""
+                            }`}
+                          >
                             <div className="vertical-set">
                               <h3 className="header-3">
                                 <button
@@ -133,14 +137,18 @@ const ChooseYourPlans = () => {
                           <div className="solid-primary">
                             <p className="silver-text">Gold Basic</p>
                             <p className="money-text">
-                              <span className="rm-text">RM </span>
+                              <span className="rm-text-silver">RM </span>
                               <span className="money-text-set">1,490</span>
                             </p>
                             <p className="year-plan">1 year plan</p>
                           </div>
                         </div>
 
-                        <div className="silver-card-sub-card">
+                        <div
+                          className={`silver-card-sub-card gold-Basic ${
+                            silverOpen ? "is-open" : ""
+                          }`}
+                        >
                           <div className="vertical-set">
                             {/* Additional features */}
                             <div className="additional-featured-buttons">
@@ -231,7 +239,7 @@ const ChooseYourPlans = () => {
                           <div className="solid-primary">
                             <p className="silver-text">Platinum Basic</p>
                             <p className="money-text">
-                              <span className="rm-text">RM </span>
+                              <span className="rm-text-silver">RM </span>
                               <span className="money-text-set">2,600</span>
                             </p>
                             <p className="year-plan">2 year plan</p>
@@ -240,7 +248,6 @@ const ChooseYourPlans = () => {
 
                         <div className="silver-card-sub-card">
                           <div className="vertical-set">
-                            {/* Additional features */}
                             <div className="additional-featured-buttons">
                               <h3 className="header-2">
                                 <button
@@ -291,7 +298,7 @@ const ChooseYourPlans = () => {
                                 onClick={() => setSilverOpen(!silverOpen)}
                               >
                                 <span className="include-text">
-                                  What’s included :
+                                  What’s included:
                                 </span>
                                 <img
                                   src={ArrowDownImage}
@@ -322,7 +329,6 @@ const ChooseYourPlans = () => {
                     </div>
                   </div>
 
-                  {/* Pagination */}
                   <div className="swiper-pagination software-pagination">
                     {[0, 1, 2].map((i) => (
                       <span
@@ -335,7 +341,6 @@ const ChooseYourPlans = () => {
                   </div>
                 </div>
 
-                {/* Arrows */}
                 <div className="arrow-cards">
                   <div className="arrow-card-container">
                     <button className="arrow-buttons">
@@ -365,14 +370,14 @@ const ChooseYourPlans = () => {
                     className="swiper-wrapper hardware-software"
                     ref={activeSliderRef}
                   >
-                    <div className="swiper-slide hard">
+                    <div className="swiper-slide hardware-card">
                       <div className="swiper-text-card">
                         <div className="border-text">
                           <div className="w-full">
                             <div className="solid-primary">
                               <p className="silver-text">Silver Plus</p>
                               <p className="money-text">
-                                <span className="rm-text">RM</span>
+                                <span className="rm-text-silver">RM</span>
                                 <span className="money-text-set-hardware">
                                   3,390
                                 </span>
@@ -382,7 +387,11 @@ const ChooseYourPlans = () => {
                             </div>
                           </div>
 
-                          <div className="silver-card-sub-card">
+                          <div
+                            className={`silver-card-sub-card hardware-silver ${
+                              silverOpen ? "is-open" : ""
+                            }`}
+                          >
                             <div className="vertical-set">
                               {/* Additional features */}
                               <div className="additional-featured-buttons">
@@ -473,7 +482,7 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Silver Pro</p>
                               <p className="money-text">
-                                <span className="rm-text">RM</span>
+                                <span className="rm-text-silver">RM</span>
                                 <span className="money-text-set-hardware">
                                   3,490
                                 </span>
@@ -583,7 +592,7 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Gold Plus</p>
                               <p className="money-text">
-                                <span className="rm-text">RM</span>
+                                <span className="rm-text-silver">RM</span>
                                 <span className="money-text-set-hardware">
                                   3,890
                                 </span>
@@ -686,7 +695,7 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Gold Pro</p>
                               <p className="money-text">
-                                <span className="rm-text">RM</span>
+                                <span className="rm-text-silver">RM</span>
                                 <span className="money-text-set-hardware">
                                   3,990
                                 </span>
@@ -808,7 +817,7 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Platinum Plus</p>
                               <p className="money-text">
-                                <span className="rm-text">RM</span>
+                                <span className="rm-text-silver">RM</span>
                                 <span className="money-text-set-hardware">
                                   5,000
                                 </span>
@@ -923,7 +932,7 @@ const ChooseYourPlans = () => {
                             <div className="solid-primary">
                               <p className="silver-text">Platinum Pro</p>
                               <p className="money-text">
-                                <span className="rm-text">RM </span>
+                                <span className="rm-text-silver">RM </span>
                                 <span className="money-text-set-hardware-platinum">
                                   5,100
                                 </span>
@@ -937,7 +946,6 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button
@@ -1039,7 +1047,7 @@ const ChooseYourPlans = () => {
                       </div>
                     </div>
                   </div>
-                  {/* Pagination */}
+
                   <div className="swiper-pagination hardware-pagination">
                     {[0, 1, 2, 3, 4, 5].map((i) => (
                       <span
@@ -1052,7 +1060,6 @@ const ChooseYourPlans = () => {
                   </div>
                 </div>
 
-                {/* Arrows */}
                 <div className="hardware-arrows">
                   <div className="arrow-card-container-hardware">
                     <button className="arrow-buttons-hardware">

@@ -74,12 +74,8 @@
   flex: 1 1 calc(33.333% - 1rem);
 }
 
-.best-value-card {
-  flex: 1 1 calc(33.333% - 1rem);
-}
-
 .height {
-  min-height: 57px;
+  min-height: 24px;
 }
 
 .new-wrapper {
@@ -219,14 +215,14 @@
   position: relative;
 }
 
-.best-value-card .started-button {
+.get-started-platinum {
   background-color: #472200;
   color: #fff;
   border: 1px solid #fff;
 }
 
-.best-value-card .best-value-text-plan {
-  top: 24px;
+.best-value-text-plan .height {
+  min-height: 9px;
 }
 
 .silver-gold-platinum {
@@ -304,21 +300,42 @@
 .pricing-texted-cards {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+}
+
+.platinum-bg {
+  background-color: #fff8e7;
+  border-radius: 0.75rem;
+}
+
+.plan-platinum .height {
+  min-height: 0px;
+}
+
+.plan-platinum .best-value-text-plan {
+  top: -8px;
+}
+
+.plan-platinum .goldBasics {
+  margin-top: -8px;
 }
 
 @media screen and (min-width: 375px) {
-  .best-value-card .best-value-text-plan {
+  .best-value-card {
     white-space: nowrap;
     height: unset;
-  }
-
-  .height {
-    min-height: 58px;
+    width: 129px;
   }
 
   .basic-text {
     white-space: nowrap;
+  }
+
+  .plan-platinum .basic-text {
+    white-space: unset;
+  }
+
+  .best-value-text-plan {
+    left: 44%;
   }
 }
 
@@ -362,10 +379,6 @@
     letter-spacing: -0.64px;
     font-weight: 600;
     white-space: unset;
-  }
-
-  .height {
-    min-height: 65px;
   }
 
   .plan-filtering-main-card {
@@ -472,7 +485,50 @@
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+
+  .plan-platinum .goldBasics {
+    margin-top: 24px;
+  }
+
+  .goldBasics {
+    gap: 0.5rem;
+  }
+
+  .plan-platinum .best-value-text-plan {
+    top: 0px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  .price-renders-card {
+    max-width: unset;
+  }
+
+  .price-renders-card-one {
+    justify-content: space-between;
+  }
+
+  .pricing-card-wrapper {
+    flex: 1 1 calc(33.33% - 1rem);
+    max-width: 240px;
+    min-width: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .silver-gold-platinum {
+    justify-content: space-between;
+  }
+
+  .height {
+    min-height: 48px;
+  }
+
+  .pricing-card-wrapper {
+    max-width: 300px;
+  }
 }

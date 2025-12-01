@@ -251,15 +251,20 @@
     margin-top: 0 !important;
     margin-bottom: 0px;
   }
+
+  .pricing-texted-cards {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .feature-name {
+    padding: 1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .hardware-cost {
     width: 830px;
-  }
-
-  .annual-card {
-    width: 300px;
   }
 }
 

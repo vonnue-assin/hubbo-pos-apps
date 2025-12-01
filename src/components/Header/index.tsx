@@ -13,12 +13,15 @@ import {
   SCROLLED,
   SOLUTIONS,
 } from "../../constants/constants";
-import DropDownHubbo from "../DropDownHubbo";
-import DropDownSolutions from "../DropDownSolutions";
+
+import Dropdown from "../DropDownSolutions";
 import EnglishLangaugesDropdown from "../LanguagesDropdown";
 import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";
 import WhyHubbo from "../WhyHubbo";
+
+import { solutionsData } from "../../data/solutionsData";
+import { hubboData } from "../../data/hubboData";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
@@ -33,6 +36,7 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<
     "solutions" | "hubbo" | "language" | null
   >(null);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showSolutions, setShowSolutions] = useState(false);
@@ -77,16 +81,11 @@ const Header = () => {
         }
       });
 
-      if (!clickedInside) {
-        setOpenDropdown(null);
-      }
+      if (!clickedInside) setOpenDropdown(null);
     };
 
     document.addEventListener(CLICK, handleClickOutside);
-
-    return () => {
-      document.removeEventListener(CLICK, handleClickOutside);
-    };
+    return () => document.removeEventListener(CLICK, handleClickOutside);
   }, []);
 
   return (
@@ -114,40 +113,49 @@ const Header = () => {
                 onClick={() => toggleDropdown("solutions")}
               >
                 <p className="solutions">Solutions</p>
-                <span>
-                  <img
-                    src={ChevronDown}
-                    alt="Chevron Down Icon"
-                    className={`chevron-down-arrow ${
-                      openDropdown === "solutions" ? ROTATE : ""
-                    }`}
-                  />
-                </span>
+                <img
+                  src={ChevronDown}
+                  alt="Chevron Down"
+                  className={`chevron-down-arrow ${
+                    openDropdown === "solutions" ? ROTATE : ""
+                  }`}
+                />
               </button>
 
-              <DropDownSolutions isOpen={openDropdown === SOLUTIONS} />
+              <Dropdown
+                isOpen={openDropdown === SOLUTIONS}
+                items={solutionsData}
+                containerClass="drop-down-container"
+                itemClass="dropdown-item"
+              />
 
               <p className="price-and-plans">
-                <Link to="/mypricing"> Plans ＆ Pricing</Link>
+                <Link to="/mypricing">Plans ＆ Pricing</Link>
               </p>
+
               <div className="why-hubbo-container">
                 <button
                   className="button-con-hubbo"
                   onClick={() => toggleDropdown("hubbo")}
                 >
                   <p className="why-hubbo">Why HUBBO</p>
-                  <span>
-                    <img
-                      src={ChevronDown}
-                      alt="Chevron Down Icon"
-                      className={`chevron-down-arrow-hubbo ${
-                        openDropdown === "hubbo" ? ROTATE : ""
-                      }`}
-                    />
-                  </span>
+                  <img
+                    src={ChevronDown}
+                    alt="Chevron Down"
+                    className={`chevron-down-arrow-hubbo ${
+                      openDropdown === "hubbo" ? ROTATE : ""
+                    }`}
+                  />
                 </button>
-                <DropDownHubbo isOpen={openDropdown === HUBBO} />
+
+                <Dropdown
+                  isOpen={openDropdown === HUBBO}
+                  items={hubboData}
+                  containerClass="drop-down-hubbo"
+                  itemClass="dropdown-item-hubbo"
+                />
               </div>
+
               <p className="contact-us">
                 <Link to="/contact">Contact Us</Link>
               </p>
@@ -166,19 +174,19 @@ const Header = () => {
                   <GlobeBrownIcon className="globe-icon" />
                   <p className="english">EN</p>
                 </div>
-                <span className="arrow-button">
-                  <img
-                    src={ChevronDown}
-                    alt="Chevron Down Icon"
-                    className={`chevron-down-arrow-english ${
-                      openDropdown === "language" ? ROTATE : ""
-                    }`}
-                  />
-                </span>
+
+                <img
+                  src={ChevronDown}
+                  alt="Chevron Down"
+                  className={`chevron-down-arrow-english ${
+                    openDropdown === "language" ? ROTATE : ""
+                  }`}
+                />
               </button>
 
               <EnglishLangaugesDropdown isOpen={openDropdown === LANGUAGE} />
             </div>
+
             <p className="loginIn">Log In</p>
             <button className="get-started">Get Started</button>
           </div>

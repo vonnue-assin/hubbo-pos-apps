@@ -13,7 +13,7 @@
 .plan-container-main-set {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
+  gap: 2rem;
 }
 
 .flex-col-card {
@@ -51,9 +51,12 @@
   --tw-border-opacity: 1;
   border-color: rgb(233 228 223 / var(--tw-border-opacity, 1));
   border-radius: 1rem;
+}
+
+.choose-a-plan-main-card {
   display: flex;
   flex-direction: column;
-  column-gap: 2rem;
+  gap: 2rem;
 }
 
 .choose-plan-sub {
@@ -231,10 +234,6 @@
     --tw-border-opacity: 1;
     border: 1px solid rgb(233 228 223 / var(--tw-border-opacity, 1));
   }
-
-  /* .silver-gold-platinum {
-    display: none;
-  } */
 
   .silver-gold-platinum-text {
     display: inline;

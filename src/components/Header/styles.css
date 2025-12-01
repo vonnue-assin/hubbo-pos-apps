@@ -136,6 +136,10 @@ a {
   transition: transform 0.3s ease;
 }
 
+.solutions-card {
+  margin-top: -2px;
+}
+
 /* ///////////////////////////////////////////////////////////////// */
 
 :root {
@@ -330,6 +334,10 @@ a {
 
   .plansandPrice-main-container .header-main-container {
     margin-top: -112px;
+  }
+
+  .plansandPrice-main-container .solutions-card {
+    margin-top: -2px;
   }
 }
 

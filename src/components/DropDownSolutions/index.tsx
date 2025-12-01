@@ -1,33 +1,69 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { solutionsData } from "../../data/solutionsData";
 import { DropDownProps } from "../../types";
-
 import "./styles.css";
 
-const DropDownSolutions: React.FC<DropDownProps> = ({ isOpen }) => {
+export interface DropdownItem {
+  id: number;
+  name: string;
+  image: string;
+  link?: string;
+}
+
+interface UnifiedDropdownProps extends DropDownProps {
+  items: DropdownItem[];
+  containerClass?: string;
+  itemClass?: string;
+}
+
+const Dropdown: React.FC<UnifiedDropdownProps> = ({
+  isOpen,
+  items,
+  containerClass = "drop-down-container",
+  itemClass = "dropdown-item",
+}) => {
   if (!isOpen) return null;
 
   return (
     <div className="dropdown-main-container">
-      <div className="drop-down-container">
-        {solutionsData.map((item) => (
-          <Link
-            key={item.id}
-            to={item.link ?? "#"}
-            className="dropdown-item"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="image-card-toggle">
-              <img src={item.image} alt={item.name} className="dropdown-icon" />
+      <div className={containerClass}>
+        {items.map((item) => {
+          const Content = (
+            <>
+              <div className="image-card-toggle">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="dropdown-icon"
+                />
+              </div>
+              <p className="item-name">{item.name}</p>
+            </>
+          );
+
+          return item.link ? (
+            <Link
+              key={item.id}
+              to={item.link}
+              className={itemClass}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {Content}
+            </Link>
+          ) : (
+            <div
+              key={item.id}
+              className={itemClass}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {Content}
             </div>
-            <p className="item-name">{item.name}</p>
-          </Link>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
 };
 
-export default DropDownSolutions;
+export default Dropdown;

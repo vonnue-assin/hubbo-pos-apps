@@ -205,8 +205,26 @@
     border-radius: 1.5rem;
   }
 
+  .freeConsultImageOne {
+    margin-top: -1px;
+  }
+
   .freeConsultImageTwo {
     display: none;
+  }
+
+  .speak-card {
+    margin-top: 1px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .freeConsultImageOne {
+    margin-top: 0px;
+  }
+
+  .speak-card {
+    margin-top: 0px;
   }
 }
 

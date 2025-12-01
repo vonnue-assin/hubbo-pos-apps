@@ -11,7 +11,7 @@ type FeaturesProps = {
 
 const Features = ({ data }: FeaturesProps) => {
   return (
-    <div className="feature-card-main-conatiner">
+    <div className="feature-card-main-">
       <div className="feature-card-main-input">
         {data.map((item) => (
           <div key={item.id} className="feature-card-spans">
