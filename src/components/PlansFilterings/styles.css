@@ -75,7 +75,8 @@
 }
 
 .height {
-  min-height: 24px;
+  /* min-height: 24px; */
+  min-height: 48px;
 }
 
 .new-wrapper {
@@ -319,6 +320,15 @@
   margin-top: -8px;
 }
 
+.silver-card-sub-card {
+  padding-bottom: 16px;
+}
+
+.features-platinum-bg .feature-name {
+  background-color: #fff8e7;
+  border-radius: 0.75rem;
+}
+
 @media screen and (min-width: 375px) {
   .best-value-card {
     white-space: nowrap;
@@ -530,5 +540,23 @@
 
   .pricing-card-wrapper {
     max-width: 300px;
+  }
+
+  .pricing-texted-cards {
+    display: flex;
+    flex-direction: row;
+    min-width: 1246px;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .card-gold {
+    margin-left: 0px;
+  }
+
+  .silver-card-sub-card {
+    padding-bottom: 16px;
   }
 }

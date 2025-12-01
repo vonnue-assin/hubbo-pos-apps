@@ -163,14 +163,19 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
           <div className="pricings-container-main">
             <p className="pricing-text">Features</p>
           </div>
-
-          <div className="pricing-texted-cards">
-            {visiblePlans.map((plan, idx) => (
-              <Features
-                key={`features-${idx}-${plan}`}
-                data={FeaturesData[plan]}
-              />
-            ))}
+          <div>
+            <div className="pricing-texted-cards">
+              {visiblePlans.map((plan, idx) => (
+                <div
+                  key={`features-${idx}-${plan}`}
+                  className={`features-wrapper ${
+                    plan === "Platinum" ? "features-platinum-bg" : ""
+                  }`}
+                >
+                  <Features data={FeaturesData[plan]} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

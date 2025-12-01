@@ -246,7 +246,11 @@ const ChooseYourPlans = () => {
                           </div>
                         </div>
 
-                        <div className="silver-card-sub-card">
+                        <div
+                          className={`silver-card-sub-card best-value-cards ${
+                            silverOpen ? "is-open" : ""
+                          }`}
+                        >
                           <div className="vertical-set">
                             <div className="additional-featured-buttons">
                               <h3 className="header-2">

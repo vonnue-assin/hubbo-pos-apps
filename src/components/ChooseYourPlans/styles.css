@@ -465,7 +465,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .arrow-card-container {
@@ -582,6 +582,10 @@
   margin-left: -11px;
 }
 
+.best-value-cards.is-open {
+  padding-bottom: 24px !important;
+}
+
 /* ////////////////////////media Queries////////////////////////// */
 
 @media screen and (min-width: 375px) {
@@ -609,9 +613,9 @@
     margin-top: 8px;
   }
 
-  .best-value .request-free-demo-button-sub {
-    margin-top: 10px;
-  }
+  /* .best-value .request-free-demo-button-sub {
+    /* margin-top: 10px; 
+  } */
 
   .silver-card-sub-card {
     padding-bottom: 16px;
