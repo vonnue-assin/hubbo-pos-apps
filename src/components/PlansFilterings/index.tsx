@@ -10,6 +10,7 @@ import {
 import { FeaturesData } from "../../data/featuresData";
 import { PLANS_DATA_FIRST_YEAR } from "../../data/pricingDataOne";
 import { PLANS_DATA_SECOND_YEAR } from "../../data/pricingDataSecondYear";
+
 import Features from "../Features";
 import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
 import PlanComparisonPriceRenderSecondYear from "../PlanComparisonPriceRenderSecondYear";
@@ -26,96 +27,82 @@ type PlansFilteringProps = {
 
 type PriceKey = "Silver" | "Gold" | "Platinum";
 
-const normalizeBasic = (value: string): string => {
+const normalizeLabel = (value: string) => {
   if (value.includes("Silver")) return SILVER_BASIC;
   if (value.includes("Gold")) return GOLD_BASIC;
   if (value.includes("Platinum")) return PLATINUM_BASIC;
   return value;
 };
 
-const mapBasicToPlanKey = (value: string): PriceKey => {
-  if (value.includes("Silver")) return "Silver";
-  if (value.includes("Gold")) return "Gold";
-  if (value.includes("Platinum")) return "Platinum";
-  return "Silver";
-};
+const mapToKey = (value: string): PriceKey =>
+  value.includes("Silver")
+    ? "Silver"
+    : value.includes("Gold")
+    ? "Gold"
+    : "Platinum";
 
-const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
-  const normalized = {
-    plus: normalizeBasic(selectedPlans.plus),
-    pro: normalizeBasic(selectedPlans.pro),
-    silver: normalizeBasic(selectedPlans.silver),
-  };
+export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
+  const plusKey = mapToKey(normalizeLabel(selectedPlans.plus));
+  const proKey = mapToKey(normalizeLabel(selectedPlans.pro));
+  const silverKey = mapToKey(normalizeLabel(selectedPlans.silver));
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener(RESIZE, handleResize);
-    return () => window.removeEventListener(RESIZE, handleResize);
+    const resize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener(RESIZE, resize);
+    return () => window.removeEventListener(RESIZE, resize);
   }, []);
 
-  const selectedPlanKeys: PriceKey[] = [
-    mapBasicToPlanKey(normalized.plus),
-    mapBasicToPlanKey(normalized.pro),
-    mapBasicToPlanKey(normalized.silver),
-  ];
+  const visiblePlans: PriceKey[] = isMobile
+    ? [plusKey, silverKey]
+    : [plusKey, proKey, silverKey];
 
-  const visiblePlans = isMobile
-    ? selectedPlanKeys.slice(0, 2)
-    : selectedPlanKeys.slice(0, 3);
+  const getTitle = (plan: PriceKey) =>
+    plan === "Silver"
+      ? SILVER_BASIC
+      : plan === "Gold"
+      ? GOLD_BASIC
+      : PLATINUM_BASIC;
 
   return (
     <div className="silver-gold-card">
       <div className="silver-gold-platinum">
-        {visiblePlans.map((planKey, idx) => {
-          const title =
-            planKey === "Silver"
-              ? SILVER_BASIC
-              : planKey === "Gold"
-              ? GOLD_BASIC
-              : PLATINUM_BASIC;
+        {visiblePlans.map((plan, i) => (
+          <div
+            key={plan + i}
+            className={`plan-filtering-main-card ${
+              plan === "Platinum" ? "plan-platinum" : ""
+            }`}
+          >
+            {plan === "Platinum" && (
+              <span className="best-value-text-plan best-value-card">
+                BEST VALUE
+              </span>
+            )}
 
-          return (
-            <div
-              key={`plan-${idx}-${planKey}`}
-              className={`plan-filtering-main-card ${
-                planKey === "Platinum" ? "plan-platinum" : ""
-              }`}
-            >
-              {planKey === "Platinum" && (
-                <span className="best-value-text-plan best-value-card">
-                  BEST VALUE
+            <div className="goldBasics">
+              <div className="title-row">
+                <h2 className="basic-text">{getTitle(plan)}</h2>
+                <p className="only-text">Software only</p>
+              </div>
+
+              <div className="new-wrapper">
+                <span className="micro-text">
+                  {plan === "Silver" ? "Microbusinesses" : "Small businesses"}
                 </span>
-              )}
-              <span className="height"></span>
-              <div className="goldBasics">
-                <div className="title-row">
-                  <h2 className="basic-text">{title}</h2>
-                  <p className="only-text">Software only</p>
-                </div>
 
-                <div className="new-wrapper">
-                  <span className="micro-text">
-                    {planKey === "Silver"
-                      ? "Microbusinesses"
-                      : "Small businesses"}
-                  </span>
-
-                  <span
-                    className={`started-button ${
-                      planKey === "Platinum" ? "get-started-platinum" : ""
-                    }`}
-                  >
-                    Get Started
-                  </span>
-                </div>
+                <span
+                  className={`started-button ${
+                    plan === "Platinum" ? "get-started-platinum" : ""
+                  }`}
+                >
+                  Get Started
+                </span>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
 
       <div className="pricing-main-card">
@@ -181,6 +168,4 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
       </div>
     </div>
   );
-};
-
-export default PlansFiltering;
+}

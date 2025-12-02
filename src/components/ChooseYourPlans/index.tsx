@@ -38,7 +38,7 @@ const ChooseYourPlans = () => {
   }, [selectedPlan]);
 
   return (
-    <section className="section-wrap">
+    <div className="section-wrap">
       <div className="sub-container">
         <h3 className="choose-ypur-plans-text">Choose your plan</h3>
 
@@ -1088,7 +1088,7 @@ const ChooseYourPlans = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

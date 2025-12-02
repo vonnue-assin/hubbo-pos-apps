@@ -699,6 +699,10 @@
   .silver-card-sub-card {
     padding-bottom: 1.5rem;
   }
+
+  .hardware-card {
+    margin-left: 0px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
