@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { ROTATE } from "../../constants/constants";
 import { footerData } from "../../data/footer";
@@ -59,7 +60,7 @@ const Footer = () => {
                     <ul className="accordion-content">
                       {item.features.map((feature, i) => (
                         <li key={i} className="feature-item">
-                          {feature}
+                          <Link to={item.link}>{feature}</Link>
                         </li>
                       ))}
                     </ul>

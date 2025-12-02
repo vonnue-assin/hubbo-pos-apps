@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
+import { footerData } from "../../data/footer";
 import DropDownFooter from "../DropDownFooter";
 
 import AppStoreExcel from "../../assets/images/app-store-xl.png";
@@ -37,60 +39,43 @@ const FooterTab = () => {
                     <span className="card">
                       <img
                         src={AppStoreExcel}
-                        alt="arrow"
+                        alt="App Store"
                         className="appStoreExcel"
                       />
                     </span>
                     <span className="card">
                       <img
                         src={GooglePlayExcel}
-                        alt="arrow"
+                        alt="Google Play"
                         className="appStoreExcel"
                       />
                     </span>
                   </div>
                 </div>
               </div>
+
               <div className="footer-sub-contents">
-                <div className="solution-card">
-                  <div className="solution">Solution</div>
-                  <div className="solution-lists">
-                    <span className="list">Cloud POS</span>
-                    <span className="list">Loyalty</span>
-                    <span className="list">Contactless Ordering</span>
-                    <span className="list">Integrations</span>
-                    <span className="list">Reporting</span>
-                    <span className="list">Number calling system</span>
+                {footerData.map((item) => (
+                  <div key={item.id} className="solution-card">
+                    <div className="solution">{item.Heading}</div>
+                    <div className="solution-lists">
+                      {item.features.map((feature, index) => (
+                        <Link key={index} to={item.link} className="list">
+                          {feature}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="solution-card">
-                  <div className="solution">Plans ＆ Pricing</div>
-                  <div className="solution-lists">
-                    <span className="list">Software Only</span>
-                    <span className="list">Software ＆ Hardware</span>
-                  </div>
-                </div>
-                <div className="solution-card">
-                  <div className="solution">Company</div>
-                  <div className="solution-lists">
-                    <span className="list">About Us</span>
-                  </div>
-                </div>
-                <div className="solution-card">
-                  <div className="solution">Support</div>
-                  <div className="solution-lists">
-                    <span className="list">Help Center</span>
-                    <span className="list">Contact Us</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
+
             <div className="hubboPos-icon">
               <div className="posImage">
                 <div className="hubbopos-card-image">
                   <img
                     src={hubboposImage}
-                    alt="arrow"
+                    alt="HubboPOS"
                     className="hubboposImage"
                   />
 
@@ -99,7 +84,7 @@ const FooterTab = () => {
                       <div className="my-content">
                         <img
                           src={malasiaImage}
-                          alt="arrow"
+                          alt="Malaysia Flag"
                           className="malasiaImage"
                         />
                         <p className="mine">MY</p>
@@ -123,14 +108,14 @@ const FooterTab = () => {
                   <span className="facebook">
                     <img
                       src={faceBookIcon}
-                      alt="arrow"
+                      alt="Facebook"
                       className="faceBookIcon"
                     />
                   </span>
                   <span className="facebook">
                     <img
                       src={instagramIcon}
-                      alt="arrow"
+                      alt="Instagram"
                       className="InstagramIcon"
                     />
                   </span>

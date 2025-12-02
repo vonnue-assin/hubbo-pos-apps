@@ -7,7 +7,7 @@ import ChevronDown from "../../assets/images/chevron-down.svg";
 import CloseImage from "../../assets/images/close.cf72762d.svg";
 import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
 import vectorImage from "../../assets/images/vector-right.bc13d4ee.svg";
-import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
+import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globeBrown.svg";
 
 import "./styles.css";
 

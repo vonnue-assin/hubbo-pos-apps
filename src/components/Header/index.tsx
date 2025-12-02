@@ -24,7 +24,7 @@ import { solutionsData } from "../../data/solutionsData";
 import { hubboData } from "../../data/hubboData";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
-import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globe-brown.svg";
+import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globeBrown.svg";
 import { ReactComponent as HubboposIconWhite } from "../../assets/svg/hubboposWhite.svg";
 import { ReactComponent as HubboposIconYellow } from "../../assets/svg/hubboposlogo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
