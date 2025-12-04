@@ -1,0 +1,21 @@
+[
+  {
+    "heading": "Basic Plan",
+    "items": [
+      { "title": "Silver (RM 990)" },
+      { "title": "Gold (RM 1,490)" },
+      { "title": "Platinum (RM 1,300)" }
+    ]
+  },
+  {
+    "heading": "Software & Hardware",
+    "items": [
+      { "title": "Silver Plus (RM 3,390)" },
+      { "title": "Silver Pro (RM 3,490)" },
+      { "title": "Gold Plus (RM 3,890)" },
+      { "title": "Gold Pro (RM 3,990)" },
+      { "title": "Platinum Plus (RM 5,000)" },
+      { "title": "Platinum Pro (RM 5,100)" }
+    ]
+  }
+]

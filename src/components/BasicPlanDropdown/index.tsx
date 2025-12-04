@@ -1,5 +1,7 @@
 import React from "react";
-import { ComparisonData } from "../../data/comparisonData";
+
+import comparisonData from "../../data/comparisonData.json";
+
 import "./styles.css";
 
 type BasicPlanProps = {
@@ -8,24 +10,20 @@ type BasicPlanProps = {
 
 const BasicPlan: React.FC<BasicPlanProps> = ({ onSelect }) => {
   return (
-    <div>
-      {ComparisonData.map((item, index) => (
-        <ul className="shadow-select-dropdown" key={index}>
-          <li className="dropdown-heading">{item.Heading}</li>
-          {item.subContents.map((sub) => (
+    <div className="shadow-select-dropdown">
+      {comparisonData.map((section, index) => (
+        <React.Fragment key={index}>
+          <li className="dropdown-heading">{section.heading}</li>
+          {section.items.map((item, i) => (
             <li
-              key={`${item.Heading}-${sub.id}`}
-              className={sub.heading ? "dropdown-heading" : "dropdown-item-set"}
-              onClick={() => {
-                if (sub.title) {
-                  onSelect(sub.title);
-                }
-              }}
+              key={`${section.heading}-${i}`}
+              className="dropdown-item-set"
+              onClick={() => onSelect(item.title)}
             >
-              {sub.title || sub.heading}
+              {item.title}
             </li>
           ))}
-        </ul>
+        </React.Fragment>
       ))}
     </div>
   );
