@@ -211,6 +211,7 @@ const Header = () => {
                   setShowSolutions(false);
                   setShowHubbo(true);
                 }}
+                isOpen={false}
               />
             </div>
           )}

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
+import EnglishLangaugesDropdown from "../LanguagesDropdown";
+
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globeBrown.svg";
-import EnglishLangaugesDropdown from "../LanguagesDropdown";
 
 const LanguageSelector: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

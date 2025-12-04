@@ -1,6 +1,7 @@
 import React from "react";
-import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
+
 import CloseImage from "../../assets/images/close.cf72762d.svg";
+import hubboposImage from "../../assets/images/hubbopos-logo-sidenav.8550feba.svg";
 
 import "./styles.css";
 

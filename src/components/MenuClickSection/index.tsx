@@ -1,24 +1,27 @@
 import React from "react";
+
+import MenuFooterButtons from "../MenuFooterButtons";
 import MenuHeader from "../MenuHeader";
 import MenuLinks from "../MenuLinks";
-import MenuFooterButtons from "../MenuFooterButtons";
 
 import "./styles.css";
 
 type MenuClickProps = {
+  isOpen: boolean;
   onClose: () => void;
   onOpenSolutions: () => void;
   onOpenHubbo: () => void;
 };
 
 const MenuClick: React.FC<MenuClickProps> = ({
+  isOpen,
   onClose,
   onOpenSolutions,
   onOpenHubbo,
 }) => {
   return (
     <div className="menuClick-main-container">
-      <div className="menuclick-sub-container">
+      <div className={`menuclick-sub-container ${isOpen ? "open" : "closed"}`}>
         <div className="menuclick-relative">
           <div className="menuclick-width">
             <div className="menuclick-height">
