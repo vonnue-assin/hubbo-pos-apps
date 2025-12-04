@@ -1,0 +1,107 @@
+.solutions-card-container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-class {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+}
+
+.list-card {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+.list-cards {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+}
+
+.list-card-plans {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+  margin-top: 0px;
+  border-bottom: 1px solid #ad6500;
+}
+
+.text-heading {
+  margin: 0px;
+  color: #472200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: "font1";
+}
+
+.text-heading-plans {
+  margin: 0px;
+  color: #472200;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-family: "font1";
+  padding-bottom: 2rem;
+}
+
+.list-card-language {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+.english-button-menu {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  font-weight: 600;
+  padding-right: 0px;
+  border-radius: 0.25rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  height: 2.5rem;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 0px;
+  margin-top: -8px;
+}
+
+.english-menu {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 500;
+  color: #472200;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  font-family: "font1";
+}
+
+.english-menu-click {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  justify-content: flex-end;
+}

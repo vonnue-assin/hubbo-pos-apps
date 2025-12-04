@@ -1,0 +1,28 @@
+.hubbopos-card-menu {
+  border-bottom: 1px solid #ffe7a9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.3rem;
+}
+
+.hubboposImageI {
+  max-width: 100%;
+  height: auto;
+}
+
+.CloseImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.closeButton {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  cursor: pointer;
+  padding: 0px;
+}

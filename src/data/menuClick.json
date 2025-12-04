@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Solutions",
+    "type": "action",
+    "action": "solutions",
+    "style": "default"
+  },
+  {
+    "label": "Why HUBBO",
+    "type": "action",
+    "action": "hubbo",
+    "style": "default"
+  },
+  {
+    "label": "Plans ＆ Pricing",
+    "type": "link",
+    "path": "/mypricing",
+    "style": "plans"
+  },
+  {
+    "label": "Contact Us",
+    "type": "link",
+    "path": "/contact",
+    "style": "plans"
+  }
+]
