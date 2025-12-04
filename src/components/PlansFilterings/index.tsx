@@ -14,7 +14,7 @@ import { FeaturesData } from "../../data/featuresData";
 import { PLANS_DATA_FIRST_YEAR } from "../../data/pricingDataOne";
 import { PLANS_DATA_SECOND_YEAR } from "../../data/pricingDataSecondYear";
 
-import Features from "../FeaturesSection";
+import Features from "../FeaturesSectionForPriceComparison";
 import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
 import PlanComparisonPriceRenderSecondYear from "../PlanComparisonPriceRenderSecondYear";
 

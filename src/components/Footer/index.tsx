@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { footerData } from "../../data/footer";
-import DropDownFooter from "../DropDownFooter";
+import DropDownFooter from "../CountrySelectorDropDown";
 
 import AppStoreExcel from "../../assets/images/app-store-xl.png";
 import ArrowDown from "../../assets/images/expand-more.7764b847.svg";
@@ -14,7 +14,7 @@ import malasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
 
 import "./styles.css";
 
-const FooterTab = () => {
+const Footer = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -133,4 +133,4 @@ const FooterTab = () => {
   );
 };
 
-export default FooterTab;
+export default Footer;

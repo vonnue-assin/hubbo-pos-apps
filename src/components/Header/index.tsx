@@ -14,7 +14,7 @@ import {
   SOLUTIONS,
 } from "../../constants/constants";
 
-import Dropdown from "../DropDownSolutions";
+import Dropdown from "../DropDownSolutionsHubbo";
 import EnglishLangaugesDropdown from "../LanguagesDropdown";
 import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";

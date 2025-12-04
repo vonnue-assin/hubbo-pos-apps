@@ -1,6 +1,6 @@
 import React from "react";
 
-import { footerMyData } from "../../data/footerMydata";
+import { countrySelectorDropDown } from "../../data/countrySelectorDropDown";
 import { DropDownProps } from "../../types";
 
 import "./styles.css";
@@ -11,7 +11,7 @@ const DropDownFooter: React.FC<DropDownProps> = ({ isOpen }) => {
   return (
     <div className="dropdown-main-footer">
       <div className="drop-down-footer">
-        {footerMyData.map((item) => (
+        {countrySelectorDropDown.map((item) => (
           <div key={item.id} className="dropdown-item">
             <div className="image-card-toggle-footer">
               <img

@@ -1,15 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { DropDownProps } from "../../types";
+import { DropDownProps, DropdownItem } from "../../types";
 import "./styles.css";
-
-export interface DropdownItem {
-  id: number;
-  name: string;
-  image: string;
-  link?: string;
-}
 
 interface UnifiedDropdownProps extends DropDownProps {
   items: DropdownItem[];

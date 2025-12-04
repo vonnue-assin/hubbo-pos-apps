@@ -4,7 +4,7 @@ import QrCodeImg from "../../assets/images/qr-code3.png";
 
 import "./styles.css";
 
-const ContactLessOrdering = () => {
+const ContactLessOrderingSectionUnderHeader = () => {
   return (
     <section className="card-container">
       <div className="contact-main-container">
@@ -43,4 +43,4 @@ const ContactLessOrdering = () => {
   );
 };
 
-export default ContactLessOrdering;
+export default ContactLessOrderingSectionUnderHeader;

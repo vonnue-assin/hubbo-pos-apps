@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 import { ROTATE } from "../../constants/constants";
 import { footerData } from "../../data/footer";
-import DropDownFooter from "../DropDownFooter";
-import FooterTab from "../FooterTab";
+import FooterTab from "../Footer";
 
 import AppStoreMd from "../../assets/images/app-store-md.png";
 import AppStore from "../../assets/images/app-store-sm (1).png";
@@ -17,6 +16,7 @@ import instagramIcon from "../../assets/images/instagram-icon (1).png";
 import MalasiaImage from "../../assets/images/malaysia-flag.ab941296.svg";
 
 import "./styles.css";
+import DropDownFooter from "../CountrySelectorDropDown";
 
 const Footer = () => {
   const [openIndex, setOpenIndex] = useState<number[]>([]);

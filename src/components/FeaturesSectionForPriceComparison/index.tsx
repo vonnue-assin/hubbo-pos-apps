@@ -9,7 +9,7 @@ type FeaturesProps = {
   data: FeatureItem[];
 };
 
-const Features = ({ data }: FeaturesProps) => {
+const FeaturesSectionForPriceComparison = ({ data }: FeaturesProps) => {
   return (
     <div className="feature-card-main-">
       <div className="feature-card-main-input">
@@ -23,4 +23,4 @@ const Features = ({ data }: FeaturesProps) => {
   );
 };
 
-export default Features;
+export default FeaturesSectionForPriceComparison;
