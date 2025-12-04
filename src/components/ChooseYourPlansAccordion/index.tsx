@@ -1,22 +1,26 @@
 import { useState } from "react";
 
+import PlanDropDown from "../PlanDropDown";
+
 import arrowDownImage from "../../assets/images/chevron-upwhite.svg";
 
 import "./styles.css";
 
-interface Props {
+type ChooseYourPlansAccordionProps = {
   selectedPlan: string;
   setSelectedPlan: (value: string) => void;
-}
+};
 
-const ChooseYourPlansAccordion = ({ selectedPlan, setSelectedPlan }: Props) => {
+const ChooseYourPlansAccordion = ({
+  selectedPlan,
+  setSelectedPlan,
+}: ChooseYourPlansAccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSelectSystem = (system: string) => {
-    setSelectedPlan(system);
+  const handleSelectSystem = (plan: string) => {
+    setSelectedPlan(plan);
     setIsOpen(false);
   };
-
   return (
     <div className="card-section">
       <button className="button-card" onClick={() => setIsOpen(!isOpen)}>
@@ -24,23 +28,7 @@ const ChooseYourPlansAccordion = ({ selectedPlan, setSelectedPlan }: Props) => {
           <div className="button-container">
             <span>{selectedPlan}</span>
 
-            {isOpen && (
-              <div className="software-dropdown shadow-select-dropdown">
-                <button
-                  className="software-drop-down-item"
-                  onClick={() => handleSelectSystem("Software Only")}
-                >
-                  Software Only
-                </button>
-
-                <button
-                  className="software-drop-down-item"
-                  onClick={() => handleSelectSystem("Software ＆ Hardware")}
-                >
-                  Software ＆ Hardware
-                </button>
-              </div>
-            )}
+            {isOpen && <PlanDropDown onSelect={handleSelectSystem} />}
 
             <img
               src={arrowDownImage}

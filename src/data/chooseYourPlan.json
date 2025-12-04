@@ -1,0 +1,4 @@
+[
+  { "label": "Software Only", "value": "software_only" },
+  { "label": "Software ＆ Hardware", "value": "software_hardware" }
+]

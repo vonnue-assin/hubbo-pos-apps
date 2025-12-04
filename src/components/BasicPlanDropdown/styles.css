@@ -1,26 +1,3 @@
-.shadow-select-dropdown {
-  --tw-shadow: 8px 8px 42px 0px rgba(49, 35, 0, 0.12);
-  --tw-shadow-colored: 8px 8px 42px 0px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  background-color: #fffefb;
-  border-radius: 0.75rem;
-  margin-top: 0.25rem;
-  position: absolute;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  top: 100%;
-  left: 1px;
-  width: 100%;
-  z-index: 10;
-  margin-top: 0.25rem;
-  display: flex;
-  animation: opacity 0.2s linear;
-  flex-direction: column;
-  cursor: pointer;
-}
-
 .dropdown-heading {
   color: #472200;
   font-size: 16px;
