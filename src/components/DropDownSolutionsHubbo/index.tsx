@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { DropDownProps, DropdownItem } from "../../types";
+
 import "./styles.css";
 
 interface UnifiedDropdownProps extends DropDownProps {
