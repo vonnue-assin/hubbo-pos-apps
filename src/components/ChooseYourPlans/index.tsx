@@ -56,7 +56,6 @@ const ChooseYourPlans = () => {
           )}
 
           <div className="software-only">
-            {/* --- PRICE TEXT --- */}
             {selectedPlan === "Software Only" ? (
               <p className="price-text">
                 Price is exclusive of set up fees and SST.
@@ -69,7 +68,7 @@ const ChooseYourPlans = () => {
             )}
 
             {selectedPlan === "Software Only" && (
-              <div className="silverBasic">
+              <div className="silverBasic software">
                 <div className="swipper-basic-main software">
                   <div className="swiper-wrapper" ref={activeSliderRef}>
                     <div className="swiper-slide">
@@ -150,7 +149,6 @@ const ChooseYourPlans = () => {
                           }`}
                         >
                           <div className="vertical-set">
-                            {/* Additional features */}
                             <div className="additional-featured-buttons">
                               <h3 className="header-2">
                                 <button
@@ -397,7 +395,6 @@ const ChooseYourPlans = () => {
                             }`}
                           >
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button
@@ -498,7 +495,6 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button
@@ -610,7 +606,6 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button
@@ -713,7 +708,6 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button
@@ -835,7 +829,6 @@ const ChooseYourPlans = () => {
 
                           <div className="silver-card-sub-card">
                             <div className="vertical-set">
-                              {/* Additional features */}
                               <div className="additional-featured-buttons">
                                 <h3 className="header-2">
                                   <button

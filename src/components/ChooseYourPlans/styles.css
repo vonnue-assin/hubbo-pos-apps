@@ -218,20 +218,6 @@
   padding-bottom: 16px;
 }
 
-/* .silver-card-sub-card {
-  padding-top: 1.5rem;
-  padding-bottom: 16px;
-}
-
-.silver-card-sub-card.is-open {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.silver-card-sub-card.is-open {
-  padding-bottom: 24px;
-} */
-
 .vertical-set {
   width: 100%;
   min-width: 100%;
@@ -465,7 +451,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 
 .arrow-card-container {
@@ -586,6 +572,14 @@
   padding-bottom: 24px !important;
 }
 
+.silverBasic {
+  margin-bottom: 0px;
+}
+
+.speak-card {
+  margin-top: 1px;
+}
+
 /* ////////////////////////media Queries////////////////////////// */
 
 @media screen and (min-width: 375px) {
@@ -594,7 +588,7 @@
   }
 
   .swiper-slide {
-    width: 321px;
+    width: 323px;
   }
 
   .swiper-text-card {
@@ -613,16 +607,16 @@
     margin-top: 8px;
   }
 
-  /* .best-value .request-free-demo-button-sub {
-    /* margin-top: 10px; 
-  } */
-
   .silver-card-sub-card {
     padding-bottom: 16px;
   }
 
   .free-consultation-main {
     margin-top: -1px;
+  }
+
+  .arrow-cards {
+    margin-top: 3rem;
   }
 }
 
@@ -638,14 +632,23 @@
   .best-value .request-free-demo-button-sub {
     margin-top: 10px;
   }
+
+  .swiper-text-card .silver-card-sub-card.is-open {
+    margin-bottom: -8px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .sub-container {
     padding-top: 5rem;
-    padding-bottom: 124px;
+    /* padding-bottom: 124px; */
+    padding-bottom: 5rem;
     padding-left: 3.5rem;
     padding-right: 3.5rem;
+  }
+
+  .software {
+    margin-bottom: 21px;
   }
 
   .Chooseyour-plans-container {
@@ -702,6 +705,14 @@
 
   .hardware-card {
     margin-left: 0px;
+  }
+
+  .hardware {
+    margin-bottom: -12px;
+  }
+
+  .swiper-text-card .silver-card-sub-card.is-open {
+    margin-bottom: 0px;
   }
 }
 
@@ -764,7 +775,7 @@
   }
 
   .software .swiper-slide {
-    width: 399.333px;
+    width: 400px;
   }
 
   .swiper-wrapper {
@@ -776,11 +787,11 @@
   }
 
   .hardware-software .swiper-slide {
-    width: 312.334px;
+    width: 312px;
   }
 
   .hardware-software .request-free-demo-button-sub {
-    margin-top: 8px;
+    margin-top: unset;
   }
 
   .platinum {
@@ -789,5 +800,23 @@
 
   .card-gold {
     margin-left: 0px;
+  }
+
+  .hardware {
+    margin-bottom: -53px;
+  }
+
+  .software {
+    margin-bottom: 0px;
+  }
+
+  .silver-card-sub-card .is-open {
+    margin-left: -1px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .hardware-software .swiper-slide {
+    width: 312px;
   }
 }

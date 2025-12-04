@@ -1,9 +1,9 @@
 import ChooseYourPlans from "../../components/ChooseYourPlans";
-import Footer from "../../components/Footer";
+import Footer from "../../components/FooterAccordion";
 import FreeConsultaion from "../../components/FreeConsultationSection";
 import Header from "../../components/Header";
-import PlanComparison from "../../components/PlanComparison";
-import Pricing from "../../components/Pricing";
+import PlanComparison from "../../components/PlanComparisonSection";
+import Pricing from "../../components/PricingSection";
 
 import "./styles.css";
 

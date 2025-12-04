@@ -18,7 +18,7 @@ import Dropdown from "../DropDownSolutions";
 import EnglishLangaugesDropdown from "../LanguagesDropdown";
 import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";
-import WhyHubbo from "../WhyHubbo";
+import WhyHubbo from "../WhyHubboMenuClickSection";
 
 import { solutionsData } from "../../data/solutionsData";
 import { hubboData } from "../../data/hubboData";

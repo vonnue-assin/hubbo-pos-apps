@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
 import {
+  GOLD,
   GOLD_BASIC,
+  PLATINUM,
   PLATINUM_BASIC,
   RESIZE,
+  SILVER,
   SILVER_BASIC,
 } from "../../constants/constants";
 
@@ -11,7 +14,7 @@ import { FeaturesData } from "../../data/featuresData";
 import { PLANS_DATA_FIRST_YEAR } from "../../data/pricingDataOne";
 import { PLANS_DATA_SECOND_YEAR } from "../../data/pricingDataSecondYear";
 
-import Features from "../Features";
+import Features from "../FeaturesSection";
 import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
 import PlanComparisonPriceRenderSecondYear from "../PlanComparisonPriceRenderSecondYear";
 
@@ -25,7 +28,7 @@ type PlansFilteringProps = {
   };
 };
 
-type PriceKey = "Silver" | "Gold" | "Platinum";
+type PriceKey = typeof SILVER | typeof GOLD | typeof PLATINUM;
 
 const normalizeLabel = (value: string) => {
   if (value.includes("Silver")) return SILVER_BASIC;
@@ -34,17 +37,13 @@ const normalizeLabel = (value: string) => {
   return value;
 };
 
-const mapToKey = (value: string): PriceKey =>
-  value.includes("Silver")
-    ? "Silver"
-    : value.includes("Gold")
-    ? "Gold"
-    : "Platinum";
+const mapToPriceKeys = (value: string): PriceKey =>
+  value.includes(SILVER) ? SILVER : value.includes(GOLD) ? GOLD : PLATINUM;
 
 export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
-  const plusKey = mapToKey(normalizeLabel(selectedPlans.plus));
-  const proKey = mapToKey(normalizeLabel(selectedPlans.pro));
-  const silverKey = mapToKey(normalizeLabel(selectedPlans.silver));
+  const plusKey = mapToPriceKeys(normalizeLabel(selectedPlans.plus));
+  const proKey = mapToPriceKeys(normalizeLabel(selectedPlans.pro));
+  const silverKey = mapToPriceKeys(normalizeLabel(selectedPlans.silver));
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -80,6 +79,7 @@ export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
                 BEST VALUE
               </span>
             )}
+            <span className="height"></span>
 
             <div className="goldBasics">
               <div className="title-row">

@@ -1,6 +1,6 @@
-import Footer from "../../components/Footer";
+import Footer from "../../components/FooterAccordion";
 import Header from "../../components/Header";
-import HelpHere from "../../components/HelpHere";
+import HelpHere from "../../components/HelpHereSection";
 import NewToHubboPos from "../../components/NewToHubboPos";
 
 import "./styles.css";

@@ -75,8 +75,8 @@
 }
 
 .height {
-  /* min-height: 24px; */
-  min-height: 28px;
+  min-height: 24px;
+  /* min-height: 28px; */
 }
 
 .new-wrapper {
@@ -361,6 +361,18 @@
   .best-value-card .best-value-text-plan {
     white-space: nowrap;
     height: unset;
+  }
+
+  .best-value-text-plan {
+    left: 37%;
+  }
+
+  .height {
+    min-height: 48px;
+  }
+
+  .goldBasics {
+    margin-top: -24px;
   }
 }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { SILVER_RM } from "../../constants/constants";
-import BasicPlan from "../BasicPlan";
+import BasicPlan from "../BasicPlanDropdown";
 import PlansFiltering from "../PlansFilterings";
 
 import DownArrowImage from "../../assets/images/chevron-down.svg";
