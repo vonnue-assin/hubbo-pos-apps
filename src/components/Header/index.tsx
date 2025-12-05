@@ -193,29 +193,40 @@ const Header = () => {
         </div>
       </div>
 
-      {isMobile && isMenuOpen && (
-        <div className="menuLay" onClick={() => setIsMenuOpen(false)}>
-          {showSolutions ? (
-            <Solutions onClose={() => setShowSolutions(false)} />
-          ) : showHubbo ? (
-            <WhyHubbo onClose={() => setShowHubbo(false)} />
-          ) : (
-            <div onClick={(e) => e.stopPropagation()}>
-              <MenuClick
-                onClose={() => setIsMenuOpen(false)}
-                onOpenSolutions={() => {
-                  setShowHubbo(false);
-                  setShowSolutions(true);
-                }}
-                onOpenHubbo={() => {
-                  setShowSolutions(false);
-                  setShowHubbo(true);
-                }}
-                isOpen={false}
-              />
-            </div>
+      {isMobile && (
+        <>
+          {isMenuOpen && (
+            <div
+              className="menuLay"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setShowSolutions(false);
+                setShowHubbo(false);
+              }}
+            ></div>
           )}
-        </div>
+
+          <div onClick={(e) => e.stopPropagation()}>
+            <MenuClick
+              isOpen={isMenuOpen && !showSolutions && !showHubbo}
+              onClose={() => setIsMenuOpen(false)}
+              onOpenSolutions={() => {
+                setShowHubbo(false);
+                setShowSolutions(true);
+              }}
+              onOpenHubbo={() => {
+                setShowSolutions(false);
+                setShowHubbo(true);
+              }}
+            />
+          </div>
+
+          {showSolutions && (
+            <Solutions onClose={() => setShowSolutions(false)} />
+          )}
+
+          {showHubbo && <WhyHubbo onClose={() => setShowHubbo(false)} />}
+        </>
       )}
     </div>
   );

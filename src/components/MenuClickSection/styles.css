@@ -1,13 +1,8 @@
 :root {
-  --tw-translate-x: 0px;
-  --tw-translate-y: 0;
-  --tw-skew-x: 0;
-  --tw-rotate: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
+  --color-brown-rgb: 132 107 84;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
-/* /////////////////////////////////////////////////////////////////// */
 
 .menuClick-main-container {
   position: relative;
@@ -18,24 +13,27 @@
   flex-direction: column;
 }
 
-:root {
-  --color-brown-rgb: 132 107 84;
+@media screen and (min-width: 375px) {
+  .menuClick-main-container {
+    width: 375px;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .menuClick-main-container {
+    width: 420px !important;
+  }
 }
 
 .menuLay {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 998;
   width: 100%;
   height: 100vh;
   background-color: rgb(var(--color-brown-rgb) / 0.4);
   display: flex;
   justify-content: flex-start;
-}
-
-.menuClick-main-container.menu-open .menuclick-sub-container {
-  left: 0;
-  opacity: 1;
 }
 
 .menuclick-sub-container {
@@ -45,18 +43,21 @@
   background-color: #fff5db;
   display: flex;
   flex-direction: column;
-  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
-  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-    0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  position: relative;
+  position: fixed;
+  top: 0;
   left: 0;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translateX(-100%);
+  transition: transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+  box-shadow: var(--tw-shadow);
+  z-index: 9999;
+}
+
+.menuclick-sub-container.open {
+  transform: translateX(0);
+}
+
+.menuclick-sub-container.closed {
+  transform: translateX(-101%);
 }
 
 .menuclick-relative {
@@ -85,11 +86,8 @@
   flex-direction: column;
 }
 
-/* //////////////////////////////////////////////////////////////// */
-
 .buttons-containers {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 0 1.5rem;
   width: 100%;
   margin-bottom: 3px;
   background-color: rgb(var(--dark-brown-300) / 0.4);
@@ -97,35 +95,31 @@
 
 .get-started-buttons {
   color: #472200;
-  text-transform: capitalize;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -0.1px;
   font-weight: 600;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 18px 0;
   background-color: #fff5db;
   border: 1px solid #472200;
   border-radius: 1rem;
   width: 100%;
   margin-bottom: 1rem;
   font-family: "font1";
+  text-transform: capitalize;
 }
 
 .free-demo-button-menu {
   color: #fff;
-  text-transform: capitalize;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: -0.1px;
   font-weight: 600;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 18px 0;
   background-color: #472200;
-  width: 100%;
   border-radius: 1rem;
-  font-family: "font1";
   border: none;
+  width: 100%;
+  font-family: "font1";
+  text-transform: capitalize;
 }
 
 .click-event > .dropdown-main-container-languages {
@@ -134,8 +128,7 @@
 }
 
 .click-event > .item-name-english {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 .chevron-down-arrow-english-event {
@@ -147,35 +140,9 @@
   transition: transform 0.3s ease;
 }
 
-.click-event > .chevron-down-arrow-english-menu {
-  margin-top: 2px;
-}
-
-@media screen and (min-width: 375px) {
-  .menuClick-main-container {
-    position: relative;
-    z-index: 1000;
-    width: 375px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 425px) {
-  .menuClick-main-container {
-    width: 420px !important;
-  }
-}
-
 @media screen and (min-width: 425px) {
   .click-event > .dropdown-main-container-languages {
-    top: 46%;
     right: -15%;
-  }
-
-  .click-event > .chevron-down-arrow-english-menu {
-    margin-top: 0px;
   }
 }
 
@@ -184,7 +151,6 @@
     top: 45%;
     right: -14%;
   }
-
   .chevron-down-arrow-english-event {
     margin-top: 0px;
   }
