@@ -129,46 +129,6 @@
   border-radius: 1.5rem;
 }
 
-.hardware-pagination {
-  position: absolute;
-  text-align: center;
-  transition: opacity 0.3s;
-  transform: translateZ(0);
-  z-index: 10;
-}
-
-.hardware-arrows {
-  display: flex;
-  margin-top: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.arrow-card-container-hardware {
-  display: flex;
-  align-items: center;
-}
-
-.arrow-buttons-hardware {
-  cursor: pointer;
-  padding-left: 27px;
-  padding-right: 27px;
-  background-color: transparent;
-  border: none;
-}
-
-.hardware .swiper-pagination {
-  bottom: 14px;
-}
-
-.hardware .arrowbuttonLeft {
-  margin-top: 5px;
-}
-
-.hardware .arrowbuttonRight {
-  margin-top: 8px;
-}
-
 .hard .swiper-text-card {
   margin-left: 0px;
 }

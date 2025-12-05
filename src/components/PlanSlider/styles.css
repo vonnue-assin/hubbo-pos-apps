@@ -1,0 +1,95 @@
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.3s;
+  transform: translateZ(0);
+  z-index: 10;
+  left: 51%;
+  bottom: 13px;
+  width: -moz-max-content;
+  width: max-content;
+  transform: translateX(-50%) !important;
+}
+
+.bullets.active-bullet {
+  background-color: #6c4c2c;
+}
+
+.bullets {
+  width: 12px;
+  height: 12px;
+  background: #d9b88a;
+  margin-right: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bullets-active {
+  background: #6c4c2c;
+}
+
+.arrow-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.arrow-card-container {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-buttons {
+  cursor: pointer;
+  text-transform: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  padding-right: 31px;
+  padding-left: 31px;
+  padding-top: 0px;
+}
+
+.arrowbuttonLeft {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem;
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.arrowbuttonRight {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem;
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.px-three {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  width: 78px;
+}
+
+.best-value .request-free-demo-button-sub {
+  margin-top: 2px;
+}
+
+.hardware .feature-card-main {
+  padding-top: 12px;
+}
+
+.pro {
+  margin-left: 1px;
+}
+
+.swiper-wrapper {
+  justify-content: flex-start !important;
+}

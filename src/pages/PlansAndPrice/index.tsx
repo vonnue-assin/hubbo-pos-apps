@@ -1,4 +1,4 @@
-import ChooseYourPlans from "../../components/ChooseYourPlans";
+import ChooseYourPlansMain from "../../components/ChooseYourPlansMain";
 import Footer from "../../components/FooterAccordion";
 import FreeConsultaion from "../../components/FreeConsultationSection";
 import Header from "../../components/Header";
@@ -13,7 +13,7 @@ export const PlansAndPrice = () => {
       <Header />
       <Pricing />
       <div className="section-3">
-        <ChooseYourPlans />
+        <ChooseYourPlansMain />
         <FreeConsultaion />
       </div>
       <PlanComparison />

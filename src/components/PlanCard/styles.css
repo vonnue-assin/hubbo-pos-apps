@@ -1,0 +1,36 @@
+.card-spacer {
+  flex-grow: 1;
+}
+
+.border-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.speak-card {
+  margin-top: 1px;
+}
+
+.price-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+}
+
+.swiper-slide {
+  display: flex;
+  height: auto !important;
+}
+
+.swiper-text-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.desktop-tabs {
+  display: none;
+}

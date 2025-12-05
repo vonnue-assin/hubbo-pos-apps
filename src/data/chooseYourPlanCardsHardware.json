@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "name": "Silver Plus",
+    "price": "3,390",
+    "billing1": "Payable first year",
+    "billing2": "RM 990 annually after",
+    "features": ["1x Single-screen POS device with built-in NFC Reader"],
+    "included": "silver"
+  },
+  {
+    "id": 2,
+    "name": "Silver Pro",
+    "price": "3,490",
+    "billing1": "Payable first year",
+    "billing2": "RM 990 annually after",
+    "features": ["1x Dual screen POS device with NFC Reader", "1x QR scanner"],
+    "included": "silver"
+  },
+  {
+    "id": 3,
+    "name": "Gold Plus",
+    "price": "3,890",
+    "billing1": "Payable first year",
+    "billing2": "RM 1,490 annually after",
+    "features": [
+      "1x Single-screen POS device with built-in NFC Reader Delivery platform integrations"
+    ],
+    "included": "gold"
+  },
+  {
+    "id": 4,
+    "name": "Gold Pro",
+    "price": "3,990",
+    "billing1": "Payable first year",
+    "billing2": "RM 1,490 annually after",
+    "features": [
+      "1x Dual screen POS device with NFC Reader",
+      "1x QR scanner",
+      "Delivery platform integrations"
+    ],
+    "included": "gold"
+  },
+  {
+    "id": 5,
+    "name": "Platinum Plus",
+    "price": "5,000",
+    "billing1": "Payable two year",
+    "billing2": "RM 2,600 biennially after",
+    "features": [
+      "1x Single-screen POS device with built-in NFC Reader",
+      "Delivery platform integrations"
+    ],
+    "included": "platinum"
+  },
+  {
+    "id": 6,
+    "name": "Platinum Pro",
+    "price": "5,100",
+    "billing1": "Payable two year",
+    "billing2": "RM 2,600 biennially after",
+    "features": [
+      "1x Dual screen POS device",
+      "1x QR scanner",
+      "Delivery platform integrations"
+    ],
+    "included": "platinum",
+    "flag": "BEST VALUE"
+  }
+]

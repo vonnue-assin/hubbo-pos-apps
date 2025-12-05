@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Silver Basic",
+    "price": "990",
+    "year": "1 year plan",
+    "type": "software",
+    "flag": null,
+    "isPremium": false,
+    "additionalFeatures": [],
+    "included": true
+  },
+  {
+    "id": 2,
+    "name": "Gold Basic",
+    "price": "1,490",
+    "year": "1 year plan",
+    "type": "software",
+    "flag": null,
+    "isPremium": false,
+    "additionalFeatures": ["Delivery Platform Integration"],
+    "included": true
+  },
+  {
+    "id": 3,
+    "name": "Platinum Basic",
+    "price": "2,600",
+    "year": "2 year plan",
+    "type": "software",
+    "flag": "BEST VALUE",
+    "isPremium": true,
+    "additionalFeatures": ["Delivery Platform Integration"],
+    "included": true
+  }
+]
