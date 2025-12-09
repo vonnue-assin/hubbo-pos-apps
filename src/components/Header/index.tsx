@@ -14,14 +14,14 @@ import {
   SOLUTIONS,
 } from "../../constants/constants";
 
+import headerMenu from "../../data/header.json";
+import { hubboData } from "../../data/hubboData";
+import { solutionsData } from "../../data/solutionsData";
 import Dropdown from "../DropDownSolutionsHubbo";
 import EnglishLangaugesDropdown from "../LanguagesDropdown";
 import MenuClick from "../MenuClickSection";
 import Solutions from "../Solutions";
 import WhyHubbo from "../WhyHubboMenuClickSection";
-
-import { solutionsData } from "../../data/solutionsData";
-import { hubboData } from "../../data/hubboData";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
 import { ReactComponent as GlobeBrownIcon } from "../../assets/svg/globeBrown.svg";
@@ -44,10 +44,8 @@ const Header = () => {
 
   useEffect(() => {
     const checkIsMobileView = () => setIsMobile(window.innerWidth <= 768);
-
     checkIsMobileView();
     window.addEventListener(RESIZE, checkIsMobileView);
-
     return () => window.removeEventListener(RESIZE, checkIsMobileView);
   }, []);
 
@@ -112,7 +110,7 @@ const Header = () => {
                 className="solutions-price-card"
                 onClick={() => toggleDropdown("solutions")}
               >
-                <p className="solutions">Solutions</p>
+                <p className="solutions">{headerMenu.mainMenu.solutions}</p>
                 <img
                   src={ChevronDown}
                   alt="Chevron Down"
@@ -130,7 +128,7 @@ const Header = () => {
               />
 
               <p className="price-and-plans">
-                <Link to="/mypricing">Plans ＆ Pricing</Link>
+                <Link to="/mypricing">{headerMenu.mainMenu.plansPricing}</Link>
               </p>
 
               <div className="why-hubbo-container">
@@ -138,7 +136,7 @@ const Header = () => {
                   className="button-con-hubbo"
                   onClick={() => toggleDropdown("hubbo")}
                 >
-                  <p className="why-hubbo">Why HUBBO</p>
+                  <p className="why-hubbo">{headerMenu.mainMenu.hubbo}</p>
                   <img
                     src={ChevronDown}
                     alt="Chevron Down"
@@ -157,7 +155,7 @@ const Header = () => {
               </div>
 
               <p className="contact-us">
-                <Link to="/contact">Contact Us</Link>
+                <Link to="/contact">{headerMenu.mainMenu.contact}</Link>
               </p>
             </div>
           )}

@@ -20,7 +20,8 @@
 }
 
 .tab-button {
-  background-color: white;
+  /* background-color: white; */
+  background-color: #fffefb;
   color: #472200;
   border: none;
   outline: none;

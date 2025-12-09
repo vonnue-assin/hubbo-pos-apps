@@ -11,7 +11,7 @@ const HardWarePlanSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [allIncludedOpen, setAllIncludedOpen] = useState(false);
-  const [allAdditionalOpen, setAllAdditionalOpen] = useState(false);
+  const [allAdditionalOpen, setAllAdditionalOpen] = useState(true);
 
   useEffect(() => {
     const slider = sliderRef.current;

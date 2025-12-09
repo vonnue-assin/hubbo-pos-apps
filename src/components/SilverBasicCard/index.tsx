@@ -3,6 +3,8 @@ import { useState } from "react";
 import ArrowDownImage from "../../../assets/images/chevron-down.svg";
 import Included from "../WhatsIncludedDropdown";
 
+import "./styles.css";
+
 const SilverBasicCard = () => {
   const [open, setOpen] = useState(true);
 
@@ -21,7 +23,9 @@ const SilverBasicCard = () => {
             </div>
           </div>
 
-          <div className={`silver-card-sub-card ${open ? "is-open" : ""}`}>
+          <div
+            className={`silver-card-sub-card ${open ? "is-open" : "closed"}`}
+          >
             <button className="button-include" onClick={() => setOpen(!open)}>
               <span className="include-text">What’s included :</span>
               <img

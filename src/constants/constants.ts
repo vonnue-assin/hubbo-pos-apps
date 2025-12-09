@@ -16,3 +16,4 @@ export const SILVER_RM = "Silver (RM 990)";
 export const SILVER = "Silver" as const;
 export const GOLD = "Gold" as const;
 export const PLATINUM = "Platinum" as const;
+export const MOUSEDOWN = "mousedown";

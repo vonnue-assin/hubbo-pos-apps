@@ -8,10 +8,6 @@
   height: 100%;
 }
 
-.speak-card {
-  margin-top: 1px;
-}
-
 .price-cards {
   display: flex;
   flex-direction: column;

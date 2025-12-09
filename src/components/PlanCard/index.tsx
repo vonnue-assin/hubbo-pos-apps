@@ -93,7 +93,7 @@ const SoftwarePlanCard = ({
                 className="button-include"
                 onClick={() => setOpenIncluded(!openIncluded)}
               >
-                <span className="include-text">What’s included:</span>
+                <span className="include-text">What’s included :</span>
                 <img
                   src={ArrowDownImage}
                   className={`ArrowDownImage ${openIncluded ? "rotated" : ""}`}

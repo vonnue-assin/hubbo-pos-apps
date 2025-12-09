@@ -8,3 +8,8 @@ export type DropdownItem = {
   image: string;
   link?: string;
 };
+
+export type PlanConfigurations = {
+  key: "plus" | "pro" | "silver";
+  className: string;
+};

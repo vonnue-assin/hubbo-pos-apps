@@ -176,7 +176,7 @@
 .silver-card-sub-card {
   vertical-align: top;
   padding-top: 1.5rem;
-  padding-bottom: 20px;
+  padding-bottom: 1.5rem;
   background-color: #fffcf4;
   flex-grow: 1;
   width: 100%;
@@ -223,7 +223,7 @@
   display: flex;
   flex-direction: column;
   /* gap: 0.5rem; */
-  gap: 4px;
+  gap: 8px;
 }
 
 .header-3 {
@@ -444,7 +444,7 @@
 
 .feature-card-main.open {
   max-height: 500px;
-  padding-top: 1.25rem;
+  /* padding-top: 1.25rem; */
 }
 
 .feature-card-main.close {
@@ -484,16 +484,6 @@
   display: block;
 }
 
-@media screen and (min-width: 768px) {
-  .desktop-tabs {
-    display: block;
-  }
-
-  .mobile-accordion {
-    display: none;
-  }
-}
-
 /* ////////////////////////media Queries////////////////////////// */
 
 @media screen and (min-width: 375px) {
@@ -510,7 +500,7 @@
   }
 
   .request-free-demo-button-sub {
-    margin-top: -30px;
+    margin-top: -8px;
   }
 
   .feature-card {
@@ -521,13 +511,9 @@
     margin-top: 8px;
   }
 
-  .silver-card-sub-card {
-    padding-bottom: 16px;
-  }
-
-  .free-consultation-main {
+  /* .free-consultation-main {
     margin-top: -1px;
-  }
+  } */
 
   .arrow-cards {
     margin-top: 3rem;
@@ -628,12 +614,23 @@
   .swiper-text-card .silver-card-sub-card.is-open {
     margin-bottom: 0px;
   }
+
+  @media screen and (min-width: 768px) {
+    .desktop-tabs {
+      display: block;
+    }
+
+    .mobile-accordion {
+      display: none;
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .sub-container {
     padding-top: 6rem;
-    padding-bottom: 6.7rem;
+    /* padding-bottom: 6.7rem; */
+    padding-bottom: 3rem;
     padding-left: 3rem;
     padding-right: 3rem;
     gap: 4rem;
@@ -673,6 +670,11 @@
 
   .platinum {
     margin-left: 0px;
+  }
+
+  .price-cards {
+    gap: 3rem;
+    height: 100%;
   }
 }
 
@@ -718,10 +720,6 @@
 
   .hardware {
     margin-bottom: -53px;
-  }
-
-  .software {
-    margin-bottom: 0px;
   }
 
   .silver-card-sub-card .is-open {

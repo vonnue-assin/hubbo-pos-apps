@@ -3,20 +3,15 @@ import { useEffect, useState } from "react";
 import {
   GOLD,
   GOLD_BASIC,
-  PLATINUM,
   PLATINUM_BASIC,
   RESIZE,
   SILVER,
   SILVER_BASIC,
 } from "../../constants/constants";
-
 import { FeaturesData } from "../../data/featuresData";
-import { PLANS_DATA_FIRST_YEAR } from "../../data/pricingDataOne";
-import { PLANS_DATA_SECOND_YEAR } from "../../data/pricingDataSecondYear";
-
+import { PLANS_DATA } from "../../data/pricingDataOne";
 import Features from "../FeaturesSectionForPriceComparison";
-import PlanComparisonPriceRender from "../PlanComparisonPriceRender";
-import PlanComparisonPriceRenderSecondYear from "../PlanComparisonPriceRenderSecondYear";
+import PlanComparisonPriceCard from "../PlanComparisonPriceRender";
 
 import "./styles.css";
 
@@ -28,7 +23,7 @@ type PlansFilteringProps = {
   };
 };
 
-type PriceKey = typeof SILVER | typeof GOLD | typeof PLATINUM;
+type PriceKey = "Silver" | "Gold" | "Platinum";
 
 const normalizeLabel = (value: string) => {
   if (value.includes("Silver")) return SILVER_BASIC;
@@ -38,7 +33,11 @@ const normalizeLabel = (value: string) => {
 };
 
 const mapToPriceKeys = (value: string): PriceKey =>
-  value.includes(SILVER) ? SILVER : value.includes(GOLD) ? GOLD : PLATINUM;
+  value.includes(SILVER)
+    ? "Silver"
+    : value.includes(GOLD)
+    ? "Gold"
+    : "Platinum";
 
 export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
   const plusKey = mapToPriceKeys(normalizeLabel(selectedPlans.plus));
@@ -79,6 +78,7 @@ export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
                 BEST VALUE
               </span>
             )}
+
             <span className="height"></span>
 
             <div className="goldBasics">
@@ -110,38 +110,38 @@ export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
           <p className="pricing-text">Pricing</p>
         </div>
 
-        <div className="price-renders-card">
-          <div className="price-renders-card-one">
-            {visiblePlans.map((plan, idx) => (
-              <div
-                key={`first-${idx}-${plan}`}
-                className={`pricing-card-wrapper ${
-                  plan === "Platinum" ? "platinum-bg" : ""
-                }`}
-              >
-                <PlanComparisonPriceRender
-                  plan={plan}
-                  data={PLANS_DATA_FIRST_YEAR[plan]}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="price-renders-card first-year-group">
+          {visiblePlans.map((plan, idx) => (
+            <div
+              key={`first-${idx}-${plan}`}
+              className={`pricing-card-wrapper ${
+                plan === "Platinum" ? "platinum-bg" : ""
+              }`}
+            >
+              <PlanComparisonPriceCard
+                type="first"
+                plan={plan}
+                data={PLANS_DATA[plan]}
+              />
+            </div>
+          ))}
+        </div>
 
-          <div className="price-renders-card-one">
-            {visiblePlans.map((plan, idx) => (
-              <div
-                key={`second-${idx}-${plan}`}
-                className={`pricing-card-wrapper ${
-                  plan === "Platinum" ? "platinum-bg" : ""
-                }`}
-              >
-                <PlanComparisonPriceRenderSecondYear
-                  plan={plan}
-                  data={PLANS_DATA_SECOND_YEAR[plan]}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="price-renders-card second-year-group">
+          {visiblePlans.map((plan, idx) => (
+            <div
+              key={`second-${idx}-${plan}`}
+              className={`pricing-card-wrapper ${
+                plan === "Platinum" ? "platinum-bg" : ""
+              }`}
+            >
+              <PlanComparisonPriceCard
+                type="second"
+                plan={plan}
+                data={PLANS_DATA[plan]}
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -150,19 +150,18 @@ export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
           <div className="pricings-container-main">
             <p className="pricing-text">Features</p>
           </div>
-          <div>
-            <div className="pricing-texted-cards">
-              {visiblePlans.map((plan, idx) => (
-                <div
-                  key={`features-${idx}-${plan}`}
-                  className={`features-wrapper ${
-                    plan === "Platinum" ? "features-platinum-bg" : ""
-                  }`}
-                >
-                  <Features data={FeaturesData[plan]} />
-                </div>
-              ))}
-            </div>
+
+          <div className="pricing-texted-cards">
+            {visiblePlans.map((plan, idx) => (
+              <div
+                key={`features-${idx}-${plan}`}
+                className={`features-wrapper ${
+                  plan === "Platinum" ? "features-platinum-bg" : ""
+                }`}
+              >
+                <Features data={FeaturesData[plan]} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

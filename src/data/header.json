@@ -1,0 +1,13 @@
+{
+  "mainMenu": {
+    "solutions": "Solutions",
+    "plansPricing": "Plans ＆ Pricing",
+    "hubbo": "Why HUBBO",
+    "contact": "Contact Us"
+  },
+  "languages": [
+    { "code": "EN", "label": "English" },
+    { "code": "MY", "label": "Malay" },
+    { "code": "CN", "label": "Chinese" }
+  ]
+}

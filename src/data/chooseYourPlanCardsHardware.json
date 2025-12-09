@@ -24,7 +24,7 @@
     "billing1": "Payable first year",
     "billing2": "RM 1,490 annually after",
     "features": [
-      "1x Single-screen POS device with built-in NFC Reader Delivery platform integrations"
+      "1x Single-screen POS device with built-in NFC ReaderDelivery platform integrations"
     ],
     "included": "gold"
   },
@@ -48,7 +48,7 @@
     "billing1": "Payable two year",
     "billing2": "RM 2,600 biennially after",
     "features": [
-      "1x Single-screen POS device with built-in NFC Reader",
+      "1x Single-screen POS device with built-in-NFC Reader",
       "Delivery platform integrations"
     ],
     "included": "platinum"

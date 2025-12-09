@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
+import { SCROLL } from "../../constants/constants";
 import PlanCard from "../PlanCard";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import chooseYourPlanCards from "../../data/chooseYourPlanCards.json";
 
 import "./styles.css";
-import { SCROLL } from "../../constants/constants";
 
 const PlanSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -56,10 +56,19 @@ const PlanSlider = () => {
 
   return (
     <>
-      <div className="swipper-basic-main software">
+      <div
+        className={`swipper-basic-main software ${
+          openIncluded ? "accordion-open" : "accordion-closed"
+        }`}
+      >
         <div className="swiper-wrapper" ref={sliderRef}>
           {chooseYourPlanCards.map((plan) => (
-            <div className="swiper-slide" key={plan.id}>
+            <div
+              className={`swiper-slide ${
+                openIncluded ? "accordion-open" : "accordion-closed"
+              }`}
+              key={plan.id}
+            >
               <PlanCard
                 plan={plan}
                 openIncluded={openIncluded}

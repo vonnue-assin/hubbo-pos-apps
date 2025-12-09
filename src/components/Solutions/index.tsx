@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+
 import { solutionsData } from "../../data/solutionsData";
+
 import leftArrowIcon from "../../assets/images/chevron-left.813f13ce.svg";
 import CloseIcon from "../../assets/images/close.cf72762d.svg";
+
 import "./styles.css";
 
 const Solutions = ({ onClose }: { onClose: () => void }) => {

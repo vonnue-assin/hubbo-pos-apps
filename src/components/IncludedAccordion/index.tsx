@@ -9,7 +9,7 @@ const IncludedAccordion = ({ children }: Props) => {
   const [open, setOpen] = useState(true);
 
   return (
-    <div className={`silver-card-sub-card ${open ? "is-open" : ""}`}>
+    <div className={`silver-card-sub-card ${open ? "is-open" : "closed"}`}>
       <button className="button-include" onClick={() => setOpen(!open)}>
         <span className="include-text">What’s included :</span>
         <img

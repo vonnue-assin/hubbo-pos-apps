@@ -74,7 +74,7 @@ const HardWarePlanCard = ({
               className="button-include"
               onClick={() => setAllIncludedOpen(!allIncludedOpen)}
             >
-              <span className="include-text">What’s included:</span>
+              <span className="include-text">What’s included :</span>
               <img
                 src={ArrowDownImage}
                 className={`ArrowDownImage ${allIncludedOpen ? "rotated" : ""}`}

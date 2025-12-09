@@ -1,21 +1,32 @@
 import { useState } from "react";
 
-import { SILVER_RM } from "../../constants/constants";
-import BasicPlan from "../BasicPlanDropdown";
+import {
+  GOLD_BASIC,
+  PLATINUM_BASIC,
+  SILVER_RM,
+} from "../../constants/constants";
+import planComparisonData from "../../data/planComparison.json";
+import { PlanConfigurations } from "../../types";
+import PlanSelector from "../PlanSelectorDropDown";
 import PlansFiltering from "../PlansFilterings";
-
-import DownArrowImage from "../../assets/images/chevron-down.svg";
 
 import "./styles.css";
 
-const PlanComparison = () => {
-  const [selPlus, setSelPlus] = useState(SILVER_RM);
-  const [selPro, setSelPro] = useState(SILVER_RM);
-  const [selSilver, setSelSilver] = useState(SILVER_RM);
+const PlansType = planComparisonData as PlanConfigurations[];
 
-  const [plusOpen, setPlusOpen] = useState(false);
-  const [proOpen, setProOpen] = useState(false);
-  const [silverOpen, setSilverOpen] = useState(false);
+const PlanComparison = () => {
+  const [selectedPlans, setSelectedPlans] = useState({
+    plus: SILVER_RM,
+    pro: GOLD_BASIC,
+    silver: PLATINUM_BASIC,
+  });
+
+  const [openDropdown, setOpenDropdown] = useState<null | string>(null);
+
+  const handleSelectPlan = (planKey: "plus" | "pro" | "silver", value: any) => {
+    setSelectedPlans((prev) => ({ ...prev, [planKey]: value }));
+    setOpenDropdown(null);
+  };
 
   return (
     <div className="plan-container-main-card">
@@ -31,92 +42,22 @@ const PlanComparison = () => {
 
           <div className="choose-a-plan-main-card">
             <div className="items-plans-card">
-              <div className="items-card-button">
-                <button
-                  className="buttons-item-set"
-                  onClick={() => setPlusOpen(!plusOpen)}
-                >
-                  <div className="flex-card-items">
-                    <span className="choose-header">Choose a plan</span>
-                    <h2 className="choose-text-header">{selPlus}</h2>
-                  </div>
-                  <img
-                    src={DownArrowImage}
-                    alt="down-arrow"
-                    className={`DownArrowImage ${plusOpen ? "rotate" : ""}`}
-                  />
-                </button>
-
-                {plusOpen && (
-                  <BasicPlan
-                    onSelect={(value) => {
-                      setSelPlus(value);
-                      setPlusOpen(false);
-                    }}
-                  />
-                )}
-              </div>
-
-              <div className="items-card-button silverPro">
-                <button
-                  className="buttons-item-set"
-                  onClick={() => setProOpen(!proOpen)}
-                >
-                  <div className="flex-card-items">
-                    <span className="choose-header">Choose a plan</span>
-                    <h2 className="choose-text-header">{selPro}</h2>
-                  </div>
-                  <img
-                    src={DownArrowImage}
-                    alt="down-arrow"
-                    className={`DownArrowImage ${proOpen ? "rotate" : ""}`}
-                  />
-                </button>
-
-                {proOpen && (
-                  <BasicPlan
-                    onSelect={(value) => {
-                      setSelPro(value);
-                      setProOpen(false);
-                    }}
-                  />
-                )}
-              </div>
-
-              <div className="items-card-button silver">
-                <button
-                  className="buttons-item-set"
-                  onClick={() => setSilverOpen(!silverOpen)}
-                >
-                  <div className="flex-card-items">
-                    <span className="choose-header">Choose a plan</span>
-                    <h2 className="choose-text-header">{selSilver}</h2>
-                  </div>
-                  <img
-                    src={DownArrowImage}
-                    alt="down-arrow"
-                    className={`DownArrowImage ${silverOpen ? "rotate" : ""}`}
-                  />
-                </button>
-
-                {silverOpen && (
-                  <BasicPlan
-                    onSelect={(value) => {
-                      setSelSilver(value);
-                      setSilverOpen(false);
-                    }}
-                  />
-                )}
-              </div>
+              {PlansType.map((plan) => (
+                <PlanSelector
+                  key={plan.key}
+                  label="Choose a plan"
+                  selected={selectedPlans[plan.key]}
+                  open={openDropdown === plan.key}
+                  onToggle={() =>
+                    setOpenDropdown(openDropdown === plan.key ? null : plan.key)
+                  }
+                  onSelect={(value) => handleSelectPlan(plan.key, value)}
+                  className={plan.className}
+                />
+              ))}
             </div>
 
-            <PlansFiltering
-              selectedPlans={{
-                plus: selPlus,
-                pro: selPro,
-                silver: selSilver,
-              }}
-            />
+            <PlansFiltering selectedPlans={selectedPlans} />
 
             <div className="button-padding-card">
               <span className="free-button-padding">Request Free Demo</span>

@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
+import HardWarePlanSlider from "../HardWarePlanSlider";
 import PlanSlider from "../PlanSlider";
 
 import "./styles.css";
-import HardWarePlanSlider from "../HardWarePlanSlider";
 
 const ChooseYourPlansMain = () => {
   const [selectedPlan, setSelectedPlan] = useState("Software Only");

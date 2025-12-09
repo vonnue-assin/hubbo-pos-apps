@@ -176,6 +176,14 @@
   .speak-card {
     margin-top: 1px;
   }
+
+  .free-consultaion-main {
+    margin-top: 1px;
+  }
+
+  .speak-text {
+    margin-top: -7px;
+  }
 }
 
 @media screen and (min-width: 425px) {
@@ -217,10 +225,12 @@
 
 @media screen and (min-width: 1024px) {
   .free-consultaion-main {
-    padding-top: 2.3rem;
+    /* padding-top: 2.3rem; */
+    padding-top: 3rem;
     padding-bottom: 6rem;
     padding-left: 3rem;
     padding-right: 3rem;
+    margin-top: 6px;
   }
 
   .background-brand-free {

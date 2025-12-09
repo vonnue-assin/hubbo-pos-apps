@@ -8,7 +8,7 @@ type BasicPlanProps = {
   onSelect: (value: string) => void;
 };
 
-const BasicPlan: React.FC<BasicPlanProps> = ({ onSelect }) => {
+const BasicPlanDropDown: React.FC<BasicPlanProps> = ({ onSelect }) => {
   return (
     <div className="shadow-select-dropdown">
       {comparisonData.map((section, index) => (
@@ -29,4 +29,4 @@ const BasicPlan: React.FC<BasicPlanProps> = ({ onSelect }) => {
   );
 };
 
-export default BasicPlan;
+export default BasicPlanDropDown;
