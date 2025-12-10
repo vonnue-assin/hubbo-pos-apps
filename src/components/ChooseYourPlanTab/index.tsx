@@ -1,11 +1,14 @@
 import "./styles.css";
 
-interface Props {
+type ChooseYourPlansProps = {
   selectedPlan: string;
   setSelectedPlan: (value: string) => void;
-}
+};
 
-const ChooseYourPlansTab = ({ selectedPlan, setSelectedPlan }: Props) => {
+const ChooseYourPlansTab = ({
+  selectedPlan,
+  setSelectedPlan,
+}: ChooseYourPlansProps) => {
   return (
     <div className="tab-main-container">
       <div className="tab-card">

@@ -100,7 +100,10 @@ const Footer = () => {
                       </div>
                     </button>
 
-                    <DropDownFooter isOpen={isDropdownOpen} />
+                    <DropDownFooter
+                      isOpen={isDropdownOpen}
+                      onClose={() => setIsDropdownOpen(false)}
+                    />
                   </div>
                 </div>
 

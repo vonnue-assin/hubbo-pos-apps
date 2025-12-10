@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import {
   GOLD_BASIC,
@@ -28,6 +28,22 @@ const PlanComparison = () => {
     setOpenDropdown(null);
   };
 
+  const dropDownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropDownRef.current &&
+        !dropDownRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div className="plan-container-main-card">
       <div className="plan-container-main">
@@ -40,7 +56,7 @@ const PlanComparison = () => {
             </p>
           </div>
 
-          <div className="choose-a-plan-main-card">
+          <div className="choose-a-plan-main-card" ref={dropDownRef}>
             <div className="items-plans-card">
               {PlansType.map((plan) => (
                 <PlanSelector
@@ -52,6 +68,7 @@ const PlanComparison = () => {
                     setOpenDropdown(openDropdown === plan.key ? null : plan.key)
                   }
                   onSelect={(value) => handleSelectPlan(plan.key, value)}
+                  onClose={() => setOpenDropdown(null)}
                   className={plan.className}
                 />
               ))}

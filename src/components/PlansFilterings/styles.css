@@ -331,6 +331,10 @@
   max-width: 300px;
 }
 
+.best-value-text-plan .best-value-text-plan:hover {
+  background-color: #633201;
+}
+
 @media screen and (min-width: 375px) {
   .best-value-card {
     white-space: nowrap;

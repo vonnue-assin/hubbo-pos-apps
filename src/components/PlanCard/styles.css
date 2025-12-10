@@ -30,3 +30,12 @@
 .desktop-tabs {
   display: none;
 }
+
+.free-demo-button-set:hover {
+  background-color: #633201;
+}
+
+.free-demo-button-set:focus {
+  outline: 1px solid #633201;
+  outline-offset: 2px;
+}

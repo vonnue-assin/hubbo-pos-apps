@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+
+import { MOUSEDOWN } from "../../constants/constants";
 import BasicPlanDropDown from "../BasicPlanDropdown";
 
 import DownArrowImage from "../../assets/images/chevron-down.svg";
@@ -9,6 +12,7 @@ type PlanSelectorProps = {
   onToggle: () => void;
   onSelect: (value: any) => void;
   className?: string;
+  onClose: () => void;
 };
 
 const PlanSelectorDropDown = ({
@@ -18,9 +22,27 @@ const PlanSelectorDropDown = ({
   onToggle,
   onSelect,
   className,
+  onClose,
 }: PlanSelectorProps) => {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        open &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    document.addEventListener(MOUSEDOWN, handleClickOutside);
+    return () => document.removeEventListener(MOUSEDOWN, handleClickOutside);
+  }, [open, onClose]);
+
   return (
-    <div className={`items-card-button ${className || ""}`}>
+    <div ref={dropdownRef} className={`items-card-button ${className || ""}`}>
       <button className="buttons-item-set" onClick={onToggle}>
         <div className="flex-card-items">
           <span className="choose-header">{label}</span>
@@ -33,7 +55,14 @@ const PlanSelectorDropDown = ({
         />
       </button>
 
-      {open && <BasicPlanDropDown onSelect={(val: string) => onSelect(val)} />}
+      {open && (
+        <BasicPlanDropDown
+          onSelect={(val: string) => {
+            onSelect(val);
+            onClose();
+          }}
+        />
+      )}
     </div>
   );
 };

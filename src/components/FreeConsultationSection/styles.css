@@ -159,6 +159,15 @@
   padding-top: 1.25rem;
 }
 
+.request:hover {
+  background-color: #633201;
+}
+
+.request:focus {
+  outline: 1px solid #633201;
+  outline-offset: 2px;
+}
+
 @media screen and (min-width: 375px) {
   .freeConsultImage {
     max-width: 100%;

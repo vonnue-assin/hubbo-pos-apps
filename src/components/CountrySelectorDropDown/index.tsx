@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
+import { MOUSEDOWN } from "../../constants/constants";
 import { countrySelectorDropDown } from "../../data/countrySelectorDropDown";
 import { DropDownProps } from "../../types";
 
 import "./styles.css";
 
-const DropDownFooter: React.FC<DropDownProps> = ({ isOpen }) => {
+type DropDownFooterProps = DropDownProps & {
+  onClose: () => void;
+};
+
+const DropDownFooter: React.FC<DropDownFooterProps> = ({ isOpen, onClose }) => {
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener(MOUSEDOWN, handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener(MOUSEDOWN, handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="dropdown-main-footer">
+    <div className="dropdown-main-footer" ref={dropdownRef}>
       <div className="drop-down-footer">
         {countrySelectorDropDown.map((item) => (
           <div key={item.id} className="dropdown-item">
