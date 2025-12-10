@@ -1,14 +1,15 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
 import HardWarePlanSlider from "../HardWarePlanSlider";
 import PlanSlider from "../PlanSlider";
+import FreeConsultaion from "../FreeConsultationSection";
 
 import "./styles.css";
 
-const ChooseYourPlansMain = () => {
-  const [selectedPlan, setSelectedPlan] = useState("Software Only");
+const ChooseYourPlansMain: React.FC = () => {
+  const [selectedPlan, setSelectedPlan] = useState<string>("Software Only");
 
   return (
     <div className="section-wrap">
@@ -45,6 +46,19 @@ const ChooseYourPlansMain = () => {
 
             {selectedPlan === "Software ＆ Hardware" && <HardWarePlanSlider />}
           </div>
+
+          <FreeConsultaion
+            wrapperClass={
+              selectedPlan === "Software ＆ Hardware"
+                ? "fc-wrapper-hardware"
+                : "fc-wrapper-software"
+            }
+            innerClass={
+              selectedPlan === "Software ＆ Hardware"
+                ? "fc-inner-hardware"
+                : "fc-inner-software"
+            }
+          />
         </div>
       </div>
     </div>

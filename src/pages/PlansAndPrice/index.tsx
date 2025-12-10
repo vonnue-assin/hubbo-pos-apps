@@ -1,6 +1,5 @@
 import ChooseYourPlansMain from "../../components/ChooseYourPlansMain";
 import Footer from "../../components/FooterAccordion";
-import FreeConsultaion from "../../components/FreeConsultationSection";
 import Header from "../../components/Header";
 import PlanComparison from "../../components/PlanComparisonSection";
 import Pricing from "../../components/PricingSection";
@@ -14,7 +13,6 @@ export const PlansAndPrice = () => {
       <Pricing />
       <div className="section-3">
         <ChooseYourPlansMain />
-        <FreeConsultaion />
       </div>
       <PlanComparison />
       <Footer />

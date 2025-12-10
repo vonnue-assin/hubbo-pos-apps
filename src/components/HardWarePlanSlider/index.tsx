@@ -13,6 +13,29 @@ const HardWarePlanSlider = () => {
   const [allIncludedOpen, setAllIncludedOpen] = useState(false);
   const [allAdditionalOpen, setAllAdditionalOpen] = useState(true);
 
+  const [bulletCount, setBulletCount] = useState(hardwarePlans.length);
+
+  const updateBulletCount = () => {
+    const width = window.innerWidth;
+
+    if (width >= 1280) {
+      setBulletCount(3);
+    } else if (width >= 1024) {
+      setBulletCount(4);
+    } else if (width >= 768) {
+      setBulletCount(5);
+    } else {
+      setBulletCount(hardwarePlans.length);
+    }
+  };
+
+  useEffect(() => {
+    updateBulletCount();
+
+    window.addEventListener("resize", updateBulletCount);
+    return () => window.removeEventListener("resize", updateBulletCount);
+  }, []);
+
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -34,13 +57,21 @@ const HardWarePlanSlider = () => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    const width = slider.querySelector(".swiper-slide")!.clientWidth;
+    const slide = slider.querySelector(".swiper-slide") as HTMLElement;
+    if (!slide) return;
+
+    const width = slide.clientWidth;
 
     slider.scrollTo({
       left: width * index,
       behavior: "smooth",
     });
   };
+
+  const displayedIndex = Math.min(activeIndex, bulletCount - 1);
+
+  const bulletsToShow = hardwarePlans.slice(0, bulletCount);
+
   return (
     <div className="silverBasic hardware">
       <div className="swipper-basic-main">
@@ -83,11 +114,14 @@ const HardWarePlanSlider = () => {
             style={{ transform: "rotate(-90deg)" }}
           />
         </button>
+
         <div className="hardware-pagination">
-          {hardwarePlans.map((_, i) => (
+          {bulletsToShow.map((_, i) => (
             <span
               key={i}
-              className={`bullets ${activeIndex === i ? "active-bullet" : ""}`}
+              className={`bullets ${
+                displayedIndex === i ? "active-bullet" : ""
+              }`}
             />
           ))}
         </div>
