@@ -1,6 +1,7 @@
+import IncludedHardware from "../IncludedHardware";
+
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 import roundTickImage from "../../assets/images/round-tick.38e908ce.svg";
-import IncludedHardware from "../IncludedHardware";
 
 import "./styles.css";
 

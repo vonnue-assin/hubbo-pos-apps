@@ -39,7 +39,9 @@ const mapToPriceKeys = (value: string): PriceKey =>
     ? "Gold"
     : "Platinum";
 
-export default function PlansFiltering({ selectedPlans }: PlansFilteringProps) {
+export default function PlansFiltering({ selectedPlans }:
+  
+  PlansFilteringProps) {
   const plusKey = mapToPriceKeys(normalizeLabel(selectedPlans.plus));
   const proKey = mapToPriceKeys(normalizeLabel(selectedPlans.pro));
   const silverKey = mapToPriceKeys(normalizeLabel(selectedPlans.silver));

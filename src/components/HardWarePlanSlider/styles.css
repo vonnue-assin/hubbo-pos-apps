@@ -1,0 +1,21 @@
+.hardware-pagination {
+  margin-bottom: 3px;
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 1804px) {
+  .arrow-buttons-hardware {
+    padding-left: 39px;
+    padding-right: 39px;
+    margin-top: 1px;
+  }
+
+  .hardware-pagination {
+    margin-bottom: 3px;
+    margin-left: 5px;
+  }
+
+  .arrow-buttons-hardware {
+    margin-top: -1px;
+  }
+}

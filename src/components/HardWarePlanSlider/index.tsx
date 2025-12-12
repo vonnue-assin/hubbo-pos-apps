@@ -6,6 +6,8 @@ import HardWarePlanCard from "../HardWarePlanCard";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
 
+import "./styles.css";
+
 const HardWarePlanSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -103,6 +105,16 @@ const HardWarePlanSlider = () => {
           />
         </button>
 
+        <div className="hardware-pagination">
+          {bulletsToShow.map((_, i) => (
+            <span
+              key={i}
+              className={`bullets ${
+                displayedIndex === i ? "active-bullet" : ""
+              }`}
+            />
+          ))}
+        </div>
         <button
           className="arrow-buttons-hardware"
           onClick={() => scrollToIndex(activeIndex + 1)}
@@ -114,17 +126,6 @@ const HardWarePlanSlider = () => {
             style={{ transform: "rotate(-90deg)" }}
           />
         </button>
-
-        <div className="hardware-pagination">
-          {bulletsToShow.map((_, i) => (
-            <span
-              key={i}
-              className={`bullets ${
-                displayedIndex === i ? "active-bullet" : ""
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </div>
   );

@@ -187,6 +187,7 @@
   width: 100%;
   position: relative;
   justify-content: center;
+  cursor: pointer;
 }
 
 .silver-gold-platinum-text {

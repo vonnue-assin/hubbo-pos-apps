@@ -46,3 +46,29 @@
   margin-right: 0.25rem;
   font-family: "font2";
 }
+
+.hardware-software .silver-card-sub-card {
+  margin-bottom: -8px;
+}
+
+.free-demo-button-set {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 375px) {
+  .request-free-demo-button-sub {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hardware-software .silver-card-sub-card {
+    margin-bottom: -8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hardware-software .silver-card-sub-card {
+    margin-bottom: 0px;
+  }
+}

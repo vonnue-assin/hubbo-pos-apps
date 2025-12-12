@@ -23,7 +23,11 @@ const PlanComparisonPriceCard = ({ plan, data, type }: PlanPriceCardProps) => {
   if (type === "first") {
     return (
       <div className="annual-card-container">
-        <div className={`annual-card first-year ${isPlatinum ? "platinum-card" : ""}`}>
+        <div
+          className={`annual-card first-year ${
+            isPlatinum ? "platinum-card" : ""
+          }`}
+        >
           <div className="annual-content">
             <span className="rm-text-annual">RM</span>
             <h1 className="annual-price">
