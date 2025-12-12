@@ -248,6 +248,10 @@
   text-decoration: underline;
 }
 
+.hello-link {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1440px) {
   .footer-last-section-main {
     display: inline;
@@ -301,7 +305,7 @@
   .footer-last-section {
     margin-top: 0px;
   }
-  
+
   .helphere-header .social-media-sub-tab {
     margin-top: 0px;
   }

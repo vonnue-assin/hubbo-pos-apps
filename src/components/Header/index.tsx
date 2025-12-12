@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   AUTO,
@@ -20,7 +20,7 @@ import { solutionsData } from "../../data/solutionsData";
 import Dropdown from "../DropDownSolutionsHubbo";
 import EnglishLangaugesDropdown from "../LanguagesDropdown";
 import MenuClick from "../MenuClickSection";
-import Solutions from "../Solutions";
+import SolutionsDropDown from "../SolutionsDropDown";
 import WhyHubbo from "../WhyHubboMenuClickSection";
 
 import ChevronDown from "../../assets/images/chevron-down.svg";
@@ -66,6 +66,8 @@ const Header = () => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const dropDownElements = document.querySelectorAll(
@@ -99,10 +101,10 @@ const Header = () => {
             </button>
           )}
 
-          <a className="hubbopos-card">
+          <span className="hubbopos-card">
             <HubboposIconWhite className="hubboposWhite" />
             <HubboposIconYellow className="huboposYellow" />
-          </a>
+          </span>
 
           {!isMobile && (
             <div className="solutions-card">
@@ -127,8 +129,11 @@ const Header = () => {
                 itemClass="dropdown-item"
               />
 
-              <p className="price-and-plans">
-                <Link to="/mypricing">{headerMenu.mainMenu.plansPricing}</Link>
+              <p
+                className="price-and-plans"
+                onClick={() => navigate("/mypricing")}
+              >
+                {headerMenu.mainMenu.plansPricing}
               </p>
 
               <div className="why-hubbo-container">
@@ -154,8 +159,8 @@ const Header = () => {
                 />
               </div>
 
-              <p className="contact-us">
-                <Link to="/contact">{headerMenu.mainMenu.contact}</Link>
+              <p className="contact-us" onClick={() => navigate("/contact")}>
+                {headerMenu.mainMenu.contact}
               </p>
             </div>
           )}
@@ -220,7 +225,7 @@ const Header = () => {
           </div>
 
           {showSolutions && (
-            <Solutions onClose={() => setShowSolutions(false)} />
+            <SolutionsDropDown onClose={() => setShowSolutions(false)} />
           )}
 
           {showHubbo && <WhyHubbo onClose={() => setShowHubbo(false)} />}

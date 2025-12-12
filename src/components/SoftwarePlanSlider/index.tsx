@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
 import { SCROLL } from "../../constants/constants";
-import PlanCard from "../PlanCard";
+import SoftwarePlanCard from "../SoftwarePlanCard";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
-import chooseYourPlanCards from "../../data/chooseYourPlanCards.json";
+import chooseYourPlanCards from "../../data/chooseYourPlanCardsSoftware.json";
 
 import "./styles.css";
 
-const PlanSlider = () => {
+const SoftwarePlanSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -69,7 +69,7 @@ const PlanSlider = () => {
               }`}
               key={plan.id}
             >
-              <PlanCard
+              <SoftwarePlanCard
                 plan={plan}
                 openIncluded={openIncluded}
                 setOpenIncluded={setOpenIncluded}
@@ -115,4 +115,4 @@ const PlanSlider = () => {
   );
 };
 
-export default PlanSlider;
+export default SoftwarePlanSlider;

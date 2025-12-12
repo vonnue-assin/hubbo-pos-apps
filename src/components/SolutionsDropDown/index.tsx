@@ -7,7 +7,7 @@ import CloseIcon from "../../assets/images/close.cf72762d.svg";
 
 import "./styles.css";
 
-const Solutions = ({ onClose }: { onClose: () => void }) => {
+const SolutionsDropDown = ({ onClose }: { onClose: () => void }) => {
   return (
     <div
       className="solutions-header-main-container"
@@ -57,4 +57,4 @@ const Solutions = ({ onClose }: { onClose: () => void }) => {
   );
 };
 
-export default Solutions;
+export default SolutionsDropDown;

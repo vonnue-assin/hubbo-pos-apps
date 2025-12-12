@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 import ChooseYourPlansAccordion from "../ChooseYourPlansAccordion";
 import ChooseYourPlansTab from "../ChooseYourPlanTab";
-import HardWarePlanSlider from "../HardWarePlanSlider";
-import PlanSlider from "../PlanSlider";
 import FreeConsultaion from "../FreeConsultationSection";
+import HardWarePlanSlider from "../HardWarePlanSlider";
+import SoftwarePlanSlider from "../SoftwarePlanSlider";
 
 import "./styles.css";
 
@@ -40,7 +40,7 @@ const ChooseYourPlansMain: React.FC = () => {
 
             {selectedPlan === "Software Only" && (
               <div className="silverBasic software">
-                <PlanSlider />
+                <SoftwarePlanSlider />
               </div>
             )}
 

@@ -117,6 +117,10 @@
   }
 
   .accordion-open .request-free-demo-button-sub {
-    margin-top: 0px;
+    margin-top: 0px !important;
+  }
+
+  .hardware-software .accordion-open .silver-card-sub-card {
+    padding-bottom: 1.5rem !important;
   }
 }
