@@ -14,7 +14,9 @@ const HardWarePlanCard = ({
 }: any) => {
   return (
     <div
-      className={`swiper-text-card ${plan.flag ? "best-value hardware" : ""}`}
+      className={`swiper-text-card ${plan.flag ? "best-value hardware" : ""} ${
+        allIncludedOpen ? "accordion-open" : "accordion-closed"
+      }`}
     >
       {plan.flag && <p className="best-value-text">{plan.flag}</p>}
 
@@ -59,8 +61,8 @@ const HardWarePlanCard = ({
                 allAdditionalOpen ? "open" : "close"
               }`}
             >
-              {plan.features.map((text: string, idx: number) => (
-                <div className="feature-card" key={idx}>
+              {plan.features.map((text: string, index: number) => (
+                <div className="feature-card" key={index}>
                   <img
                     src={roundTickImage}
                     className="roundTickImage"

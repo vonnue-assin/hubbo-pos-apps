@@ -4,13 +4,15 @@
   transition: opacity 0.3s;
   transform: translateZ(0);
   z-index: 10;
+  margin-bottom: 2px;
 }
 
 .hardware-arrows {
   display: flex;
-  margin-top: 3rem;
   align-items: center;
   justify-content: center;
+  position: relative;
+  margin-top: 1px;
 }
 
 .arrow-card-container-hardware {
@@ -32,10 +34,14 @@
 
 .hardware .arrowbuttonLeft {
   margin-top: 5px;
+  position: relative;
+  left: -16px;
 }
 
 .hardware .arrowbuttonRight {
-  margin-top: 8px;
+  margin-top: 6px;
+  position: relative;
+  right: -20px;
 }
 
 .rm-text-silvers {
@@ -47,7 +53,7 @@
   font-family: "font2";
 }
 
-.hardware-software .silver-card-sub-card {
+.hardware-software .accordion-closed .silver-card-sub-card {
   margin-bottom: -8px;
 }
 
@@ -59,16 +65,58 @@
   .request-free-demo-button-sub {
     margin-top: 0px;
   }
+
+  .hardware-software .accordion-closed .silver-card-sub-card {
+    margin-bottom: 0px;
+  }
+
+  .hardware .arrowbuttonLeft {
+    left: -7px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-  .hardware-software .silver-card-sub-card {
-    margin-bottom: -8px;
+  .hardware-software .accordion-closed .silver-card-sub-card {
+    margin-bottom: 0px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .hardware-software .silver-card-sub-card {
+  .hardware-software .accordion-closed .silver-card-sub-card {
+    margin-top: 0px;
+  }
+
+  .hardware-software .accordion-open .silver-card-sub-card {
+    padding-bottom: 2rem;
     margin-bottom: 0px;
+  }
+
+  .swiper-text-card.accordion-open.hardware .silver-card-sub-card {
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+  }
+
+  .accordion-closed .best-value .request-free-demo-button-sub {
+    margin-top: -8px !important;
+  }
+
+  .accordion-open .best-value .request-free-demo-button-sub {
+    margin-top: 2px !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .accordion-open .request-free-demo-button-sub {
+    margin-top: 8px;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .hardware-software .accordion-closed .silver-card-sub-card {
+    margin-bottom: -8px !important;
+  }
+
+  .accordion-open .request-free-demo-button-sub {
+    margin-top: 0px;
   }
 }

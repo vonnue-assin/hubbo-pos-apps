@@ -91,41 +91,42 @@ const HardWarePlanSlider = () => {
           ))}
         </div>
       </div>
-
-      <div className="hardware-arrows">
-        <button
-          className="arrow-buttons-hardware"
-          onClick={() => scrollToIndex(activeIndex - 1)}
-        >
-          <img
-            src={ArrowDownImage}
-            className="arrowbuttonLeft"
-            alt=""
-            style={{ transform: "rotate(90deg)" }}
-          />
-        </button>
-
-        <div className="hardware-pagination">
-          {bulletsToShow.map((_, i) => (
-            <span
-              key={i}
-              className={`bullets ${
-                displayedIndex === i ? "active-bullet" : ""
-              }`}
+      <div className="arrow-card">
+        <div className="hardware-arrows">
+          <button
+            className="arrow-buttons-hardware"
+            onClick={() => scrollToIndex(activeIndex - 1)}
+          >
+            <img
+              src={ArrowDownImage}
+              className="arrowbuttonLeft"
+              alt=""
+              style={{ transform: "rotate(90deg)" }}
             />
-          ))}
+          </button>
+
+          <div className="hardware-pagination">
+            {bulletsToShow.map((_, i) => (
+              <span
+                key={i}
+                className={`bullets ${
+                  displayedIndex === i ? "active-bullet" : ""
+                }`}
+              />
+            ))}
+          </div>
+          <button
+            className="arrow-buttons-hardware"
+            onClick={() => scrollToIndex(activeIndex + 1)}
+          >
+            <img
+              src={ArrowDownImage}
+              className="arrowbuttonRight"
+              alt=""
+              style={{ transform: "rotate(-90deg)" }}
+            />
+          </button>
         </div>
-        <button
-          className="arrow-buttons-hardware"
-          onClick={() => scrollToIndex(activeIndex + 1)}
-        >
-          <img
-            src={ArrowDownImage}
-            className="arrowbuttonRight"
-            alt=""
-            style={{ transform: "rotate(-90deg)" }}
-          />
-        </button>
       </div>
     </div>
   );

@@ -3,6 +3,67 @@
   margin-left: 5px;
 }
 
+.hardware-arrows-main-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hardware-arrows {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+@media screen and (min-width: 425px) {
+  .hardware-software .accordion-closed .silver-card-sub-card {
+    margin-bottom: -16px;
+  }
+
+  .hardware-software .accordion-open .silver-card-sub-card {
+    padding-bottom: 1rem;
+  }
+
+  .hardware-arrows {
+    margin-top: 0px;
+  }
+
+  .hardware-pagination {
+    margin-bottom: -1px;
+    margin-left: 6px;
+  }
+
+  .hardware .arrowbuttonLeft {
+    top: 2px;
+    left: -8px;
+  }
+
+  .hardware .arrowbuttonRight {
+    top: 1px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hardware .arrowbuttonRight {
+    right: -11px;
+  }
+
+  .hardware .arrowbuttonLeft {
+    top: 1px;
+    left: 1px;
+  }
+
+  .accordion-open .request-free-demo-button-sub {
+    margin-top: 8px;
+  }
+}
+
 @media screen and (min-width: 1804px) {
   .arrow-buttons-hardware {
     padding-left: 39px;
@@ -11,11 +72,21 @@
   }
 
   .hardware-pagination {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     margin-left: 5px;
   }
 
   .arrow-buttons-hardware {
-    margin-top: -1px;
+    margin-top: 3px;
+  }
+
+  .hardware .arrowbuttonLeft {
+    top: -2px;
+    left: -18px;
+  }
+
+  .hardware .arrowbuttonRight {
+    top: -2px;
+    right: -18px;
   }
 }

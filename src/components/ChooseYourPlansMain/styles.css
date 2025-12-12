@@ -444,7 +444,6 @@
 
 .feature-card-main.open {
   max-height: 500px;
-  /* padding-top: 1.25rem; */
 }
 
 .feature-card-main.close {
@@ -511,10 +510,6 @@
     margin-top: 8px;
   }
 
-  /* .free-consultation-main {
-    margin-top: -1px;
-  } */
-
   .arrow-cards {
     margin-top: 3rem;
   }
@@ -541,7 +536,6 @@
 @media screen and (min-width: 768px) {
   .sub-container {
     padding-top: 5rem;
-    /* padding-bottom: 124px; */
     padding-bottom: 5rem;
     padding-left: 3.5rem;
     padding-right: 3.5rem;
@@ -607,10 +601,6 @@
     margin-left: 0px;
   }
 
-  /* .hardware {
-    margin-bottom: -12px;
-  } */
-
   .swiper-text-card .silver-card-sub-card.is-open {
     margin-bottom: 0px;
   }
@@ -628,7 +618,7 @@
   }
 
   .fc-inner-hardware {
-    margin-top: 11px;
+    margin-top: 13px;
   }
 }
 
@@ -681,10 +671,6 @@
   .price-cards {
     gap: 3rem;
     height: 100%;
-  }
-
-  .hardware-software .silver-card-sub-card {
-    padding-bottom: 1rem;
   }
 }
 
@@ -745,7 +731,7 @@
 @media screen and (min-width: 1804px) {
   .fc-inner-hardware {
     padding-top: 7rem;
-    margin-top: 9px !important;
+    margin-top: 7px !important;
   }
 }
 

@@ -206,7 +206,7 @@
   }
 
   .speak-card {
-    margin-top: 0px;
+    margin-top: 2px;
   }
 }
 
@@ -305,7 +305,7 @@
 
   .fc-inner-hardware {
     padding-top: 4rem;
-    margin-top: 3px !important;
+    margin-top: 5px !important;
   }
 }
 
@@ -340,5 +340,11 @@
 
   .need-text {
     width: 483px;
+  }
+}
+
+@media screen and (min-width: 1804px) {
+  .speak-text {
+    margin-top: -2px;
   }
 }
