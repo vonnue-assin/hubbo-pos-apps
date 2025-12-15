@@ -43,67 +43,63 @@ const SoftwarePlanCard = ({
             plan.isPremium ? "best-value-cards" : ""
           }`}
         >
-          <div>
-            <div className="vertical-set">
-              {plan.additionalFeatures.length > 0 && (
-                <div>
-                  <button
-                    className="button-additional"
-                    onClick={() => setOpenAdditional(!openAdditional)}
-                  >
-                    <span
-                      className={`additional-features ${
-                        openAdditional ? "open" : ""
-                      }`}
-                    >
-                      Additional features
-                    </span>
-
-                    <img
-                      src={ArrowDownImage}
-                      className={`ArrowDownImage ${
-                        openAdditional ? "rotated" : ""
-                      }`}
-                      alt="arrow"
-                    />
-                  </button>
-
-                  <div
-                    className={`feature-card-main ${
-                      openAdditional ? "open" : "close"
+          <div className="vertical-set">
+            {plan.additionalFeatures.length > 0 && (
+              <div>
+                <button
+                  className="button-additional"
+                  onClick={() => setOpenAdditional(!openAdditional)}
+                >
+                  <span
+                    className={`additional-features ${
+                      openAdditional ? "open" : ""
                     }`}
                   >
-                    {plan.additionalFeatures.map(
-                      (feature: string, i: number) => (
-                        <div className="feature-card" key={i}>
-                          <img
-                            src={roundTickImage}
-                            className="roundTickImage"
-                            alt="tick"
-                          />
-                          <p className="platform-text">{feature}</p>
-                        </div>
-                      )
-                    )}
-                  </div>
+                    Additional features
+                  </span>
+
+                  <img
+                    src={ArrowDownImage}
+                    className={`ArrowDownImage ${
+                      openAdditional ? "rotated" : ""
+                    }`}
+                    alt="arrow"
+                  />
+                </button>
+
+                <div
+                  className={`feature-card-main ${
+                    openAdditional ? "open" : "close"
+                  }`}
+                >
+                  {plan.additionalFeatures.map((feature: string, i: number) => (
+                    <div className="feature-card" key={i}>
+                      <img
+                        src={roundTickImage}
+                        className="roundTickImage"
+                        alt="tick"
+                      />
+                      <p className="platform-text">{feature}</p>
+                    </div>
+                  ))}
                 </div>
-              )}
-
-              <button
-                className="button-include"
-                onClick={() => setOpenIncluded(!openIncluded)}
-              >
-                <span className="include-text">What’s included :</span>
-                <img
-                  src={ArrowDownImage}
-                  className={`ArrowDownImage ${openIncluded ? "rotated" : ""}`}
-                  alt="arrow"
-                />
-              </button>
-
-              <div className={`included-content ${openIncluded ? "open" : ""}`}>
-                <Included />
               </div>
+            )}
+
+            <button
+              className="button-include"
+              onClick={() => setOpenIncluded(!openIncluded)}
+            >
+              <span className="include-text">What’s included :</span>
+              <img
+                src={ArrowDownImage}
+                className={`ArrowDownImage ${openIncluded ? "rotated" : ""}`}
+                alt="arrow"
+              />
+            </button>
+
+            <div className={`included-content ${openIncluded ? "open" : ""}`}>
+              <Included />
             </div>
           </div>
         </div>

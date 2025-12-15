@@ -51,12 +51,12 @@
 
 @media screen and (min-width: 768px) {
   .hardware .arrowbuttonRight {
-    right: -11px;
+    right: -2px;
   }
 
   .hardware .arrowbuttonLeft {
     top: 1px;
-    left: 1px;
+    left: 10px;
   }
 
   .accordion-open .request-free-demo-button-sub {

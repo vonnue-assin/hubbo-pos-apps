@@ -13,15 +13,8 @@
   animation: opacity 0.2s linear;
   border-radius: 0.5rem;
   background-color: #fffefb;
-
-  --tw-shadow-color: rgba(0, 0, 0, 0.1);
-  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
-    0 1px 2px -1px var(--tw-shadow-color);
-
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
     var(--tw-shadow);
-
   max-height: 12rem;
 }
 
@@ -55,6 +48,14 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.dropdown-item-languages:nth-child(1) {
+  background-color: #fff5db;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
 
 .item-name-english:nth-child(1):hover {

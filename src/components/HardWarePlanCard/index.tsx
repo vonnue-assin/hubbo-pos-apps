@@ -12,11 +12,20 @@ const HardWarePlanCard = ({
   allAdditionalOpen,
   setAllAdditionalOpen,
 }: any) => {
+  const isBothOpen = allIncludedOpen && allAdditionalOpen;
+  const isBothClosed = !allIncludedOpen && !allAdditionalOpen;
+  const isIncludedOnlyOpen = allIncludedOpen && !allAdditionalOpen;
+  const isAdditionalOnlyOpen = !allIncludedOpen && allAdditionalOpen;
+
   return (
     <div
-      className={`swiper-text-card ${plan.flag ? "best-value hardware" : ""} ${
-        allIncludedOpen ? "accordion-open" : "accordion-closed"
-      }`}
+      className={`swiper-text-card
+        ${plan.flag ? "best-value hardware" : ""}
+        ${isBothOpen ? "both-open" : ""}
+        ${isBothClosed ? "both-closed" : ""}
+        ${isIncludedOnlyOpen ? "included-open-only" : ""}
+        ${isAdditionalOnlyOpen ? "additional-open-only" : ""}
+      `}
     >
       {plan.flag && <p className="best-value-text">{plan.flag}</p>}
 
@@ -24,6 +33,7 @@ const HardWarePlanCard = ({
         <div className="w-full">
           <div className="solid-primary">
             <p className="silver-text">{plan.name}</p>
+
             <p className="money-text">
               <span className="rm-text-silvers">RM</span>
               <span className="money-text-set-hardware">{plan.price}</span>
@@ -47,6 +57,7 @@ const HardWarePlanCard = ({
               >
                 Additional features
               </span>
+
               <img
                 src={ArrowDownImage}
                 className={`ArrowDownImage ${
@@ -78,6 +89,7 @@ const HardWarePlanCard = ({
               onClick={() => setAllIncludedOpen(!allIncludedOpen)}
             >
               <span className="include-text">What’s included :</span>
+
               <img
                 src={ArrowDownImage}
                 className={`ArrowDownImage ${allIncludedOpen ? "rotated" : ""}`}
@@ -86,12 +98,15 @@ const HardWarePlanCard = ({
             </button>
 
             <div
-              className={`included-content ${allIncludedOpen ? "open" : ""}`}
+              className={`included-content ${
+                allIncludedOpen ? "open included-active" : "closed"
+              }`}
             >
               <IncludedHardware />
             </div>
           </div>
         </div>
+
         <div className="request-free-demo-button-sub">
           <span className="free-demo-button-set">Request Free Demo</span>
         </div>
