@@ -11,7 +11,6 @@ import "./styles.css";
 const SoftwarePlanSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-
   const [openIncluded, setOpenIncluded] = useState(true);
 
   useEffect(() => {

@@ -12,6 +12,8 @@ import { FeaturesData } from "../../data/featuresData";
 import { PLANS_DATA } from "../../data/pricingDataOne";
 import Features from "../FeaturesSectionForPriceComparison";
 import PlanComparisonPriceCard from "../PlanComparisonPriceRender";
+import PlanHeaderCard from "../PlanHeaderCard";
+import VisiblePlansRenderer from "../VisiblePlansRender";
 
 import "./styles.css";
 
@@ -39,13 +41,10 @@ const mapToPriceKeys = (value: string): PriceKey =>
     ? "Gold"
     : "Platinum";
 
-export default function PlansFiltering({ selectedPlans }:
-  
-  PlansFilteringProps) {
+const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
   const plusKey = mapToPriceKeys(normalizeLabel(selectedPlans.plus));
   const proKey = mapToPriceKeys(normalizeLabel(selectedPlans.pro));
   const silverKey = mapToPriceKeys(normalizeLabel(selectedPlans.silver));
-
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -58,53 +57,13 @@ export default function PlansFiltering({ selectedPlans }:
     ? [plusKey, silverKey]
     : [plusKey, proKey, silverKey];
 
-  const getTitle = (plan: PriceKey) =>
-    plan === "Silver"
-      ? SILVER_BASIC
-      : plan === "Gold"
-      ? GOLD_BASIC
-      : PLATINUM_BASIC;
-
   return (
     <div className="silver-gold-card">
       <div className="silver-gold-platinum">
-        {visiblePlans.map((plan, i) => (
-          <div
-            key={plan + i}
-            className={`plan-filtering-main-card ${
-              plan === "Platinum" ? "plan-platinum" : ""
-            }`}
-          >
-            {plan === "Platinum" && (
-              <span className="best-value-text-plan best-value-card">
-                BEST VALUE
-              </span>
-            )}
-
-            <span className="height"></span>
-
-            <div className="goldBasics">
-              <div className="title-row">
-                <h2 className="basic-text">{getTitle(plan)}</h2>
-                <p className="only-text">Software only</p>
-              </div>
-
-              <div className="new-wrapper">
-                <span className="micro-text">
-                  {plan === "Silver" ? "Microbusinesses" : "Small businesses"}
-                </span>
-
-                <span
-                  className={`started-button ${
-                    plan === "Platinum" ? "get-started-platinum" : ""
-                  }`}
-                >
-                  Get Started
-                </span>
-              </div>
-            </div>
-          </div>
-        ))}
+        <VisiblePlansRenderer
+          plans={visiblePlans}
+          render={(plan, i) => <PlanHeaderCard key={plan + i} plan={plan} />}
+        />
       </div>
 
       <div className="pricing-main-card">
@@ -112,39 +71,27 @@ export default function PlansFiltering({ selectedPlans }:
           <p className="pricing-text">Pricing</p>
         </div>
 
-        <div className="price-renders-card first-year-group">
-          {visiblePlans.map((plan, idx) => (
-            <div
-              key={`first-${idx}-${plan}`}
-              className={`pricing-card-wrapper ${
-                plan === "Platinum" ? "platinum-bg" : ""
-              }`}
-            >
-              <PlanComparisonPriceCard
-                type="first"
-                plan={plan}
-                data={PLANS_DATA[plan]}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="price-renders-card second-year-group">
-          {visiblePlans.map((plan, idx) => (
-            <div
-              key={`second-${idx}-${plan}`}
-              className={`pricing-card-wrapper ${
-                plan === "Platinum" ? "platinum-bg" : ""
-              }`}
-            >
-              <PlanComparisonPriceCard
-                type="second"
-                plan={plan}
-                data={PLANS_DATA[plan]}
-              />
-            </div>
-          ))}
-        </div>
+        {["first", "second"].map((type) => (
+          <div key={type} className={`price-renders-card ${type}-year-group`}>
+            <VisiblePlansRenderer
+              plans={visiblePlans}
+              render={(plan, idx) => (
+                <div
+                  key={`${type}-${idx}-${plan}`}
+                  className={`pricing-card-wrapper ${
+                    plan === "Platinum" ? "platinum-bg" : ""
+                  }`}
+                >
+                  <PlanComparisonPriceCard
+                    type={type as "first" | "second"}
+                    plan={plan}
+                    data={PLANS_DATA[plan]}
+                  />
+                </div>
+              )}
+            />
+          </div>
+        ))}
       </div>
 
       <div className="features-main-card">
@@ -154,19 +101,24 @@ export default function PlansFiltering({ selectedPlans }:
           </div>
 
           <div className="pricing-texted-cards">
-            {visiblePlans.map((plan, idx) => (
-              <div
-                key={`features-${idx}-${plan}`}
-                className={`features-wrapper ${
-                  plan === "Platinum" ? "features-platinum-bg" : ""
-                }`}
-              >
-                <Features data={FeaturesData[plan]} />
-              </div>
-            ))}
+            <VisiblePlansRenderer
+              plans={visiblePlans}
+              render={(plan, idx) => (
+                <div
+                  key={`features-${idx}-${plan}`}
+                  className={`features-wrapper ${
+                    plan === "Platinum" ? "features-platinum-bg" : ""
+                  }`}
+                >
+                  <Features data={FeaturesData[plan]} />
+                </div>
+              )}
+            />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default PlansFiltering;
