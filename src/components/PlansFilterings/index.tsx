@@ -8,12 +8,10 @@ import {
   SILVER,
   SILVER_BASIC,
 } from "../../constants/constants";
-import { FeaturesData } from "../../data/featuresData";
-import { PLANS_DATA } from "../../data/pricingDataOne";
-import Features from "../FeaturesSectionForPriceComparison";
-import PlanComparisonPriceCard from "../PlanComparisonPriceRender";
 import PlanHeaderCard from "../PlanHeaderCard";
 import VisiblePlansRenderer from "../VisiblePlansRender";
+import PricingSectionComparison from "../PricingSectionComparison";
+import FeaturesSectionPlanAndPrice from "../FeatureSectionPlanAndPrice";
 
 import "./styles.css";
 
@@ -45,6 +43,7 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
   const plusKey = mapToPriceKeys(normalizeLabel(selectedPlans.plus));
   const proKey = mapToPriceKeys(normalizeLabel(selectedPlans.pro));
   const silverKey = mapToPriceKeys(normalizeLabel(selectedPlans.silver));
+
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -66,57 +65,8 @@ const PlansFiltering = ({ selectedPlans }: PlansFilteringProps) => {
         />
       </div>
 
-      <div className="pricing-main-card">
-        <div className="pricings-container-main">
-          <p className="pricing-text">Pricing</p>
-        </div>
-
-        {["first", "second"].map((type) => (
-          <div key={type} className={`price-renders-card ${type}-year-group`}>
-            <VisiblePlansRenderer
-              plans={visiblePlans}
-              render={(plan, idx) => (
-                <div
-                  key={`${type}-${idx}-${plan}`}
-                  className={`pricing-card-wrapper ${
-                    plan === "Platinum" ? "platinum-bg" : ""
-                  }`}
-                >
-                  <PlanComparisonPriceCard
-                    type={type as "first" | "second"}
-                    plan={plan}
-                    data={PLANS_DATA[plan]}
-                  />
-                </div>
-              )}
-            />
-          </div>
-        ))}
-      </div>
-
-      <div className="features-main-card">
-        <div className="features-card">
-          <div className="pricings-container-main">
-            <p className="pricing-text">Features</p>
-          </div>
-
-          <div className="pricing-texted-cards">
-            <VisiblePlansRenderer
-              plans={visiblePlans}
-              render={(plan, idx) => (
-                <div
-                  key={`features-${idx}-${plan}`}
-                  className={`features-wrapper ${
-                    plan === "Platinum" ? "features-platinum-bg" : ""
-                  }`}
-                >
-                  <Features data={FeaturesData[plan]} />
-                </div>
-              )}
-            />
-          </div>
-        </div>
-      </div>
+      <PricingSectionComparison visiblePlans={visiblePlans} />
+      <FeaturesSectionPlanAndPrice visiblePlans={visiblePlans} />
     </div>
   );
 };

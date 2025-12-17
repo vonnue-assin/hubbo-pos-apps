@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import Included from "../WhatsIncludedDropdown";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
@@ -9,33 +7,33 @@ import "./styles.css";
 
 type PlanCardProps = {
   plan: any;
+  openAdditional: boolean;
+  setOpenAdditional: (open: boolean) => void;
   openIncluded: boolean;
   setOpenIncluded: (open: boolean) => void;
 };
 
 const SoftwarePlanCard = ({
   plan,
+  openAdditional,
+  setOpenAdditional,
   openIncluded,
   setOpenIncluded,
 }: PlanCardProps) => {
-  const [openAdditional, setOpenAdditional] = useState(true);
-
   return (
     <div className={`swiper-text-card ${plan.isPremium ? "best-value" : ""}`}>
       {plan.flag && <p className="best-value-text">{plan.flag}</p>}
 
       <div className="border-text">
-        <div className="w-full">
-          <div className="solid-primary">
-            <p className="silver-text">{plan.name}</p>
+        <div className="solid-primary">
+          <p className="silver-text">{plan.name}</p>
 
-            <p className="money-text">
-              <span className="rm-text-silver">RM</span>
-              <span className="money-text-set">{plan.price}</span>
-            </p>
+          <p className="money-text">
+            <span className="rm-text-silver">RM</span>
+            <span className="money-text-set">{plan.price}</span>
+          </p>
 
-            <p className="year-plan">{plan.year}</p>
-          </div>
+          <p className="year-plan">{plan.year}</p>
         </div>
 
         <div
@@ -45,7 +43,7 @@ const SoftwarePlanCard = ({
         >
           <div className="vertical-set">
             {plan.additionalFeatures.length > 0 && (
-              <div>
+              <>
                 <button
                   className="button-additional"
                   onClick={() => setOpenAdditional(!openAdditional)}
@@ -72,18 +70,20 @@ const SoftwarePlanCard = ({
                     openAdditional ? "open" : "close"
                   }`}
                 >
-                  {plan.additionalFeatures.map((feature: string, i: number) => (
-                    <div className="feature-card" key={i}>
-                      <img
-                        src={roundTickImage}
-                        className="roundTickImage"
-                        alt="tick"
-                      />
-                      <p className="platform-text">{feature}</p>
-                    </div>
-                  ))}
+                  {plan.additionalFeatures.map(
+                    (feature: string, index: number) => (
+                      <div className="feature-card" key={index}>
+                        <img
+                          src={roundTickImage}
+                          className="roundTickImage"
+                          alt="tick"
+                        />
+                        <p className="platform-text">{feature}</p>
+                      </div>
+                    )
+                  )}
                 </div>
-              </div>
+              </>
             )}
 
             <button
@@ -104,7 +104,6 @@ const SoftwarePlanCard = ({
           </div>
         </div>
 
-        <div className="card-spacer" />
         <div className="request-free-demo-button-sub">
           <span className="free-demo-button-set">Request Free Demo</span>
         </div>

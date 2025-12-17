@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -31,11 +31,11 @@ import { ReactComponent as MenuIcon } from "../../assets/svg/menuBrown.svg";
 
 import "./styles.css";
 
+type DropDownType = "solutions" | "hubbo" | "language" | null;
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<
-    "solutions" | "hubbo" | "language" | null
-  >(null);
+  const [openDropdown, setOpenDropdown] = useState<DropDownType>(null);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -62,9 +62,9 @@ const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const toggleDropdown = (dropdown: "solutions" | "hubbo" | "language") => {
+  const toggleDropdown = useCallback((dropdown: DropDownType) => {
     setOpenDropdown((prev) => (prev === dropdown ? null : dropdown));
-  };
+  }, []);
 
   const navigate = useNavigate();
 

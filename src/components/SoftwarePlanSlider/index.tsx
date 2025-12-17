@@ -12,6 +12,7 @@ const SoftwarePlanSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [openIncluded, setOpenIncluded] = useState(true);
+  const [openAdditional, setOpenAdditional] = useState(true);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -72,6 +73,8 @@ const SoftwarePlanSlider = () => {
                 plan={plan}
                 openIncluded={openIncluded}
                 setOpenIncluded={setOpenIncluded}
+                openAdditional={openAdditional}
+                setOpenAdditional={setOpenAdditional}
               />
             </div>
           ))}
