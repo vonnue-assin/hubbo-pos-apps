@@ -12,7 +12,7 @@ const Pricing = () => {
           <div className="contactless">
             <div className="contact-button">
               <div className="ordering">
-                <img src={payementImg} className="qr-image" />
+                <img src={payementImg} className="qr-image" alt="qr-images" />
               </div>
               <h3 className="contactless-order">Pricing</h3>
             </div>
@@ -31,8 +31,13 @@ const Pricing = () => {
           <img
             src={PricingLandImageSmall}
             className="ContaclessImage-smaller"
+            alt="smallerImages"
           />
-          <img src={PricingLandImageLarge} className="ContactlessImageLarge" />
+          <img
+            src={PricingLandImageLarge}
+            className="ContactlessImageLarge"
+            alt="pricing"
+          />
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Button from "../Button";
 import Included from "../WhatsIncludedDropdown";
 
 import ArrowDownImage from "../../assets/images/chevron-down.svg";
@@ -42,28 +43,31 @@ const SoftwarePlanCard = ({
           }`}
         >
           <div className="vertical-set">
+            {/* ---------- Additional Features ---------- */}
             {plan.additionalFeatures.length > 0 && (
               <>
-                <button
+                <Button
                   className="button-additional"
                   onClick={() => setOpenAdditional(!openAdditional)}
                 >
-                  <span
-                    className={`additional-features ${
-                      openAdditional ? "open" : ""
-                    }`}
-                  >
-                    Additional features
-                  </span>
+                  <>
+                    <span
+                      className={`additional-features ${
+                        openAdditional ? "open" : ""
+                      }`}
+                    >
+                      Additional features
+                    </span>
 
-                  <img
-                    src={ArrowDownImage}
-                    className={`ArrowDownImage ${
-                      openAdditional ? "rotated" : ""
-                    }`}
-                    alt="arrow"
-                  />
-                </button>
+                    <img
+                      src={ArrowDownImage}
+                      className={`ArrowDownImage ${
+                        openAdditional ? "rotated" : ""
+                      }`}
+                      alt="arrow"
+                    />
+                  </>
+                </Button>
 
                 <div
                   className={`feature-card-main ${
@@ -86,17 +90,22 @@ const SoftwarePlanCard = ({
               </>
             )}
 
-            <button
+            {/* ---------- What's Included ---------- */}
+            <Button
               className="button-include"
               onClick={() => setOpenIncluded(!openIncluded)}
             >
-              <span className="include-text">What’s included :</span>
-              <img
-                src={ArrowDownImage}
-                className={`ArrowDownImage ${openIncluded ? "rotated" : ""}`}
-                alt="arrow"
-              />
-            </button>
+              <>
+                <span className="include-text">What’s included :</span>
+                <img
+                  src={ArrowDownImage}
+                  className={`ArrowDownImage ${
+                    openIncluded ? "rotated" : ""
+                  }`}
+                  alt="arrow"
+                />
+              </>
+            </Button>
 
             <div className={`included-content ${openIncluded ? "open" : ""}`}>
               <Included />

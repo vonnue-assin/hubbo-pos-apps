@@ -308,15 +308,6 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .rm-text {
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: -0.1px;
-    font-weight: 500;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .left {
     border-radius: 0.75rem;
@@ -412,7 +403,7 @@
   }
 
   .feature-name {
-    padding: 1rem;
+    padding: 1rem !important;
   }
 }
 
@@ -424,6 +415,13 @@
   .first-year {
     padding-left: 2.6rem;
     padding-right: 2.6rem;
+  }
+
+  .rm-text {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.1px;
+    font-weight: 500;
   }
 }
 

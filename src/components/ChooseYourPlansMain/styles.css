@@ -143,7 +143,6 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;
-  /* margin-right: 0.25rem; */
   font-family: "font2";
   margin-right: 9px;
 }
@@ -224,7 +223,6 @@
   min-width: 100%;
   display: flex;
   flex-direction: column;
-  /* gap: 0.5rem; */
   gap: 8px;
 }
 
@@ -735,7 +733,7 @@
     width: 312px;
   }
 
-  .hardware-software .request-free-demo-button-sub {
+  .software .request-free-demo-button-sub {
     margin-top: unset;
   }
 
@@ -765,6 +763,10 @@
   .fc-inner-hardware {
     padding-top: 7rem;
     margin-top: 7px !important;
+  }
+
+  .software .accordion-open .silver-card-sub-card {
+    padding-bottom: 1.5rem;
   }
 }
 

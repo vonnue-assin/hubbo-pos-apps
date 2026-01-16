@@ -16,8 +16,16 @@ const TouchFree = () => {
           </h2>
 
           <div className="image-free-box">
-            <img src={scannedImageMobile} className="scannedImageMobile" />
-            <img src={scannedImageTab} className="scannedImageTab" />
+            <img
+              src={scannedImageMobile}
+              className="scannedImageMobile"
+              alt="scannedImage"
+            />
+            <img
+              src={scannedImageTab}
+              className="scannedImageTab"
+              alt="scannedImage"
+            />
 
             <div className="content-store-main">
               {touchFreeFeatures.map((feature) => (

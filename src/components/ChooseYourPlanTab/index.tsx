@@ -1,3 +1,4 @@
+import Button from "../Button";
 import "./styles.css";
 
 type ChooseYourPlansProps = {
@@ -9,27 +10,21 @@ const ChooseYourPlansTab = ({
   selectedPlan,
   setSelectedPlan,
 }: ChooseYourPlansProps) => {
+  const plans = ["Software Only", "Software ＆ Hardware"];
+
   return (
     <div className="tab-main-container">
       <div className="tab-card">
         <div className="tab-container">
-          <button
-            className={`tab-button ${
-              selectedPlan === "Software Only" ? "active" : ""
-            }`}
-            onClick={() => setSelectedPlan("Software Only")}
-          >
-            <p className="soft-button">Software Only</p>
-          </button>
-
-          <button
-            className={`tab-button ${
-              selectedPlan === "Software ＆ Hardware" ? "active" : ""
-            }`}
-            onClick={() => setSelectedPlan("Software ＆ Hardware")}
-          >
-            <p className="soft-button">Software ＆ Hardware</p>
-          </button>
+          {plans.map((plan) => (
+            <Button
+              key={plan}
+              text={plan}
+              isActive={selectedPlan === plan}
+              onClick={() => setSelectedPlan(plan)}
+              className="tab-button"
+            />
+          ))}
         </div>
       </div>
     </div>

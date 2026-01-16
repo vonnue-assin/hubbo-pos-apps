@@ -1,0 +1,27 @@
+.get-started {
+  border: none;
+  background-color: #472200;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 1rem;
+  font-family: "font1";
+  cursor: pointer;
+}
+
+.button-icon {
+  margin-left: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.button-dropdown {
+  position: relative;
+}

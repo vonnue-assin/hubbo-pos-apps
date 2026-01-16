@@ -558,6 +558,8 @@
 
   .price-renders-card {
     justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 

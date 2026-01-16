@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import Button from "../Button";
 import PlanDropDown from "../PlanDropDown";
 
 import arrowDownImage from "../../assets/images/chevron-upwhite.svg";
@@ -15,29 +14,29 @@ const ChooseYourPlansAccordion = ({
   selectedPlan,
   setSelectedPlan,
 }: ChooseYourPlansAccordionProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const handleSelectSystem = (plan: string) => {
     setSelectedPlan(plan);
-    setIsOpen(false);
   };
+
   return (
     <div className="card-section">
-      <button className="button-card" onClick={() => setIsOpen(!isOpen)}>
-        <div className="main-class">
-          <div className="button-container">
-            <span>{selectedPlan}</span>
-
-            {isOpen && <PlanDropDown onSelect={handleSelectSystem} />}
-
-            <img
-              src={arrowDownImage}
-              alt="arrowDownImage"
-              className={`arrowDownImage ${isOpen ? "rotated" : ""}`}
-            />
+      <Button
+        className="button-card"
+        dropdown={<PlanDropDown onSelect={handleSelectSystem} />}
+      >
+        {(isOpen) => (
+          <div className="main-class">
+            <div className="button-container">
+              <span>{selectedPlan}</span>
+              <img
+                src={arrowDownImage}
+                alt="arrowDownImage"
+                className={`arrowDownImage ${isOpen ? "rotated" : ""}`}
+              />
+            </div>
           </div>
-        </div>
-      </button>
+        )}
+      </Button>
     </div>
   );
 };

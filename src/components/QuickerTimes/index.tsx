@@ -10,7 +10,7 @@ const QuickerTimes = () => {
         <div className="section-sub-wrapper">
           <div className="section-two">
             <div className="section-one-image-large">
-              <img src={ScanImage} className="ScanImage" />
+              <img src={ScanImage} className="ScanImage" alt="scanImage" />
             </div>
             <div className="quicker-times">
               <div className="quicker-times-text">
@@ -18,7 +18,11 @@ const QuickerTimes = () => {
                   Quicker Turnaround Times and Smoother Workflows
                 </h2>
                 <div className="image-card">
-                  <img src={ScanImageSmall} className="ScanImageSmall" />
+                  <img
+                    src={ScanImageSmall}
+                    className="ScanImageSmall"
+                    alt="scanImage"
+                  />
                 </div>
                 <h3 className="quicker-content">
                   With HUBBO POS, customers can easily browse menus, place
